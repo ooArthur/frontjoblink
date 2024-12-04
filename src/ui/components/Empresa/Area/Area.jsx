@@ -8,7 +8,7 @@ import BoxVagas from '../BoxVagas/BoxVagas';
 import CurriculosRecomendados from '../CurriculosRecomendados/CurriculosRecomendados';
 import Loading from '../../Loading/Loading';
 
-import './areaEmpresa.css';
+import './AreaEmpresa.css';
 
 export default function Empresa() {
   const [company, setCompany] = useState(null);

@@ -9,7 +9,7 @@ import Termos from './pages/Termos';
 import Faq from './pages/Faq';
 import PrivateRoute from './PrivateRoutes';
 import Candidato from './ui/components/Candidato/Area/Candidato';
-import TodasVagas from './ui/components/Candidato/TodasVagas/TodasVagas';
+import TodasVagas from './ui/components/Candidato/TodasVagas/Todasvagas.jsx';
 import ListarEmpresas from './ui/components/Candidato/ListarEmpresas/ListarEmpresas.jsx'
 import VagasFavoritas from './ui/components/Candidato/VagasFavoritas/VagasFavoritas';
 import CurriculosEnviados from './ui/components/Candidato/CurriculosEnviados/CurriculosEnviados';
