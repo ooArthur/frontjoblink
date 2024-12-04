@@ -1,0 +1,66 @@
+.content-reset-password {
+    display: flex;
+    flex-direction: column;
+    width: 33vw;
+    height: 85%;
+}
+
+.content-reset-password>form>button {
+    width: 46%;
+    padding: 0.9vw!important;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    font-weight: 600;
+    border-radius: 0.4vw;
+    font-size: 1.1vw;
+    border: 0.078vw solid var(--button-bg-color);
+    margin: 2vw 0 0 0;
+}
+
+.content-reset-password>form>button:hover {
+    background-color: white;
+    color: var(--button-bg-color);
+}
+
+.p-reset-password {
+    font-size: 1.07vw;
+    text-align: justify;
+}
+
+.container-input-reset {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 3vw 0;
+}
+
+.container-input-reset input {
+    border: 0.11vw solid #eeeeee;
+    padding: 0.8vw;
+    border-radius: 1.17vw 0 1.17vw 0;
+    font-size: 1vw;
+}
+
+.container-input-reset>label {
+    font-size: 1.13vw;
+}
+
+.info-content-reset {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-reset {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.p-reset-color, .p-reset-color>Link {
+    color: #999999;
+    text-decoration: none;
+}

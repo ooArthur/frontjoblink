@@ -1,0 +1,107 @@
+.container-cards-empresas {
+    width: 80%;
+    margin: 3vw 0 0 14vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-empresa {
+    display: flex;
+    flex-direction: column;
+    width: 34vw;
+    height: 13vw;
+    background-color: #160E37;
+    justify-content: space-around;
+    padding: 1.6vw 1.7vw;
+    margin: 3vw 0 3vw 0;
+    color: white;
+    border-radius: 0.6vw;
+    border-right: 1.3vw solid #FFF600;
+    box-shadow: 0 0 1vw 0.6vw #f0f0f0;
+    transition: 0.3s;
+}
+
+.card-empresa:hover {
+    transform: scale(0.97);
+    transition: 0.2s;
+}
+
+.card-empresa>p {
+    color: white;
+    font-weight: 100;
+    font-size: 0.95vw;
+}
+
+.info-card-empresa {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-card-empresa>h4,
+.info-card-empresa>h5 {
+    color: #898989;
+}
+
+.info-card-empresa>h3 {
+    font-size: 1.4vw;
+    font-weight: 800;
+    color: white;
+}
+
+.info-card-empresa>h4 {
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+.info-card-empresa>h5 {
+    font-size: 1vw;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 450px) {
+    .cabecalhoMobile{
+        display: block;
+        margin: 6vw 0 0 5vw;
+    }
+
+    .container-cards-empresas{
+        width: 90%;
+        margin: 3vw 0 0 5vw;
+        justify-content: space-between !important;
+    }
+
+    .card-empresa{
+        width: 100%;
+        height: 150px;
+        border-right: 17px solid #FFF600;
+        padding: 0 30px;
+        margin: 20px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 8px 2px rgb(192, 192, 192);
+    }
+
+    .info-card-empresa>h3{
+        font-size: 3.5vw;
+        font-weight: 800;
+    }
+
+    .info-card-empresa>h4{
+        font-size: 3vw;
+        color: #b8b8b8;
+    }
+
+    .info-card-empresa>h5{
+        font-size: 2.7vw;
+        color: #b8b8b8;
+    }
+
+    .card-empresa>p{
+        font-size: 2.6vw;
+        color: white;
+    }
+
+}

@@ -1,0 +1,249 @@
+.curriculos-enviados{
+    width: 80vw;
+    margin-left: 14vw;
+}
+
+.sectionCandidatura {
+    width: 80vw;
+    margin: 4vw 0 0 0;
+}
+
+.candidaturaConfig{
+    display: flex;
+    width: 100%;
+    height: 11.8vw;
+    margin: 3vw 0;
+    border-radius: 0.6vw;
+    box-shadow: 0 0 1vw 0.3vw #eaeaea;
+    transition: 0.5s;
+}
+
+.candidaturaConfig:hover {
+    transform: scale(1.004);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.divDetalhes {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#tituloDetalhes{
+    font-size: 1.4vw;
+    font-weight: 700;
+    color: white;
+}
+
+#semiTituloDetalhes {
+    font-size: 1.35vw;
+    font-weight: 600;
+    color: #898989;
+}
+
+.divDetalhes h5 {
+    color: #898989;
+    font-weight: 400;
+    font-size: 1.1vw;
+}
+
+.detalhesCandidatura {
+    width: 75%;
+    padding: 1.3vw 3vw;
+    background-color: #160E37;
+    border-top-left-radius: 0.6vw;
+    border-bottom-left-radius: 0.6vw;
+}
+
+.detalhesCandidatura p {
+    font-size: 0.95vw;
+    margin: 1vw 0;
+    text-align: justify;
+    color: rgb(238, 238, 238);
+    font-weight: lighter;
+}
+
+.detalhesStatus {
+    width: 30%;
+    text-align: center;
+    max-height: 100%;
+    background-color: #F9F9F9;
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+}
+
+.detalhesStatus button {
+    height: 2.5vw ;
+    width: 2.5vw;
+    border-radius: 2vw;
+    border: none;
+    background-color: #160e3708;
+    transition: 0.7s;
+}
+
+.detalhesStatus button:hover {
+    transition: 0.7s;
+    background-color: #eaeaea;
+}
+
+.detalhesStatus i {
+    font-size: 0.8vw;
+}
+
+.detalhesStatusTitulo {
+    display: flex;
+    padding: 0 1vw;
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detalhesStatusTitulo h3 {
+    font-size: 1.4vw;
+    font-weight: 700;
+    margin-left: 8vw;
+}
+
+.optionDetalhesStatus{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    height: 70%;
+
+}
+
+.divDetalhesStatus {
+    padding: 3.1% 0;
+    background-color: #E4E4E4;
+    font-size: 0.98vw;
+    font-weight: 400;
+}
+
+.curriculoActive {
+    background-color: #160E37 !important;
+    color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.aprovadoBorder {
+    border-bottom-right-radius: 0.6vw;
+}
+
+.curriculo-enviado-content{
+    margin: 4vw 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.candidaturas-content{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+@media screen and (max-width:450px){
+    .curriculos-enviados{
+        width: 100%;
+        margin: 0 0 15vw 0;
+        padding: 0 5vw;
+    }
+
+    .input-container{
+        display: none;
+    }
+
+    .filtro h2{
+        font-size: 5vw;
+    }
+
+    .detalhesCandidatura{
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .candidaturaConfig{
+        flex-direction: column;
+        margin: 3vw 0 10vw 0;
+        border-radius: 10px 10px 0 0;
+        height: 30%;
+        background-color: transparent;
+        box-shadow: 0 0 10px 10px rgb(217, 217, 217);
+    }
+
+    .optionDetalhesStatus{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #tituloDetalhes{
+        font-size: 3.5vw;
+    }
+
+    #semiTituloDetalhes{
+        font-size: 3vw;
+    }
+
+    .divDetalhes{
+        align-items: center;
+    }
+
+    .divDetalhes h5{
+        font-size: 3vw;
+    }
+
+    .divDetalhesStatus{
+        width: 33.34%;
+        font-size: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+    }
+
+    .divDetalhesStatus>h4{
+        font-weight: 300;
+    }
+
+    .curriculo-enviado-content{
+        font-size: 3vw;
+    }
+
+    .detalhesCandidatura p {
+        font-size: 3vw;
+    }
+
+    .detalhesStatus{
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .detalhesStatusTitulo{
+        justify-content: center;
+        padding: 2vw 0;
+        background-color: #160E37;
+        color: white;
+    }
+
+    .detalhesStatusTitulo h3{
+        font-size: 4vw;
+        margin: 0;
+        color: white;
+    }
+
+    .candidaturaConfig:hover{
+        box-shadow: none;
+        transform: scale(1);
+    }
+
+    .filtro-vagas select{
+        font-size: 3vw;
+    }
+
+    .candidaturas-content{
+        flex-direction: column;
+    }
+}

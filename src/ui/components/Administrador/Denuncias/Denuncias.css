@@ -1,0 +1,262 @@
+.denunciasArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 86vw;
+}
+
+.containerDenuncias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    width: 86vw;
+    margin: 1vw 0;
+}
+
+.cardDenuncia {
+    width: 26.7vw;
+    height: 11.3vw;
+    display: flex;
+    border-radius: 0.4vw;
+    box-shadow: 0 0 0.7vw 0.01vw #e4e4e4;
+    margin-bottom: 5vw;
+    transition: 0.2s;
+}
+
+.cardDenuncia:hover {
+    transform: scale(1.009);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.denunciasH1 {
+    width: 86vw;
+    text-align: center;
+    margin: 0 0 1.1vw 0;
+}
+
+.denunciasH1 > h1 {
+    color: #720D0D;
+    font-size: 1.7vw !important;
+    font-weight: 800;
+}
+
+/* ============== Cards ================ */
+.cardDenunciaEmpresa {
+    width: 4.3vw;
+    height: 100%;
+    background-color: #720D0D;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-top-left-radius: 0.4vw;
+    border-bottom-left-radius: 0.4vw;   
+}
+
+.cardDenunciaEmpresa > h4 {
+    transform: rotate(360deg);
+    writing-mode: vertical-rl;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 1.3vw;
+}
+
+.cardDenunciaInfo {
+    padding: 0.9vw 1.5vw;
+    border-left: none !important;
+    border-top-right-radius: 0.4vw;
+    border-bottom-right-radius: 0.4vw;
+    width: 100%;
+}
+
+.cardDenunciaTitulo {
+    display: flex;
+    width: 100%;
+    height: 1.6vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardDenunciaTitulo > h4 {
+    font-weight: 600;
+    font-size: 1.3vw;
+}
+
+.cardDenunciaTitulo > button {
+    border: none;
+    font-size: 1.1vw;
+    color: #720D0D;
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+.cardDenunciaTitulo > button:hover {
+    color: #ca1b1b;
+    transition: 0.2s;
+}
+
+.cardDenunciaMotivo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 7.6vw;
+    justify-content: flex-start;
+}
+
+.cardDenunciaMotivo > h5 {
+    font-size: 1.15vw;
+    font-weight: 500;
+}
+
+.cardDenunciaMotivo > p {
+    font-size: 1.03vw !important;
+    font-weight: 300;
+    margin-top: 2vw;
+}
+
+/* ============================ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    overflow-y: none;
+}
+
+.modal-card {
+    display: flex;
+    background-color: white;
+    border-radius: 0.52vw;
+    position: relative;
+    width: 55vw;
+    height: 27vw;
+}
+
+.entidadeDenuncia { 
+    width: 4.5vw !important;
+}
+
+.entidadeDenuncia > h4 {
+    font-size: 1.6vw;
+}
+
+.infoDenuncia {
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+    overflow: auto;
+}
+
+.infoDenuncia::-webkit-scrollbar-thumb{
+    background-color: #c3c3c3;
+    border-radius: 1vw;
+
+}
+.infoDenuncia::-webkit-scrollbar{
+    background-color: white;
+    width: 0.7vw;
+
+}
+
+.description-denuncia{
+    color: #ca1b1b !important;
+    text-align: justify; 
+    overflow-wrap: break-word;
+}
+
+.infoDenuncia > p > span{
+    font-weight: bold;
+}
+
+.infoDenuncia > h2 {
+    font-size: 1.8vw;
+    font-weight: 700;
+} 
+
+.infoDenunciaTitulo > h5 {
+    font-size: 1.4vw;
+    font-weight: 600;
+}
+
+.infoDenunciaTitulo > h2 {
+    font-size: 2vw;
+}
+
+.infoDenuncia > p {
+    font-size: 1.09vw;
+    margin: 0.5vw 0;
+    text-align: justify;
+}
+
+.infoDenunciasData > h4 {
+    font-size: 1.2vw;
+    color: #720D0D;
+    font-weight: 700;
+}
+
+.infoDenunciasData > h4 > span {
+    color: black !important;
+}
+
+.infoDenunciasData{
+    margin-bottom: 1vw;
+}
+
+.buttonsDenuncia {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.buttonsDenuncia > button {
+    padding: 0.8vw 3.2vw;
+    border-radius: 0.3vw;
+    border: none;
+    font-weight: 300;
+    font-size: 1.04vw;
+    color: white;
+}
+
+.buttonsDenuncia > .buttonExcluirDenuncia {
+    background-color: #720D0D;
+    transition: 0.3s;
+}
+
+.buttonsDenuncia > .buttonExcluirDenuncia:hover {
+    background-color: #ac1818;
+    transition: 0.3s;
+}
+
+.buttonsDenuncia > .buttonAvisar{
+    background-color: black;
+    transition: 0.3s;
+}
+
+.buttonsDenuncia > .buttonAvisar:hover{
+    background-color: rgb(61, 61, 61);
+    transition: 0.3s;
+}
+
+.buttonsDenuncia > .buttonDeletarEntidade {
+    background-color: #160E37;
+    transition: 0.3s;
+}
+
+.buttonsDenuncia > .buttonDeletarEntidade:hover {
+    background-color: #4225b5;
+    transition: 0.3s;
+}
+
+.containerDenuncias .no-reports{
+    font-size: 1.2vw !important;
+    color: #b4b4b4;
+}

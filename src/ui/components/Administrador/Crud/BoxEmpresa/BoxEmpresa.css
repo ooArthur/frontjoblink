@@ -1,0 +1,7 @@
+.sectionVagasCrud {
+    margin: 0 !important;
+}
+
+.sectionVagasCrud>.actions {
+    width: 100% !important;
+}

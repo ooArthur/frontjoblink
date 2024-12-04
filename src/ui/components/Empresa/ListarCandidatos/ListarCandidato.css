@@ -1,0 +1,246 @@
+.list-candidate{
+    margin-left: 14vw;
+}
+
+/* Estilo para o card */
+.candidate-card {
+    background-color: white;
+    border-radius: 0.5vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    box-sizing: border-box;
+    z-index: 1000; /* Garantir que o card fique acima do overlay */
+}
+
+/* Header do card com título e botão de fechar */
+
+.filter-modal{
+    background-color: white;
+    width: 80vw;
+    border-radius: 0.6vw;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    color: #160E37;
+    align-items: center;
+    border-radius: 0.5vw;
+    padding: 1vw 3vw;
+    font-size: 1vw;
+}
+
+.modal-header button i{
+    color: #160E37;
+}
+
+.modal-header button {
+    background: none;
+    border: none;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.area-atuacao-modal{
+    display: flex;
+     width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.area-atuacao-modal h2{
+    font-size: 1.4vw;
+    font-weight: 600;
+}
+
+.infos-modal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1vw 6vw;
+}
+
+.desc-info-modal{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.desc-info-modal2 {
+    justify-content: end !important;
+}
+
+.desc-info-modal h3{
+    font-size: 1.3vw;
+    font-weight: 500;
+}
+
+.desc-info-modal p{
+    font-size: 1.2vw;
+}
+
+.desc-candidato-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.desc-candidato-modal p {
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word; /* Quebra palavras longas */
+    max-height: 200px; /* Define um limite de altura */
+    overflow-y: auto; /* Adiciona um scroll vertical se o texto for muito longo */
+    font-size: 1vw;
+}
+
+.acessar-perfil-button{
+    display: flex;
+    justify-content: center;
+    padding: 3vw 1vw;
+}
+
+.acessar-perfil-button button{
+    background-color: #160E37;
+    color: white;
+    border: solid 1px #160E37;
+    border-radius: 10px;
+    padding: 0.5vw 4vw;
+}
+
+.acessar-perfil-button button:hover{
+    background-color: white;
+    color: #160E37;
+}
+
+.modal-content-filter {
+    display: flex;
+    height: 30vw;
+}
+
+.sidebar{
+    border-right: 1px solid #160E37;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 1vw;
+    justify-content: space-evenly;
+}
+
+.sidebar button.disable{
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.10vw;
+    color: #c3c3c3;
+}
+
+.sidebar button.active {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.10vw;
+    color: #160E37;
+}
+
+.button-filter{
+    display: flex;
+
+}
+
+.button-filter button{
+    background-color: #160E37;
+    color: white;
+    border: 1px solid #160E37;
+    padding: 1vw 0;
+    border-radius: 3vw;
+    font-size: 1.10vw;
+    width: 100%;
+}
+
+.button-filter button:hover{
+    background-color: white;
+    color: #160E37;
+}
+
+.filter-options h3{
+    text-align: center;
+    margin-bottom: 2vw;
+    font-size: 1.7vw;
+}
+
+.filter-options {
+    padding: 1vw 5vw;
+    width: 75%;
+    overflow: auto;
+}
+
+.filter-options::-webkit-scrollbar-thumb{
+    background-color: #c3c3c3;
+    border-radius: 1vw;
+
+}
+.filter-options::-webkit-scrollbar{
+    background-color: white;
+    width: 0.7vw;
+
+}
+
+.filter-itens {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1vw;
+}
+
+.filter-options button {
+    margin: 0.7vw 0;
+    padding: 1vw;
+    background-color: #ffffff;
+    border: #160E37 solid 1px;
+    cursor: pointer;
+    border-radius: 1vw;
+    text-align: center;
+    font-size: 1vw;
+}
+
+
+.applied-filters{
+    text-align: center;
+    height: 2vw;
+    margin: 2vw 0;
+}
+
+.applied-filters-selected{
+    height: 6vw;
+    overflow: auto;
+}
+
+.filter-button {
+    width: 30%;
+    text-align: center;
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-button.selected {
+    background-color: #160E37; 
+    color: #fff;
+    border: 1px solid black;
+}
+
+.applied-filters span{
+    margin: 0.5vw;
+    color: #160E37;
+    cursor: pointer;
+}

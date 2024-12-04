@@ -1,0 +1,92 @@
+.bodyLoading {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.spanCarregando>p {
+    font-size: 14px;
+    margin-top: 30px;
+    font-weight: 300;
+    color: #160e37;
+}
+
+span.carregando {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    border: 3.5px solid #160e37;
+    border-top: 3.5px solid #160e3700;
+    animation: loading 1s linear infinite;
+}
+
+.logoLoading {
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+.logoLoading>h1 {
+    font-weight: 700;
+    color: #160e37;
+}
+
+.logoLoading>img {
+    width: 50px;
+    animation: Lupa 5s 6;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.spanCarregando {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes Lupa {
+    0% {
+        transform: scale(0.99);
+    }
+
+    20% {
+        transform: scale(0.8);
+    }
+
+    40% {
+        transform: scale(0.75);
+    }
+
+    60% {
+        transform: scale(0.8);
+    }
+
+    80% {
+        transform: scale(0.9);
+    }
+
+    90% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(0.99);
+    }
+}

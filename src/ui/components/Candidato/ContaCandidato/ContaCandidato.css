@@ -1,0 +1,313 @@
+.sectionCandidato {
+    width: 100%;
+    margin-left: 14vw;
+    width: 80vw;
+}
+
+.contaCandidato {
+    text-align: center;
+    margin: 1.3vw 0;
+}
+
+.contaCandidato>h2 {
+    font-size: 1.7vw;
+}
+
+.camposCandidato {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    /* Espaçamento entre os itens */
+    align-items: flex-start;
+}
+
+.camposCandidato>form {
+    display: flex;
+    flex-direction: row;
+}
+
+.camposCandidato>div {
+    flex: 1 1 20%;
+    /* Cada div ocupará 23% da linha */
+    min-width: 10.4vw;
+    box-sizing: border-box;
+
+}
+
+.camposCandidato>div label {
+    display: block;
+    margin-bottom: 0.3vw;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.camposCandidato>div input {
+    width: 100%;
+    padding: 1vw 1vw;
+    border-radius: 1vw 0.3vw;
+    border: 0.15vw solid #dcdcdc;
+    font-size: 1vw;
+    color: #616161;
+    font-weight: 400;
+}
+
+.camposCandidato>div input::placeholder {
+    color: #cfcfcf;
+}
+
+
+.buttonCamposCandidatos button {
+    border-radius: 0.4vw;
+    border: 0.1vw solid #160E37;
+    background-color: #160E37;
+    color: white;
+    transition: 0.3s;
+}
+
+.buttonCamposCandidatos button:hover {
+    background-color: white;
+    color: #160E37;
+}
+
+.senha-candidato {
+    width: 100%;
+}
+
+.expanded>button {
+    border: 0.15vw solid #f1f1f1 !important;
+}
+
+.expanded i {
+    transform: rotate(90deg);
+}
+
+.senha-empresa {
+    width: 50%;
+    background-color: white;
+    border: 1px solid #c3c3c3;
+    border-radius: 10px;
+}
+
+.senha-candidato button {
+    display: flex;
+    padding: 1vw;
+    justify-content: space-between;
+    font-size: 1vw;
+    background-color: white;
+    color: #c3c3c3;
+    border: 0.15vw solid #dcdcdc;
+    border-radius: 1vw 0.3vw;
+    width: 100%;
+}
+
+.senha-empresa button {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 0.3vw;
+    background-color: white;
+    color: #c3c3c3;
+    font-weight: bold;
+}
+
+.password-info-candidato {
+    display: flex;
+    padding: 15px 0;
+}
+
+
+.salvar-empresa button {
+    background-color: #160E37;
+    color: white;
+    border: solid 1px #160E37;
+    border-radius: 1vw;
+    padding: 1vw 4vw;
+    font-size: 1vw;
+}
+
+.salvar-empresa {
+    margin-top: 2vw;
+}
+
+
+.senha-salvar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2vw;
+}
+
+.senha-candidato.expanded {
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px 0 10px 0;
+    border: 1.7px solid #c3c3c3;
+}
+
+.password-info-candidato.enter {
+    justify-content: space-between;
+}
+
+.salvar-conta button {
+    background-color: #160E37;
+    color: white;
+    border: solid 0.1vw #160E37;
+    border-radius: 5px;
+    padding: 12px 60px;
+    font-size: 1.1vw;
+    font-weight: 400;
+    margin: 20px 0;
+    transition: 0.5s;
+}
+
+.salvar-conta button:hover {
+    border: 0.vw solid #160E37;
+    color: #160E37;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+
+.content-password-info-candidato>p {
+    font-size: 1.2vw;
+}
+
+i {
+    transition: transform 0.3s ease;
+}
+
+/* Classe para a rotação do ícone */
+.rotated {
+    transform: rotate(90deg);
+    /* Ajuste o valor se quiser uma rotação diferente */
+}
+
+.alinhamento-salvar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.alinhamento-salvar>.senha-salvar {
+    width: 50%;
+}
+
+.targetSalaryAccount>div {
+    display: flex;
+    flex-direction: row;
+}
+
+.targetSalaryAccount>div>select {
+    width: 3.5vw;
+    margin-right: 0.7vw;
+    height: 3.6vw;
+}
+
+.targetSalaryAccount>div>input {
+    width: 15vw;
+}
+
+.branchOfAct>select {
+    width: 18vw;
+    background-color: none;
+    border: 0.1vw solid black;
+    height: 3.35vw;
+}
+
+#buttonContaSair{
+    display: none;
+}
+
+@media screen and (max-width:450px) {
+    .sectionCandidato {
+        margin: 0;
+        padding: 0 5vw;
+        width: 100%;
+    }
+
+    .camposCandidato {
+        flex-direction: column;
+        width: 100%;
+        gap: 6vw;
+        margin-bottom: 50px;
+    }
+
+    .contaCandidato h2 {
+        font-size: 5vw;
+        font-weight: bolder;
+        margin: 5vw 0;
+    }
+
+    .camposCandidato>div {
+        width: 100%;
+    }
+
+    .camposCandidato>div label {
+        font-size: 4vw;
+    }
+
+    .camposCandidato>div input {
+        font-size: 4vw;
+        border: solid 0.4vw #c3c3c3;
+        padding: 3vw;
+        border-radius: 3vw 0;
+        width: 100%;
+    }
+
+    .targetSalaryAccount>div {
+        gap: 3vw;
+        align-items: center;
+    }
+
+    .targetSalaryAccount>div>select {
+        color: #160E37;
+        width: 40px;
+        height: 40px;
+        border-radius: 0 3vw;
+        border: solid 0.4vw #c3c3c3;
+    }
+
+    .senha-candidato button {
+        font-size: 4vw;
+        border: solid 0.5vw #c3c3c3;
+        padding: 3vw;
+        border-radius: 3vw 0;
+        margin-bottom: 50px;
+    }
+
+    .senha-salvar {
+        margin-bottom: 10vh;
+    }
+
+    .content-password-info-candidato p {
+        font-size: 4vw;
+    }
+
+    .buttonsConta{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #buttonContaSair{
+        display: flex;
+        background-color: #9c0000;
+        border: 1px solid #9c0000;
+    }
+
+    #buttonContaSair:hover{
+        background-color: transparent;
+        border: 1px solid black;
+    }
+
+    .password-info-candidato {
+        gap: 4vw;
+        flex-direction: column;
+    }
+
+    .salvar-conta button {
+        font-size: 3vw;
+    }
+}

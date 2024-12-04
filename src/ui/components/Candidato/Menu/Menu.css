@@ -1,0 +1,132 @@
+main{
+    transition: filter 0.8s ease;
+}
+
+/* Estilos para o menu lateral */
+nav.menu-lateral {
+    width: 6.5vw;
+    height: 100vh;
+    background-color: #160E37;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 1s;
+    z-index: 10000;
+}
+
+nav.menu-lateral:hover {
+    width: 20vw;
+}
+
+nav.menu-lateral.expandir {
+    width: 20vw;
+}
+
+.btn-expandir {
+    height: 4.8vw;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2vw;
+    display: flex;
+    font-size: 1.2vw;
+    font-weight: 300;
+    /* transition: 0.3s ease-in; */
+}
+
+.btn-expandir:hover {
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .btn-expandir:hover i,
+  .btn-expandir:hover span {
+    color: #160E37;
+    cursor: pointer;
+  }
+
+.btn-expandir span {
+    color: rgb(255, 255, 255);
+    margin-left: 6vw;
+}
+
+.btn-expandir i {
+    color: white;
+    font-size: 1.5vw;
+    margin-left: 1.2vw;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* .btn-expandir span:hover, i:hover {
+    transition: 0.5s;
+    color: #585858;
+} */
+
+.ulMenu {
+    height: 85vh;
+}
+
+.ulMenu li.item-menu {
+    transition: 0.3s ease-in;
+}
+
+.ulMenu li.ativo {
+    background-color: white;
+}
+
+.ulMenu li.ativo a span {
+    color: #160E37;
+}
+
+.ulMenu li.item-menu:hover {
+    background-color: white;
+}
+
+.ulMenu li.item-menu a:hover {
+    color: #160E37;
+}
+
+.ulMenu li.item-menu a {
+    font-weight: 300;
+    width: 18vw;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2vw;
+    padding: 1.2vw 4%;
+    display: flex;
+    align-items: center;
+    text-wrap: nowrap;
+}
+
+.ulMenu li.item-menu a .txt-link {
+    margin-left: 4vw;
+    margin-right: 4vw;
+    font-size: 1.1vw;
+}
+
+.ulMenu li.item-menu a .icon i {
+    font-size: 1.5vw;
+    margin-left: 2vw;
+}
+
+.icon {
+    width: 15%;
+}
+
+.txt-link {
+    width: 85%;
+    font-size: 1.3vw;
+}
+
+/* Adiciona blur ao conteúdo principal quando o menu está expandido */
+.main-content.blur {
+    filter: blur(8px);
+    transition: filter 0.8s ease;
+}
+
+.fa-arrow-right-from-bracket{
+    padding-left: 1vw;
+}

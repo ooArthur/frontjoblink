@@ -1,0 +1,193 @@
+.infos-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+}
+
+.escolha-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    overflow: auto;
+}
+
+.escolha-cadastro p {
+    font-weight: 300;
+    font-size: 1.2vw;
+}
+
+.escolha-select {
+    padding: 1vw 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.escolha-cadastro select {
+    display: flex;
+    text-align: center;
+    padding: 0.78125vw;
+    border-radius: 0.78125vw;
+    color: #c3c3c3;
+    border: 0.078125vw solid #c3c3c3;
+    width: 70%;
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.escolha-cadastro select:hover {
+    background-color: #f4f4f4db;
+}
+
+.input-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+}
+
+
+.form-container>form {
+    overflow: auto;
+    max-height: 13vw;
+    width: 100%;
+    margin-top: 1.5vw;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ededed #ffd90000;
+}
+
+
+.form-titulo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-titulo>h3 {
+    font-size: 1.5vw;
+}
+
+
+.form-cadastro {
+    width: 100%;
+}
+
+.form-cadastro label {
+    display: flex;
+    flex-direction: column;
+    padding: 1.3vw;
+    width: 100%;
+}
+
+.form-cadastro label input {
+    padding: 0.8vw;
+    border-radius: 0.78vw 0px;
+    border: 0.078vw solid #c3c3c3;
+    width: 100%;
+    font-size: 1vw;
+}
+
+.container-inputs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-cadastrar {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.enviar-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1vw 0;
+}
+
+.enviar-cadastro button {
+    padding: 1vw 6vw;
+    background-color: #11233E;
+    color: white;
+    margin-top: 1vw;
+    border-radius: 0.8vw;
+    border: 1px solid #11233E;
+    font-weight: bold;
+    font-size: 1vw;
+
+}
+
+.enviar-cadastro button:hover {
+    background-color: white;
+    color: #11233E;
+}
+
+@media screen and (max-width: 450px) {
+    .escolha-cadastro p{
+        font-size: 3.5vw;
+    }
+
+    .escolha-select{
+        margin-bottom: 10px;
+    }
+
+    .escolha-cadastro select{
+        width: 80%;
+        height: 50px;
+        text-align: center !important;
+        font-size: 3vw;
+        color: rgb(80, 80, 80);
+        background-color: #f7f7f7;
+        border: 2px solid #f7f7f7;
+    }
+
+    .selectMobile>select{
+        width: 100% !important;
+        margin: 10px 0 !important;
+        font-size: 3vw !important;
+    }
+
+    .form-container>form{
+        max-height: 200px;
+        overflow-y: scroll;
+    }
+
+    .form-titulo>h3{
+        font-size: 5vw;
+    }
+
+    .container-inputs{
+        flex-direction: column;
+    }
+
+    .form-cadastro label{
+        padding: 20px;
+    }
+
+    .form-cadastro label input{
+        padding: 13px;
+        font-size: 4vw;
+        border-radius: 10px 0;
+        border: 1.3px solid #d8d8d8;
+    }
+
+    .enviar-cadastro button{
+        font-size: 3.3vw;
+        padding: 15px 50px;
+        margin: 20px 0;
+    }
+
+}

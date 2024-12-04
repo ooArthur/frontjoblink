@@ -1,0 +1,129 @@
+.minhas-vagas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+
+.container-minhas-vagas {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 4vw 0 0 0;
+}
+
+
+
+.content-minhas-vagas {
+    width: 28%;
+    border-radius: 10px;
+    margin-bottom: 4vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0.9vw 0.01vw #e3e3e3;
+}
+
+.content-infos-minhas-vagas {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    height: 15vw;
+    width: 22.5vw;
+    padding: 0.6vw 1.5vw;
+    font-size: 1vw;
+    border-bottom: 0 !important;
+    border-radius: 0.78vw 0.78vw 0 0;
+}
+
+.content-infos-minhas-vagas p {
+    text-align: justify;
+    font-size: 1vw;
+}
+
+.content-infos-minhas-vagas h4 {
+    padding: 0 0 0.5vw 0;
+    font-size: 1vw;
+    font-weight: 600;
+}
+
+.content-titulo-minhas-vagas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-titulo-minhas-vagas i {
+    background-color: #f9f9f9a0;
+    color: #160E37;
+    transform: rotate(-45deg);
+    padding: 1vw;
+    border-radius: 100px;
+    font-size: 0.8vw;
+}
+
+.content-titulo-minhas-vagas h1 {
+    font-size: 1.2vw;
+}
+
+.content-area-minhas-vagas {
+    display: flex;
+    width: 100%;
+    background-color: #160E37;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 0.78vw 0.78vw;
+    font-size: 0.8vw;
+}
+
+.content-area-minhas-vagas a {
+    font-size: 1.2vw;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    padding: 1vw;
+}
+
+.sem-informacoes {
+    font-size: 1.2vw !important;
+    color: #b4b4b4;
+}
+
+.alinhamento-crud {
+    margin-left: 0 !important;
+}
+
+.select-vacancy-checkbox{
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}
+
+.select-vacancy-checkbox input[type="checkbox"] {
+    width: 1.3vw;
+    height: 1.3vw;
+    border: 1px solid #160E37;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0.3vw;
+}
+
+.select-vacancy-checkbox input[type="checkbox"]:checked {
+
+    background-color: #160E37;
+}
+
+.select-vacancy-checkbox input[type="checkbox"]:checked::before {
+    font-size: 1vw;
+    color: white; /* Cor do ícone */
+    top: 0vw; left: 0vw; right: 0vw; bottom: 0vw; /* Posicionamento para centralizar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

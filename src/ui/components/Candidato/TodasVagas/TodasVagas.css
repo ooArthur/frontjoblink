@@ -1,0 +1,199 @@
+.opcao-todas-vagas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4vw;
+}
+
+/* -------------------------------- */
+
+.voltar-area-candidato{
+    display: flex;
+    justify-content: start;
+    width: 40vw;
+    padding: 0vw 0vw 0vw 4vw;
+}
+
+.titulo-todas-vagas h1{
+    font-size: 3vw;
+    color: #2B00C6;
+    font-weight: 900;
+}
+
+.voltar-area-candidato a{
+    background-color: #2B00C6;
+    padding: 1vw 4vw;
+    color: white;
+    text-decoration: none;
+    border-radius: 1vw;
+}
+
+/* -------------------------------- */
+
+.titulo-todas-vagas{
+    display: flex;
+    width: 40vw;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* -------------------------------- */
+.container-todas-vagas{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2vw;
+}
+/* --------------Cabeçalho----------------- */
+
+.input-container {
+    position: relative;
+}
+
+.search-input {
+    text-align: center;
+    border: none;
+    border-bottom: 0.2vh solid transparent; /* Borda inicial transparente */
+    background-color: #F9F9F9; /* Cor de fundo inicial */
+    outline: none; /* Remove o contorno padrão */
+    width: 25vw;
+    height: 3vw; /* Ocupa toda a largura do container */
+    transition: 0.3s; /* Transições suaves */
+    font-size: 1.1vw; /* Tamanho da fonte do input */
+    border-radius: 0.5vw;
+}
+
+.search-input::placeholder {
+    text-align: center;
+}
+
+.search-input:focus::placeholder {
+    color: rgb(231, 231, 231);
+}
+
+.search-input:focus {
+    background-color: white; /* Cor de fundo ao focar */
+    border-bottom: 0.2vw solid #160E37; /* Cor da borda ao focar */
+    border-radius: 0;
+    text-align: center;
+}
+
+.input-container i {
+    position: absolute;
+    left: 1.25vw; /* Espaço do ícone com medida relativa */
+    top: 35%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    color: #160E37; /* Cor do ícone igual à borda */
+    font-size: 1.1vw; /* Tamanho do ícone */
+}
+
+
+/* --------------Filtro----------------- */
+
+.filtro {
+    margin-top: 2.6vw;
+    justify-content: space-between;
+    align-items: center !important;
+    display: flex;
+}
+
+.filtro h2 {
+    font-size: 1.7vw;
+}
+
+.filtro-vagas select {
+    padding: 0.7vw 4vw;
+    border: 0.2vw solid #C3C3C3;
+    color: #c3c3c3;
+    font-size: 1.1vw;
+    font-weight: 700;
+    border-radius: 2vw;
+    cursor: pointer;
+}
+
+.filtro-vagas option {
+    text-align: center;
+    color: black;
+    font-weight: 400;
+}
+
+.filtro-vagas select::after {
+    color: #160E37;
+}
+
+.filtro-vagas button{
+    background-color: white;
+    color: #c3c3c3;
+    padding: 0.8vw 9vw;
+    border: 0.13vw solid #C3C3C3;
+    border-radius: 10vw;
+    font-size: 1.1vw;
+}
+
+.criar-vagas a{
+    background-color: #160E37;
+    color: white;
+    padding: 1vw;
+    border-radius: 200px;
+    font-size: 1vw;
+}
+
+.criar-vagas button{
+    background-color: #160E37;
+    border: #160E37 0.1vw solid;
+    color: white;
+    padding: 1.6vw 5vw;
+    border-radius: 0.7vw;
+    font-size: 1.2vw;
+}
+
+
+/* Filtro */
+
+.selected-filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-tag {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.filter-tag span {
+    margin-right: 5px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+
+@media screen and (max-width:450px){
+    .container-todas-vagas{
+        width: 100%;
+    }
+
+    .filtro-vagas button{
+        font-size: 3vw;
+        border: 1px solid gray;
+        color: gray;
+    }
+}

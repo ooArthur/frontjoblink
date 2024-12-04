@@ -1,0 +1,137 @@
+:root {
+    --primary-gradient-start: #5833F2;
+    --primary-gradient-end: #160E37;
+    --primary-bg-color: white;
+    --primary-text-color: black;
+    --secondary-text-color: #c3c3c3;
+    --button-bg-color: #160E37;
+    --button-text-color: white;
+    --secondary-bg-color: #A7A7A7;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.mainFaq {
+    background-color: var(--primary-gradient-end);
+    margin: 0 !important;
+}
+
+.Topo-faq > div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.voltar-faq > img {
+    width: 100%;
+}
+
+.voltar-faq {
+    width: 2vw;
+    margin-top: 4vw;
+    margin-left: 4vw;
+}
+
+.titulo-faq {
+    margin-top: 4vh;
+    margin-left: 35vw;
+}
+
+#t1 {
+    text-align: center;
+}
+
+.titulo-faq h1 {
+    color: var(--button-text-color);
+    font-weight: 900;
+    font-size: 5vw;
+    margin-bottom: 1vh;
+}
+
+.titulo-faq h2 {
+    color: var(--secondary-bg-color);
+    font-weight: 800;
+    font-size: 1.7vw;
+}
+
+.faq {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 2vw;
+    border-radius: 0.8vw;
+    box-shadow: 0 0.2vw 1vw var(--shadow-color);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-gradient-end);
+    color: var(--button-text-color);
+    border-left: none;
+    border-right: none;
+    border-top: 0.1vw solid var(--button-text-color);
+    font-size: 1.3vw;
+    cursor: pointer;
+    outline: none;
+    border-bottom: none;
+    padding: 1.5vw;
+}
+
+.arrow img {
+    width: 1vw;
+    transition: transform 0.3s ease;
+    rotate: 180deg;
+}
+
+.rotate img {
+    transform: rotate(90deg);
+}
+
+.faq-answer {
+    display: none;
+    border-radius: 0.5vw;
+    color: var(--button-text-color);
+    font-size: 1.1vw;
+    padding-left: 1.5vw;
+    padding-bottom: 1.5vw;
+}
+
+.faq-answer p {
+    font-weight: 200;
+}
+
+.faq-answer.show {
+    display: block;
+}
+
+@media screen and (max-width: 450px) {
+    .titulo-termos h1{
+        font-size: 12vw;
+    }
+
+    .titulo-termos h2{
+        font-size: 4vw;
+    }
+
+    .titulo-termos{
+        margin-left: 22%;
+    }
+    
+    .privacy-policy > section > h2{
+        font-size: 4vw;
+    }
+
+    .privacy-policy > section > p, .privacy-policy > section > ul > li{
+        font-size: 2.4vw;
+        padding: 10px 0;
+    }
+
+    .privacy-policy > section{
+        padding: 20px 0;
+    }
+
+    .faq-question {
+        border-top: 1px solid var(--button-text-color);
+    }
+}

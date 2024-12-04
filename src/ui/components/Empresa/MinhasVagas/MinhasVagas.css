@@ -1,0 +1,129 @@
+/* Fundo do modal */
+.create-vaga-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Estrutura do modal */
+.create-vaga-card {
+    background-color: #fff;
+    border-radius: 0.4vw;
+    max-width: 500px;
+    width: 70vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Formulário */
+.form-criar-vaga {
+    display: flex;
+    flex-direction: column;
+    max-height: 30vw;
+    overflow-y: auto;
+    padding: 3vw;
+}
+
+.form-criar-vaga::-webkit-scrollbar-thumb{
+    background-color: #c3c3c3;
+    border-radius: 10px;
+
+}
+.form-criar-vaga::-webkit-scrollbar{
+    background-color: white;
+    width: 10px;
+
+}
+
+.form-criar-vaga button{
+    background-color: #160E37;
+    color: white;
+    border: solid 1px #160E37;
+    border-radius: 10px;
+    padding: 1vw;
+    
+}
+
+.container-inputs-vagas {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    /* Espaço entre os campos */
+}
+
+/* Campos de entrada */
+.container-inputs-vagas div {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-inputs-vagas h4 {
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+.container-inputs-vagas input {
+    padding: 1.2vw;
+    font-size: 1vw;
+    border: 1px solid #ccc;
+    border-radius: 1vw;
+}
+
+.container-inputs-vagas select{
+    padding: 1.1vw;
+    font-size: 1vw;
+    border: 1px solid #ccc;
+    border-radius: 1vw;
+    color: #989898;
+    cursor: pointer;
+}
+
+.day-selector{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.day-selector button {
+    margin: 5px;
+    padding: 1.2vw;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #160E37;
+    border-radius: 10px;
+    color: #160E37;
+}
+
+.day-selector button.selected {
+    background-color: #160E37;
+    color: white;
+}
+
+.container-inputs-vagas > ul > li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5vw;
+    background-color: #f2f2f294;
+    padding: 0.3vw 1vw;
+    border-radius: 1vw;
+}
+
+.container-inputs-vagas > ul > li> button{
+    background: none;
+    color: #c3c3c3;
+    padding: 0;
+    border: none;
+    padding: 0.5vw;
+}
+
+.button-modal-vagas:hover{
+    background-color: white;
+    color: #160E37;
+}

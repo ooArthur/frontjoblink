@@ -1,0 +1,127 @@
+/* Header */
+
+.pre-visualizacao header {
+    width: 100%;
+    height: 8vw;
+    background-color: #160E37;
+    margin: 0 !important;
+    justify-content: flex-start !important;
+}
+
+.header {
+    display: flex;
+    width: 54%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-icon {
+    padding: 0 3vw;
+    color: #FFF600;
+}
+
+.class-icon > button {
+    color: #FFF600;
+    background: none;
+    border: none;
+    font-size: 1.5vw;
+    padding: 1vw;
+}
+
+.perfil-pre-visualizacao {
+    text-align: center;
+    padding: 1vw 0;
+    color: white;
+}
+
+.perfil-pre-visualizacao span {
+    font-weight: 300;
+    font-size: 2vw;
+}
+
+.perfil-pre-visualizacao > h3 {
+    font-weight: 400;
+    font-size: 1.8vw;
+}
+
+.perfil-pre-visualizacao > h4 {
+    font-weight: 300;
+    color: #BDBDBD;
+    font-size: 1.2vw;
+}
+
+/* ========================== */
+
+.infos-pre-visualizacao {
+    width: 65vw;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 0 4vw 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+.infos-pre-visualizacao p {
+    font-size: 1.15vw;
+    margin: 0.3vw 0;
+    color: #616161;
+    font-weight: 300;
+}
+
+.infos-pre-visualizacao h3 {
+    font-size: 1.35vw;
+    margin: 0.7vw 0;
+    padding: 0.4vw 0;
+    font-weight: 600;
+}
+
+.info-perfil {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.3vw 0;
+    width: 100% !important;
+}
+
+.info-perfil-visualizacao {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lado-esquerdo-perfil {
+    text-align: left;
+}
+
+.lado-direito-perfil {
+    text-align: right;
+}
+
+.alinhamento-perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2vw 0;
+}
+
+.alinhamento-perfil-dois {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1.4vw 0;
+}
+
+.alinhamento-perfil-dois > p {
+    text-align: justify;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+}
+
+.info-perfil-borda {
+    border-bottom: 0.26vw solid #EFEFEF;
+    width: 100%;
+}

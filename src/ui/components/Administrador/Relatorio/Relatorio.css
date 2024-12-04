@@ -1,0 +1,87 @@
+.sectionLog {
+    background-color: #160E37;
+    width: 86vw !important;
+    height: 34vw;
+    margin-left: 0 !important;
+    border-radius: 0.4vw;
+    justify-content: normal !important;
+}
+
+.divLog {
+    padding: 2vw 0;
+    overflow: auto;
+}
+
+.divLog::-webkit-scrollbar{
+    background-color: #160E37;
+    width: 0.8vw;
+    
+}
+
+.divLog::-webkit-scrollbar-thumb{
+    background-color: white;
+    border: 2px solid #160E37;
+    width: 0.1vw;
+
+}
+
+.divLog > p {
+    color: white;
+    font-weight: 300 !important;
+    font-size: 1.07vw !important;
+}
+
+.logh1 > h1 {
+    font-size: 2vw !important;
+}
+
+.log-info {
+    color: green; /* Cor para INFO */
+    font-size: 20px;
+}
+
+.log-warn {
+    color: orange; /* Cor para WARN */
+}
+
+.log-error {
+    color: red; /* Cor para ERROR */
+}
+
+.log-bold {
+    font-weight: bold; /* Para o texto em negrito */
+}
+
+.sectionLog form{
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    justify-content: flex-start;
+}
+
+.sectionLog form > input{
+    background-color: white;
+    border: solid 1px #160E37;
+    border-radius: 0.3vw;
+    padding: 0.7vw 3vw;
+}
+
+.sectionLog form > input:hover {
+    cursor: pointer;
+}
+
+.sectionLog form > button{
+    background-color: white;
+    border: solid 0.11vw #160E37;
+    padding: 0.85vw;
+    margin: 1vw 0;
+    border-radius: 0.3vw;
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+
+.sectionLog form > button:hover{
+    background-color: #160E37;
+    color: white;
+    border: solid 1px white;
+}

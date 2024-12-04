@@ -1,0 +1,13 @@
+.ulMenu li.item-menu a .icon span {
+    font-size: 1.8vw !important;
+    margin-left: 2vw;
+}
+
+.icon {
+    width: 15%;
+}
+
+.txt-link {
+    width: 85%;
+    font-size: 1.3vw;
+}

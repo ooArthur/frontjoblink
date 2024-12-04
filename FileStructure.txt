@@ -1,0 +1,102 @@
+JobLink-Front
+│── .env
+│── .gitignore
+│── eslint.config.js
+│── index.css
+│── index.html
+│── package-lock.json
+│── package.json
+│── public
+│   │── bluelogo.svg
+│   │── logo (1).svg
+│   │── whitelogo.svg
+│   └── whitelogo180.svg
+│── README.md
+│── src
+│   │── App.jsx
+│   │── assets
+│   │   │── images
+│   │   │   │── Carrossel1.svg
+│   │   │   │── Carrossel2.svg
+│   │   │   │── Carrossel3.svg
+│   │   │   │── celularHome.svg
+│   │   │   │── FAQ.svg
+│   │   │   │── imageCadastro.svg
+│   │   │   └── return-arrow.svg
+│   │   └── style
+│   │       │── Cadastro.css
+│   │       │── faq.css
+│   │       │── home.css
+│   │       │── login.css
+│   │       └── termos.css
+│   │── Context
+│   │   │── FavoritesContext.jsx
+│   │   └── InterestedContext.jsx
+│   │── main.jsx
+│   │── pages
+│   │   │── Cadastro.jsx
+│   │   │── Faq.jsx
+│   │   │── Home.jsx
+│   │   │── Login.jsx
+│   │   └── Termos.jsx
+│   │── PrivateRoutes.jsx
+│   │── Router.jsx
+│   │── source
+│   │   │── api.js
+│   │   └── axiosInstance.js
+│   └── ui
+│       └── components
+│           │── Administrador
+│           │   │── Area
+│           │   │   │── Admin.jsx
+│           │   │   └── AreaAdmin.css
+│           │   │── Conta
+│           │   │   │── ContaAdministrador.css
+│           │   │   └── ContaAdministrador.jsx
+│           │   │── Crud
+│           │   │── Denuncias
+│           │   │   │── Denuncias.css
+│           │   │   └── Denuncias.jsx
+│           │   │── Menu
+│           │   │   │── Menu.css
+│           │   │   └── Menu.jsx
+│           │   └── Relatorio
+│           │       │── Relatorio.css
+│           │       └── Relatorio.jsx
+│           │── Candidato
+│           │   │── Area
+│           │   │   │── candidato.css
+│           │   │   └── Candidato.jsx
+│           │   │── BoxVaga
+│           │   │   │── BoxVaga.css
+│           │   │   └── BoxVaga.jsx
+│           │   │── BoxVagaFavorita
+│           │   │   └── BoxVagaFavorita.jsx
+│           │   │── BoxVagaRecomendada
+│           │   │   └── BoxVagaRecomendada.jsx
+│           │   │── CandidateName
+│           │   │   └── CandidateName.jsx
+│           │   │── ContaCandidato
+│           │   │   │── ContaCandidato.css
+│           │   │   └── ContaCandidato.jsx
+│           │   │── CurriculosEnviados
+│           │   │   │── CurriculosEnviados.css
+│           │   │   └── CurriculosEnviados.jsx
+│           │   │── Menu
+│           │   │   │── Menu.css
+│           │   │   └── Menu.jsx
+│           │   │── Pre-Visualizacao
+│           │   │   │── Pre-Visualizacao.css
+│           │   │   └── Pre-Visualizacao.jsx
+│           │   │── TodasVagas
+│           │   │   │── TodasVagas.css
+│           │   │   └── Todasvagas.jsx
+│           │   └── VagasFavoritas
+│           │       │── VagasFavoritas.css
+│           │       └── VagasFavoritas.jsx
+│           │── Empresa
+│           └── Footer
+│               │── Footer.css
+│               └── Footer.jsx
+│── vercel.json
+└── vite.config.js

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+    transition: all 0.3s ease; /* Animações suaves e rápidas */
+}
+
+body{
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Melhora a renderização de fontes */
+    text-rendering: optimizeLegibility;
+}
+
+main {
+    margin-top: 3vw;
+    width: 100vw;
+}
+
+button{
+    cursor: pointer;
+}
+
+input:focus{
+    outline: none;
+}
+
+input:disabled{
+    background-color: #ebebeb;
+    cursor: not-allowed;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(232, 232, 232, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #160E37;
+}
+
+.blurMain.blurred {
+    filter: blur(2px);
+    pointer-events: none;
+}

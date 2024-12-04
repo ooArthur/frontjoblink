@@ -1,0 +1,119 @@
+:root {
+    --primary-gradient-start: #5833F2;
+    --primary-gradient-end: #160E37;
+    --primary-bg-color: white;
+    --primary-text-color: black;
+    --secondary-text-color: #c3c3c3;
+    --button-bg-color: #160E37;
+    --button-text-color: white;
+    --secondary-bg-color: #A7A7A7;
+}
+
+.mainTermos {
+    background-color: var(--primary-gradient-end);
+    margin: 0 !important;
+}
+
+.topo-termos > div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.voltar-termos > img {
+    width: 2vh;
+}
+
+.voltar-termos {
+    width: 2vw;
+    margin-top: 4vw;
+    margin-left: 4vw;
+}
+
+.titulo-termos {
+    margin-top: 4vh;
+    margin-left: 35vw;
+}
+
+#t1 {
+    text-align: center;
+}
+
+.titulo-termos h1 {
+    color: var(--button-text-color);
+    font-weight: 900;
+    font-size: 5vw;
+    margin-bottom: 1vh;
+}
+
+.titulo-termos h2 {
+    color: var(--secondary-bg-color);
+    font-weight: 800;
+    font-size: 1.7vw;
+}
+
+.privacy-policy {
+    margin: 0 auto;
+    width: 90vw;
+}
+
+.privacy-policy > section > h2 {
+    color: var(--secondary-bg-color);
+    font-size: 1.5vw;
+}
+
+.privacy-policy > section > p {
+    color: var(--secondary-bg-color);
+    font-weight: 200;
+    font-size: 1vw;
+    margin-bottom: 1.5%;
+}
+
+.privacy-policy > section > ul {
+    padding-left: 2vw;
+    margin-bottom: 2.82%;
+}
+
+.privacy-policy > section > ul > li {
+    color: var(--secondary-bg-color);
+    font-weight: 200;
+    font-size: 1vw;
+    list-style-type: disc;
+    margin-bottom: 1%;
+}
+
+.privacy-policy > section {
+    margin-top: 2%;
+    border-bottom: 2px solid var(--secondary-bg-color);
+}
+
+@media screen and (max-width: 450px) {
+    .titulo-faq h1 {
+        font-size: 12vw !important;
+    }
+
+    .titulo-faq h2{
+        font-size: 4vw !important;
+    }
+
+    .titulo-faq{
+        margin-left: 22% !important;
+    }
+
+    .faq{
+        max-width: 90vw !important;
+        padding: 30px 0 !important;
+    }
+
+    .faq-question{
+        padding: 17px 5px !important;
+        font-size: 2.5vw !important;
+        text-align: start;
+    }
+    
+    .faq-answer p{
+        font-size: 3vw;
+        padding: 10px;
+        color: white;
+    }
+}

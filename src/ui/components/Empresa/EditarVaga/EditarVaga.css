@@ -1,0 +1,316 @@
+.header-editar-vaga {
+    display: flex;
+    align-items: center;
+    /* Mantém o alinhamento vertical */
+    justify-content: center;
+    position: relative;
+    padding: 1vw;
+    width: 100%;
+}
+
+.content-header-editar-vaga a {
+    position: absolute;
+    left: 4vw;
+    /* Ajuste conforme necessário */
+    background: none;
+    border: none;
+    font-size: 1.3vw;
+    color: rgb(255, 230, 0);
+    cursor: pointer;
+    margin-top: 1vw;
+    /* Adicione uma margem superior */
+    padding: 0;
+}
+
+.empresa-data {
+    margin: 0;
+    font-size: 0.8vw;
+    /* Tamanho do texto */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.vaga-titulo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-vaga-titulo {
+    width: 80%;
+    margin: 1vw 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tempo-dados-vaga {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.content-vaga-titulo button {
+    background-color: #160E37;
+    border: solid 0.11vw #160E37;
+    color: white;
+    border-radius: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.6vw;
+    width: 16vw;
+    font-size: 1vw;
+}
+
+.vaga-titulo-nome p {
+    color: rgb(167, 167, 167);
+}
+
+.content-vaga-titulo button:hover {
+    background-color: white;
+    color: #160E37;
+}
+
+.dados-vaga {
+    width: 100%;
+    background-color: #160E37;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vw 0;
+}
+
+.container-dados-vaga {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.content-dados-vaga {
+    width: 35%;
+}
+
+.principal-dados-vaga {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description-dados-vaga {
+    padding: 1vw 0;
+}
+
+.description-dados-vaga p {
+    word-wrap: break-word;
+    /* Quebra palavras longas */
+    overflow-wrap: break-word;
+    /* Quebra palavras longas */
+
+    overflow-y: auto;
+    /* Adiciona um scroll vertical se o texto for muito longo */
+    font-size: 1.3vw;
+}
+
+.list-dados-vaga h1 {
+    padding: 0.5vw 0;
+}
+
+.list-dados-vaga ul {
+    margin-left: 1vw;
+}
+
+.balanco-dados-vaga {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-balanco-dados-vaga {
+    background-color: rgba(0, 0, 0, 0.400);
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 2vw;
+    width: 100%;
+    border-radius: 10px;
+    margin: 3vw 0 0 0;
+}
+
+.analise-dados-vaga {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.analise-dados-vaga i {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.233);
+    padding: 0.5vw;
+    font-size: 0.8vw;
+    border-radius: 100px;
+    transform: rotate(-45deg);
+}
+
+.analise-numeros-dados-vaga {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5vw 0;
+}
+
+.box-analise-dados-vaga {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    border-radius: 10px;
+    padding: 1vw;
+}
+
+.box-analise-dados-vaga h1 {
+    font-size: 2.5vw;
+    font-weight: 800;
+}
+
+.ver-mais-dados-vaga {
+    display: flex;
+    justify-content: end;
+}
+
+.ver-mais-dados-vaga button {
+    padding: 0.5vw 2vw;
+    border-radius: 20px;
+    background-color: rgba(128, 128, 128, 0.589);
+    color: white;
+    border: solid rgba(128, 128, 128, 0.589) 1px;
+}
+
+.mapItens li {
+    list-style-type: none;
+    font-size: 1vw;
+}
+
+
+.candidatos-interessados {
+    display: flex;
+    flex-direction: column;
+    margin: 4vw;
+}
+
+.candidatos-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.titulo-candidatos-interessados {
+    display: flex;
+    justify-content: center;
+
+}
+
+.content-curriculos-interessados {
+    display: flex;
+    border-radius: 10px;
+    width: 30%;
+    height: 7vw;
+    margin: 3vw 0 3vw 0;
+    font-size: 1vw;
+    box-shadow: 0 0 12px 5px rgb(240, 240, 240);
+    transition: 0.3s;
+    justify-content: space-between;
+}
+
+.content-curriculos-interessados button{
+    background-color: #160E37;
+    color: white;
+    border: solid 1px #160E37;
+    border-radius: 1vw 0 0 1vw;
+}
+
+.content-curriculos-interessados > button > p{
+    transform: rotate(90deg);
+    transform-origin: center;
+    font-size: 1vw;
+}
+
+.content-infos-interessados {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-box-infos-curriculos {
+    width: 95%;
+    padding: 1vw;
+}
+
+.status-curriculo-interessado {
+    display: flex;
+    flex-direction: column;
+    background-color: #160E37;
+    color: white;
+    width: 30%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.status-curriculo-interessado h1 {
+    padding: 0.5vw;
+}
+
+.status-curriculo-interessado button {
+    width: 100%;
+    height: 100%;
+    padding: 0.5vw;
+}
+
+.status-curriculo-interessado button.normal {
+    background-color: #160E37;
+    /* Cor padrão */
+    color: white;
+    border: none;
+}
+
+.status-curriculo-interessado button.green {
+    background-color: green;
+    /* Cor para "Recebido" */
+    color: white;
+    border: none;
+}
+
+.status-curriculo-interessado button.yellow {
+    background-color: #FFC300;
+    /* Cor para "Em Análise" */
+    color: white;
+    border: none;
+}
+
+.status-curriculo-interessado button.white {
+    background-color: white;
+    /* Cor para "Aprovado" */
+    color: black;
+    border: none;
+}
+
+.buttons-vaga-titulo {
+    gap: 2vw;
+    display: flex;
+}
+
+.button-delet {
+    margin-left: 10px;
+    background-color: red !important;
+    color: white;
+    border: solid 1px red !important;
+}
+
+.button-delet:hover {
+    background-color: white !important;
+    color: red !important;
+}

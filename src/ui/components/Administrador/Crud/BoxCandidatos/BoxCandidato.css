@@ -1,0 +1,165 @@
+.content-curriculos-recomendados {
+    display: flex;
+    border-radius: 0.7vw;
+    width: 45%;
+    margin: 0 0 3vw 0;
+    font-size: 1vw;
+    box-shadow: 0 0 12px 5px rgb(240, 240, 240);
+    transition: 0.3s;
+    height: 10vw;
+    cursor: pointer;
+}
+
+.content-curriculos-recomendados:hover{
+    background-color: #f6f6f66a;
+}
+
+.content-infos-curriculos-select {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.8vw 1.5vw;
+    width: 100%;
+}
+
+
+
+.content-area-curriculos {
+    background-color: #160E37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.7vw 0 0 0.7vw;
+    width: 4.7vw;
+    font-size: 0.8vw;
+    text-align: center;
+}
+
+.area-atuacao {
+    padding: 0 0 0.4vw 0;
+}
+
+
+.content-area-curriculos h1 {
+    transform: rotate(90deg);
+    color: white;
+    width: 5vw;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.content-infos-curriculos {
+    border-left: 0 !important;
+    border-radius: 0 10px 10px 0;
+    width: 95%;
+    
+}
+
+.select-candidate-checkbox {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: 1vw;
+}
+
+.select-candidate-checkbox input[type="checkbox"] {
+    width: 1.3vw;
+    height: 1.3vw;
+    border: 1px solid #160E37;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0.3vw;
+}
+
+.select-candidate-checkbox input[type="checkbox"]:checked {
+
+    background-color: #160E37;
+}
+
+.select-company-checkbox input[type="checkbox"] {
+    width: 1.3vw;
+    height: 1.3vw;
+    border: 1px solid #fff;
+    background-color: #160E37;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0.3vw;
+}
+
+.select-company-checkbox input[type="checkbox"]:checked {
+
+    background-color: #fff;
+}
+
+.content-infos-curriculos-nome h1 {
+    font-size: 1.4vw;
+}
+
+.content-infos-curriculos h3 {
+    font: 1vw;
+    font-weight: 600;
+    padding: 0 0 0.3vw 0;
+}
+
+.content-infos-curriculos p {
+    display: -webkit-box;
+    /* Para navegadores WebKit */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    /* Limita a 3 linhas */
+    max-height: 10vw;
+    /* Ajuste conforme necessário */
+    text-overflow: ellipsis;
+    /* Adiciona '...' ao final */
+    line-height: 1vw;
+    /* Ajuste conforme necessário */
+}
+
+.actions{
+    width: 80%;
+    gap: 1vw;
+    display: flex;
+    justify-content: end;
+    margin: 2vw 0;
+}
+
+.actions .action-selecionar{
+    background-color: white;
+    color: #160E37;
+    border: solid 1px #160E37;
+    border-radius: 0.5vw;
+    padding: 1.2vw 4vw;
+    font-size: 1vw
+}
+
+.action-selecionar.selecionado {
+    background-color: #160E37; /* Cor de fundo quando selecionado */
+    color: white; /* Cor do texto quando selecionado */
+  }
+
+.actions .action-deletar{
+    background-color: #ac1818;
+    border: #ac1818 solid 1px;
+    padding: 1vw 4vw;
+    border-radius: 0.5vw;
+    color: white;
+    font-size: 1vw;
+}
+
+
+.acessar-perfil-button a{
+    background-color: #160E37;
+    color: white;
+    padding: 0.5vw 2vw;
+    border: solid 1px #160E37;
+    border-radius: 1vw;
+    text-decoration: none;
+}
+
+.acessar-perfil-button a:hover{
+    background-color: white;
+    color: #160E37;
+}

@@ -1,0 +1,613 @@
+/* Ajuste para a aparência geral da página */
+.container-box-vagas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 80vw;
+    margin-left: 14vw;
+    margin-top: 2vw;
+}
+
+.container-box-vagas p {
+    color: #777;
+    font-size: 1vw;
+}
+
+/* Estilo do card da vaga */
+.box-vaga {
+    width: 24vw;
+    height: 20vw;
+    box-shadow: rgb(243, 243, 243) 0 0 2vw 0.1vw;
+    transition: ease 0.3s;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.9vw;
+    margin: 4vw 1vw;
+    overflow: hidden;
+}
+
+/* Efeito de hover no card */
+.box-vaga:hover {
+    transform: scale(0.99);
+    transition: ease 1s;
+}
+
+/* Margem à direita dos cards */
+.box-vaga:not(:nth-child(3n)) {
+    margin-top: 2vw;
+}
+
+/* Estilo das informações no card da vaga */
+.info-box-vaga {
+    flex: 1;
+    padding: 0 1.8vw;
+    display: flex;
+    flex-direction: column;
+    border-bottom: none !important;
+    border-top-left-radius: 0.45vw;
+    border-top-right-radius: 0.45vw;
+}
+
+.info-box-vaga h3 {
+    font-size: 1.4vw;
+}
+
+/* Estilo do cabeçalho do card */
+.header-box-vaga {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* Estilo do botão no cabeçalho do card */
+.header-box-vaga button {
+    border: none;
+    background-color: transparent;
+}
+
+/* Estilo do ícone do botão */
+.header-box-vaga i {
+    font-size: 1.2vw;
+    color: rgb(251, 221, 0);
+}
+
+.header-box-vaga i:hover {
+    color: rgb(251, 159, 0);
+}
+
+/* Estilo do nome da vaga */
+.nome-vaga {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+}
+
+.nome-vaga h2 {
+    font-size: 1.5vw;
+}
+
+.nome-vaga a {
+    color: #ffd900;
+    text-decoration: none;
+    font-size: 1.3vw;
+}
+
+/* Estilo da faixa salarial e descrição da vaga */
+.vaga-info {
+    flex: 1;
+    /* Expande para preencher o espaço disponível */
+    padding: 1.3vh 0 0 0;
+    max-width: 100%;
+}
+
+.vaga-info h3 {
+    font-size: 1.2vw;
+    margin-bottom: 2%;
+    font-weight: 400;
+}
+
+/* Truncar descrição longa com reticências */
+.truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4vw;
+    font-size: 0.8vw;
+    padding-bottom: 2vh;
+}
+
+.vaga-info p {
+    margin: 0;
+    margin: 1vw 0;
+    font-size: 1.1vw;
+}
+
+/* Estilo da área da vaga no card */
+.area-vaga {
+    width: 100%;
+    background-color: #160E37;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 0 0 0.45vw 0.45vw;
+    padding: 1vw;
+}
+
+.area-vaga a {
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1.3vw;
+    font-weight: 500;
+}
+
+/* Estilo da sobreposição do modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.63);
+    backdrop-filter: blur(0.4vw);
+    z-index: 10000;
+    overflow-y: auto;
+}
+
+/* Estilo do modal */
+.vaga-cardInfo {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 30vw;
+    border-radius: 0.4vw;
+    z-index: 10000;
+    padding: 2vw;
+    overflow-y: hidden;
+}
+
+/* Área lateral do modal */
+.vagaArea {
+    background-color: #160E37;
+    width: 4.5vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw 0 0 1vw;
+}
+
+.vagaArea h2 {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1.7vw;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+}
+
+/* Informação do modal */
+.vagaContent {
+    flex: 1;
+    padding: 0.8vw 6vw;
+    text-align: center;
+    background-color: white;
+    overflow-y: auto;
+}
+
+/* Estiliza a barra de rolagem */
+.vagaContent::-webkit-scrollbar {
+    width: 0.8vw;
+    /* Define a largura da barra de rolagem */
+}
+
+/* Estiliza o fundo da barra de rolagem */
+.vagaContent::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    /* Branco claro */
+}
+
+/* Estiliza o polegar (parte que move) da barra de rolagem */
+.vagaContent::-webkit-scrollbar-thumb {
+    background-color: #e6e6e6;
+    border-radius: 0.15vw;
+}
+
+/* Estiliza o polegar da barra de rolagem ao passar o mouse */
+.vagaContent::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+}
+
+.vagaTitle {
+    padding: 1vw;
+    margin-bottom: 1.6vw;
+}
+
+.vagaTitle h2 {
+    font-size: 1.7vw;
+    font-weight: 900;
+}
+
+.vagaTitle h3 {
+    font-size: 1.5vw;
+    margin-top: 0.5vw;
+}
+
+.vagaTitle a {
+    color: #ffd900;
+    text-decoration: none;
+    font-size: 1.3vw;
+}
+
+/* Evita rolagem da página quando o modal está aberto */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Estilo da área de informações do modal */
+.vagaInfo {
+    display: flex;
+    width: 100%;
+    height: 2vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vagaInfo {
+    font-size: 1.3vw;
+}
+
+.vagaInfo span {
+    font-weight: bold;
+}
+
+.vagaInfo p {
+    font-size: 1.3vw;
+}
+
+.salario {
+    display: flex;
+    align-items: center;
+}
+
+.vagaDescription {
+    margin: 3vw 0;
+    text-align: justify;
+}
+
+.vagaDescription p {
+    font-size: 1.2vw;
+    font-weight: 300;
+}
+
+.vagaExpediente {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.6vw 0 0 0;
+}
+
+.vagaExpediente ul {
+    list-style-type: none;
+}
+
+.vagaExpediente>h4 {
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+
+.listaDiasTrabalhados h4 {
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+
+.listaDiasTrabalhados ul {
+    padding: 0.4vw 0;
+}
+
+.listaDiasTrabalhados ul>li {
+    font-size: 1.2vw;
+    text-align: left;
+    font-weight: 300;
+}
+
+.horarioDiasTrabalhados {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.horarioDiasTrabalhados h4 {
+    font-size: 1.3vw;
+    font-weight: 600;
+    text-align: end;
+}
+
+.horarioDiasTrabalhados h5 {
+    font-size: 1.2vw;
+    font-weight: 300;
+    text-align: end;
+}
+
+.alinhamentoHorarioDT {
+    margin-top: 2vw;
+}
+
+.vagaQualificacoesandHabilidades {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerVagaCard {
+    text-align: justify;
+    padding: 1.7vw 0;
+}
+
+.containerVagaCard ul {
+    list-style-type: none;
+}
+
+.containerVagaCard>h4 {
+    font-size: 1.3vw;
+    font-weight: 600;
+    padding: 0.4vw 0;
+}
+
+.containerVagaCard>span {
+    font-size: 1.2vw;
+    font-weight: 300;
+}
+
+.buttonsVagaCard {
+    margin: 2vw 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonDenuncia {
+    padding: 0.8vw 3vw;
+    font-size: 1.24vw;
+    border: none;
+    border-radius: 0.6vw;
+    background-color: #ED2929;
+    color: white;
+    transition: 0.5s;
+    border: 0.12vw solid transparent;
+}
+
+.buttonEnviarCV {
+    padding: 0.8vw 3vw;
+    font-size: 1.24vw;
+    border: none;
+    border-radius: 0.6vw;
+    background-color: #2B00C6;
+    color: white;
+    transition: 0.5s;
+    border: 0.12vw solid transparent;
+}
+
+.buttonEnviarCV:hover {
+    background-color: #11004f;
+}
+
+.buttonDenuncia:hover {
+    background-color: rgb(127, 23, 23);
+}
+
+.no-vacancies-message {
+    text-align: center;
+    font-size: 1.3vw;
+    color: #777;
+    padding: 1.8vw 0;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5vw;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.carousel-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.8vw !important;
+    color: #11233E;
+    font-stretch: expanded;
+    font-weight: 1000;
+    z-index: 1;
+    animation: carrosselAnim 2s ease;
+}
+
+.carousel-button:disabled {
+    color: #ccc;
+}
+
+.boxVagaBlur {
+    transition: ease 0.5s;
+
+}
+
+.stretched-button {
+    font-size: 20px;
+    font-weight: 400;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.button-Cleft {
+    transform: rotate(270deg);
+}
+
+.button-Cright {
+    transform: rotate(90deg);
+}
+
+.denunciaCard {
+    margin: 2vw 0;
+    padding: 1vw 2vw;
+    background-color: #fff;
+    border-radius: 1vw;
+    box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.3);
+    z-index: 10000000;
+    text-align: left;
+}
+
+.denunciaCard label {
+    display: block;
+    margin-bottom: 1vw;
+    font-size: 1vw;
+}
+
+.denunciaCard select,
+.denunciaCard input {
+    width: 100%;
+    padding: 0.8vw;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+    border: 1px solid #ccc;
+    border-radius: 0.5vw;
+}
+
+.denunciaCard button {
+    margin-top: 1.5vw;
+    width: 100%;
+    padding: 1vw;
+    font-size: 1vw;
+    color: #fff;
+    background-color: #f44336;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+.denunciaCard button:hover {
+    background-color: #d32f2f;
+}
+
+@media screen and (max-width: 450px) {
+    .container-box-vagas {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container-box-vagas p {
+        font-size: 3.5vw;
+    }
+
+    .nome-vaga h2 {
+        font-size: 3vw;
+    }
+
+    .box-vaga {
+        width: 40vw;
+        height: 35vw;
+    }
+
+    .vaga-info p {
+        display: none;
+    }
+
+    .info-box-vaga h3 {
+        font-size: 3vw;
+        font-weight: normal;
+    }
+
+    .area-vaga a {
+        font-size: 3.5vw;
+    }
+
+    .header-box-vaga i {
+        font-size: 4vw;
+    }
+
+    .vaga-cardInfo {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .vagaArea {
+        width: 5vw;
+    }
+
+    .vagaTitle h2 {
+        font-size: 3.5vw;
+    }
+
+    .vagaTitle a {
+        font-size: 3.5vw;
+    }
+
+
+    .vagaArea h2 {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .vagaInfo {
+        font-size: 2.5vw;
+    }
+
+    .vagaInfo p {
+        font-size: 3vw;
+    }
+
+    .vagaDescription p {
+        font-size: 3vw;
+    }
+
+    .listaDiasTrabalhados h4 {
+        font-size: 3vw;
+    }
+
+    .listaDiasTrabalhados ul>li {
+        font-size: 3vw;
+    }
+
+    .horarioDiasTrabalhados h4 {
+        font-size: 3vw;
+    }
+
+    .horarioDiasTrabalhados h5 {
+        font-size: 3vw;
+    }
+
+    .containerVagaCard>h4 {
+        font-size: 3vw;
+    }
+
+    .containerVagaCard span {
+        font-size: 3vw;
+    }
+
+    .buttonDenuncia {
+        font-size: 3vw;
+        color: white;
+    }
+
+    .buttonEnviarCV {
+        font-size: 3vw;
+        color: white;
+    }
+
+
+}

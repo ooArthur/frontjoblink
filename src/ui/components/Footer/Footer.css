@@ -1,0 +1,134 @@
+footer {
+    background-color: #08002A;
+    width: 100%;
+    padding: 5vw 5vw 2vw 5vw;
+    color: white;
+    color: #a7a7a7;
+    margin-top: 10vh;
+}
+
+.content-footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgb(255, 217, 0);
+}
+
+.logo-footer {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.logo-footer h1 {
+    font-size: 3vw;
+    font-weight: 900;
+}
+
+.logo-footer p {
+    padding: 1.3vw 0;
+    font-size: 1.2vw;
+    font-weight: lighter;
+}
+
+.termos {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.termos h3 {
+    font-size: 2vw;
+}
+
+.termos a {
+    padding: 1vw 0;
+    text-decoration: none;
+    color: #a7a7a7;
+    font-size: 1.4vw;
+    font-weight: lighter;
+}
+
+.termos a:hover {
+    text-decoration: underline;
+}
+
+.icons-footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.7vw 0;
+}
+
+.icons-footer a {
+    text-decoration: none;
+    color: #a7a7a7;
+    font-size: 1.3vw;
+    font-weight: lighter;
+}
+
+.icons-content-footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icons-footer i {
+    font-size: 2vw;
+    margin-left: 3vw;
+}
+
+@media screen and (max-width: 450px) {
+
+    h1, h3, p, a{
+        color: black;
+    }
+
+    footer{
+        background: linear-gradient(to bottom, #f7f7f7, #fff);
+    }
+
+    .logo-footer>h1 {
+        font-size: 9vw;
+    }
+    
+    .logo-footer>p {
+        display: none;
+    }
+
+    .content-footer {
+        border-bottom: 1px solid rgb(185, 185, 185);
+        padding: 15px 0;
+    }
+
+    .termos>a {
+        display: none;
+    }
+
+    .termos>h3{
+        font-size: 4vw;
+    }
+
+    .termos>.termosMobile {
+        display: flex !important;
+        height: 100%;
+        font-size: 3vw;
+        color: black;
+    }
+
+    .icons-footer{
+        padding: 15px 0;
+    }
+
+    .icons-footer>a {
+        font-size: 2vw;
+        color: black;
+    }
+
+    .icons-content-footer>i{
+        font-size: 5vw;
+    }
+}

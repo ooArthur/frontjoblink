@@ -1,0 +1,929 @@
+:root {
+    --primary-gradient-start: #5833F2;
+    --primary-gradient-end: #160E37;
+    --primary-bg-color: white;
+    --primary-text-color: black;
+    --secondary-text-color: #c3c3c3;
+    --button-bg-color: #160E37;
+    --button-text-color: white;
+    --secondary-bg-color: #A7A7A7;
+    --highlight-color: var(--primary-gradient-end);
+}
+
+.cabecalhoCandidato {
+    width: 80vw;
+    margin-left: 14vw;
+}
+
+.Date {
+    font-size: 1.2vw;
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}
+
+.cabecalhoCandidato>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cabecalhoCandidato>div>h1 {
+    font-size: 2.3vw;
+    font-weight: 1000;
+}
+
+.cabecalhoCandidato button {
+    display: flex;
+    background-color: #160E37;
+    color: white;
+    border: solid 0.11vw #160E37;
+    border-radius: 50vw;
+    height: 3vw;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5vw 5vw;
+    font-size: 1.2vw;
+    transition: 0.5s;
+}
+
+.cabecalhoCandidato button:hover {
+    transition: 0.5s;
+    transform: scale(0.9);
+    border: 0.11vw solid #160E37;
+    background-color: white;
+    color: #160E37;
+}
+
+
+
+.cabecalhoCandidato>div>a {
+    font-size: 1.2vw;
+    font-weight: 300;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 0.8vw 6vw;
+    height: 100%;
+    border-radius: 1.5vw;
+    text-decoration: none;
+}
+
+.content-vagas {
+    margin-top: 5vw;
+}
+
+.container-vagas {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2vw;
+}
+
+.content-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    margin-left: 14vw;
+}
+
+.content-titulo h2 {
+    color: var(--highlight-color);
+    font-size: 1.7vw;
+}
+
+.content-titulo a {
+    border-radius: 0.8vw;
+    text-decoration: none;
+    size: 1vw;
+    color: var(--button-text-color);
+    background-color: var(--highlight-color);
+    border: 0.1vw solid #160E37;
+    padding: 0.8vw 3vw;
+    transition: 0.6s;
+    font-size: 1.3vw;
+}
+
+.content-titulo a:hover {
+    transition: 0.6s;
+    background-color: white;
+    color: #160E37;
+    margin-left: 14vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.candidateArea {
+    margin-top: 1vw;
+    width: 80vw;
+    margin-left: 14vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Dashboard do Candidato */
+
+.candidateDashboard {
+    box-shadow: rgb(246 246 246) 0 0 2vw 0.3vw;
+    background-color: #ffffff;
+    border-radius: 1.2vw;
+    padding: 1.08vw;
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.candidateDashboard>div {
+    border-radius: 1vw;
+    padding: 1.08vw;
+    box-shadow: rgb(247, 247, 247) 0 0 2vw 0.3vw;
+}
+
+#dashboardAreaC>h3 {
+    font-size: 1.17vw;
+}
+
+#dashboardAreaC>h2 {
+    font-size: 1.35vw;
+    font-weight: 1000;
+}
+
+#dashboardAreaC>p {
+    font-size: 0.99vw;
+    color: #D0D0D0;
+    margin-top: 0.5vw;
+}
+
+#dashboardSent>p {
+    font-size: 0.99vw;
+    color: #D0D0D0;
+}
+
+#dashboardSent>h1 {
+    font-size: 3.4vw;
+}
+
+#dashboardLimitC>p {
+    font-size: 0.99vw;
+    color: #D0D0D0;
+}
+
+#dashboardLimitC>h2 {
+    font-size: 1.17vw;
+    color: white;
+}
+
+#dashboardLimitC>h1 {
+    font-size: 2.8vw;
+    color: white;
+}
+
+.dashboardAreaCTittle {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.dashboardAreaCTittle button {
+    background-color: white;
+    border: none;
+}
+
+
+.dashboardAreaCTittle i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5vw;
+    width: 2.5vw;
+    font-size: 0.9vw;
+    border-radius: 5vw;
+    border: none;
+    background-color: #160e370e;
+    transition: 0.7s;
+}
+
+.dashboardAreaCTittle a {
+    text-decoration: none;
+    color: #160E37;
+}
+
+.dashboardAreaCTittle h2 {
+    font-size: 1.2vw;
+}
+
+
+#dashboardLimitC {
+    background: linear-gradient(120deg, rgba(22, 14, 55, 1) 36%, rgb(58, 39, 141) 60%, rgb(43, 62, 158) 68%, rgb(55, 79, 199) 80%, rgb(71, 113, 211) 86%, rgb(71, 174, 211) 100%);
+}
+
+/* Área do Currículo Virtual */
+.virtualCV {
+    box-shadow: #f0f0f0 0 0 2vw 0.1vw;
+    border-radius: 1vw;
+}
+
+.virtualCVInfo {
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    height: 30vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.virtualCVInfo button {
+    font-size: 1.2vw;
+    transition: 0.3s;
+}
+
+.virtualCVInfo button:hover {
+    border: 0.1vw solid #160E37;
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+
+
+.virtualCVInfo::-webkit-scrollbar {
+    width: 0.7vw;
+}
+
+.virtualCVInfo::-webkit-scrollbar-thumb {
+    background-color: rgb(225, 225, 225);
+    border-radius: 0.3vw;
+}
+
+.virtualCVInfo::-webkit-scrollbar-track {
+    background: transparent;
+    /* deixa o track do scroll invisível */
+}
+
+
+.CVInfo {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px 0;
+}
+
+.CVInfo>button {
+    color: white;
+    background-color: #160E37;
+    width: 70%;
+    padding: 1vw;
+    margin: 0 auto;
+    border: 0.11vw solid #160E37;
+    border-radius: 0.6vw;
+    font-weight: bold;
+
+}
+
+.CVInfo>button:hover {
+    transition: 0.4s;
+    background-color: white;
+    color: #160E37;
+}
+
+.virtualCVHeader {
+    background-color: #160E37;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+
+.virtualCVHeader>h1 {
+    font-weight: 300;
+    font-size: 1.45vw;
+    padding-top: 0.8vw;
+    padding-bottom: 0.8vw;
+}
+
+.CVInfo>div {
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 0 3vw 0;
+}
+
+.CVInfo>div>h2 {
+    font-size: 1.3vw;
+    font-weight: 500;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.CVInfo>div>input {
+    width: 100%;
+    border: 0.11vw solid #f3f3f3;
+    border-radius: 0.4vw;
+    padding: 0.6vw;
+    color: #160E37;
+    font-size: 1.1vw;
+    padding-left: 1.2vw;
+    margin-top: 2%;
+}
+
+.CVInfo>div>h2>p {
+    color: #640000;
+    font-size: 1.7vw;
+}
+
+.CVInfo>div>textarea {
+    color: #160E37;
+    font-size: 1.1vw;
+    font-weight: 300;
+    padding: 0.6vw;
+}
+
+.CVInfo>div>div>input {
+    width: 100%;
+    font-size: 1.2vw;
+    padding-left: 1.2vw;
+    padding: 0.6vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.CVInfo>div>textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 0.11vw solid #f3f3f3;
+    border-radius: 0.4vw;
+}
+
+.CVInfo>div>div>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.6vw 4vw;
+    font-size: 1.1vw;
+    background-color: white;
+    border: 0.11vw solid #f3f3f3;
+    margin-bottom: 2%;
+    border-radius: 0.4vw;
+    transition: 0.3s;
+}
+
+.CVInfo>div>div>button:hover {
+    transition: 0.3s;
+    transform: scale(0.95);
+    border: 0.11vw solid #160E37;
+}
+
+.experiencia {
+    width: 100%;
+    justify-content: flex-start !important;
+    padding: 0.6vw 1vw !important;
+    font-weight: 300 !important;
+}
+
+.expandido {
+    display: flex;
+    flex-direction: column;
+    margin: 2% auto;
+    width: 100%;
+    padding: 2vw;
+    border-radius: 0.5vw;
+    border: 0.15vw solid #f2f2f2;
+}
+
+.expandido>h3 {
+    text-align: center;
+    font-size: 1.45vw;
+    color: #c3c3c3;
+    font-weight: 700;
+}
+
+.expandido>div {
+    padding: 1vw 0;
+}
+
+.expandido>div>h5 {
+    font-size: 1vw;
+    padding: 0.5vw 0;
+    color: rgb(190, 190, 190);
+    font-weight: 500;
+}
+
+.expandido>div>input {
+    border-radius: 1vw;
+    border: 0.1vw solid #c3c3c3;
+    font-size: 1.1vw;
+    color: rgb(0, 0, 0);
+}
+
+.expandido>div>select {
+    border: #c3c3c3 solid 0.1vw;
+    border-radius: 2vw;
+    width: 100%;
+    padding: 0.5vw;
+    font-size: 0.9vw;
+}
+
+.expandido>div>input,
+textarea {
+    padding: 0.7vw;
+    width: 100%;
+    border: solid 0.11vw #efefef;
+    border-radius: 0.3vw;
+}
+
+.expandido>button {
+    background-color: red;
+    color: white;
+    border-radius: 0.7vw;
+    border: 0.1vw solid red;
+    padding: 0.75vw;
+    font-weight: bold;
+    font-size: 1vw;
+    margin-top: 2vw;
+}
+
+.expandido>button:hover {
+    color: red;
+    background-color: white;
+    border: 0.11vw solid red !important;
+}
+
+.addItem {
+    border: none;
+    margin-bottom: 5%;
+}
+
+.addItem>button {
+    width: 6% !important;
+}
+
+.addItem>button>p {
+    color: #160E37;
+    font-size: 1vw;
+    font-weight: 800;
+    text-align: center;
+
+}
+
+.skillCompetencies {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.skillCompetencies>input {
+    width: 90%;
+    border: 0.11vw solid #f3f3f3;
+    border-radius: 0.4vw;
+    padding: 0.6vw;
+    color: #160E37;
+    font-size: 1.1vw;
+    padding-left: 1.2vw;
+    margin-top: 2%;
+}
+
+.deleteItem {
+    width: 10%;
+    border: none;
+    background-color: white;
+    border-radius: 0.4vw;
+    padding: 0.6vw;
+    color: #160E37;
+    font-size: 1.5vw;
+    margin-top: 2%;
+}
+
+
+
+.div-limite {
+    border: none !important;
+    box-shadow: 0 0 7px 3px #d8d8d8 !important;
+}
+
+.div-limite h1 {
+    font-size: 3.2vw !important;
+    font-weight: 600;
+}
+
+.div-limite h2 {
+    font-weight: 500;
+}
+
+.div-limite p {
+    color: rgba(255, 255, 255, 0.397) !important;
+}
+
+
+/* Estilização do bglh da área de atuação */
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    left: 120%;
+    /* Ajuste a posição para a direita do botão */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.5rem;
+    /* Use rem para ser responsivo */
+    z-index: 1;
+}
+
+button:hover+.tooltip {
+    visibility: visible;
+}
+
+.modal-carda {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 0.1vw solid #ccc;
+    padding: 2rem;
+    box-shadow: 0 0 0.vw rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 60vw;
+    text-align: center;
+    border-radius: 1.4vw;
+}
+
+
+
+.modal-carda-close {
+    display: flex;
+    justify-content: end;
+}
+
+.modal-carda-close button {
+    background-color: white;
+    color: #160E37;
+    border: none;
+    font-size: 1.5vw
+}
+
+.areas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1vw;
+    justify-content: space-evenly;
+}
+
+.areas-container .botao-normal {
+    width: 23%;
+    padding: 0.5vw;
+    background-color: white;
+    color: #160E37;
+    border: solid 1px #160E37;
+    border-radius: 1.75vw;
+    font-size: 1vw;
+}
+
+.areas-container .botao-selecionado {
+    width: 23%;
+    padding: 0.5vw;
+    background-color: #160E37;
+    color: white;
+    border: solid 1px #160E37;
+    border-radius: 1.75vw;
+    font-size: 1vw;
+}
+
+.confirm-button {
+    background-color: #160E37;
+    color: white;
+    padding: 0.5vw 5vw;
+    border: 0.1vw solid #160E37;
+    border-radius: 1.75vw;
+    margin-top: 1vw;
+    font-size: 1vw;
+}
+
+.modal-carda>h3 {
+    margin-bottom: 2vw;
+}
+
+
+
+.dashboard-mobile-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.dashboard-mobile-button {
+    width: 90%;
+    display: none;
+    justify-content: space-between;
+    align-items: self-start;
+}
+
+.dashboard-mobile-content i {
+    background-color: #160E37;
+    color: white;
+    border: solid 1px #160E37;
+    border-radius: 1vw;
+    padding: 2vw;
+    font-size: 6vw;
+}
+
+.dashboard-mobile-content p {
+    font-size: 3vw;
+}
+
+.dashboard-mobile-content button {
+    border: none;
+    background: none;
+}
+
+.curriculo-dia-mobile {
+    background-color: #160E37;
+    color: white;
+    text-decoration: none;
+    padding: 2vw 4vw;
+    font-size: 5vw;
+    border-radius: 1vw;
+}
+
+.baixar-curriculo-mobile {
+    display: none;
+    justify-content: center;
+    margin: 3vw 0;
+}
+
+.baixar-curriculo-mobile-content {
+    width: 90%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3.5vw;
+}
+
+.baixar-curriculo-mobile-content button {
+    background-color: #160E37;
+    color: white;
+    border-radius: 1.5vw;
+    font-size: 3vw;
+    padding: 3vw 6vw;
+    border: none;
+}
+
+.dashboard-candidato-mobile {
+    display: none;
+    justify-content: center;
+    margin: 5vh 0;
+    height: 12vh;
+    color: white;
+}
+
+.cabecalhoCandidato button.baixar-curriculo-m {
+    display: none;
+}
+
+.confirm-button {
+    background-color: gray;
+    /* Cor inicial */
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    font-size: 1.4vw;
+    cursor: not-allowed;
+    /* Inicialmente não clicável */
+    opacity: 0.7;
+    transition: background-color 0.3s, cursor 0.3s, opacity 0.3s;
+}
+
+.confirm-button:not(:disabled) {
+    cursor: pointer;
+    opacity: 1;
+}
+
+@media screen and (max-width: 450px) {
+
+    .cabecalhoCandidato {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .cabecalhoCandidato>div>h1 {
+        font-size: 6vw;
+    }
+
+    .Date {
+        font-size: 3.5vw;
+    }
+
+    .cabecalhoCandidato>div {
+        width: 90%;
+        margin: 5vw 0;
+    }
+
+    .cabecalhoCandidato button.baixar-curriculo {
+        display: none;
+    }
+
+    .cabecalhoCandidato button.baixar-curriculo-m {
+        display: flex;
+    }
+
+    .content-vagas {
+        margin: 60px 0;
+        justify-content: flex-start;
+    }
+
+
+    .candidateArea {
+        margin: 5vw 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .virtualCVInfo {
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .CVInfo>div {
+        padding: 15px 0;
+    }
+
+    .CVInfo>div>h2 {
+        font-size: 3.5vw;
+    }
+
+    .CVInfo>div>div>button {
+        display: flex;
+        color: black;
+        border: #c3c3c3 solid 0.3vw;
+        padding: 2vw 6vw !important;
+        justify-content: center !important;
+        font-size: 3vw;
+    }
+
+    .addItem>button>p {
+        font-size: 4vw;
+    }
+
+    .CVInfo>div>h2>p {
+        font-size: 4vw;
+    }
+
+    #aboutCandidate {
+        width: 100%;
+        font-size: 3vw;
+        border: solid 0.3vw #c3c3c3;
+    }
+
+    .skillCompetencies>input {
+        font-size: 3vw;
+        padding: 2vw 6vw !important;
+        border: solid 0.3vw #c3c3c3;
+    }
+
+    .CVInfo>div>input {
+        font-size: 3vw;
+        padding: 2vw 6vw !important;
+        border: solid 0.3vw #c3c3c3;
+    }
+
+    .CVInfo>button {
+        font-size: 3vw;
+    }
+
+    .virtualCV {
+        box-shadow: #bababa 0 0 2vw 0.1vw;
+    }
+
+    .virtualCVInfo button {
+        font-size: 3.5vw;
+        padding: 2vw 6vw;
+    }
+
+    .virtualCVHeader h1 {
+        font-size: 4.5vw;
+        color: white;
+        padding: 5px 0;
+    }
+
+    .candidateDashboard {
+        display: none;
+    }
+
+    .recomendadas {
+        margin-bottom: 130px;
+    }
+
+
+    .container-box-vagas p {
+        font-size: 3vw;
+    }
+
+    .content-titulo {
+        width: 100%;
+        margin: 0;
+        padding: 0 5vw;
+    }
+
+    .content-titulo a {
+        font-size: 3vw;
+        padding: 2vw 4vw;
+    }
+
+    .content-titulo h2 {
+        font-size: 4vw;
+    }
+
+
+    .container-vagas {
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+
+    .baixar-curriculo-mobile {
+        display: flex;
+    }
+
+    .baixar-curriculo-mobile-content {
+        display: flex;
+    }
+
+    .baixar-curriculo-mobile-content>h2 {
+        font-size: 4vw;
+    }
+
+    .dashboard-mobile-button {
+        display: flex;
+    }
+
+    .dashboard-candidato-mobile {
+        display: flex;
+        margin: 50px 0;
+    }
+
+    .modal-carda {
+        top: 45%;
+        width: 80vw;
+    }
+
+    .modal-carda h3 {
+        font-size: 4.5vw;
+    }
+
+    .areas-container {
+        gap: 3vh;
+    }
+
+    .areas-container .botao-normal {
+        width: 40%;
+        font-size: 3.5vw;
+    }
+
+    .areas-container .botao-selecionado {
+        width: 40%;
+        font-size: 3.5vw;
+    }
+
+    .confirm-button {
+        font-size: 3vw;
+    }
+
+    .modal-carda-close button {
+        font-size: 3.5vw;
+    }
+
+    .expandido h3 {
+        font-size: 3.5vw;
+    }
+
+    .expandido>div>h5 {
+        font-size: 3.5vw;
+    }
+
+    .expandido>div>input {
+        font-size: 3.5vw;
+    }
+
+    .expandido>div>select {
+        padding: 2vw;
+        border-radius: 10px !important;
+        font-size: 3vw;
+
+    }
+
+}
