@@ -34,28 +34,22 @@ function Admin() {
     // Função para obter os dados do backend
     const fetchData = async () => {
       try {
-        // Fazendo as requisições de denúncias separadamente
-        const [usersRes, companiesRes, candidatesRes, vacanciesRes, reportsRes, statusCountsRes] = await Promise.all([
+        const [usersRes, companiesRes, candidatesRes, reportsRes, statusCountsRes] = await Promise.all([
           axiosInstance.get('/api/user/list-users'),
           axiosInstance.get('/api/user/company/list-companies'),
           axiosInstance.get('/api/user/candidate/list-candidates'),
-          axiosInstance.get('/api/user/company/vacancy/list-vacancies'),
           axiosInstance.get('/api/report/list-reports'),
-          axiosInstance.get('/api/user/company/vacancy/admin/candidate-status-counts')
+          axiosInstance.get('/api/user/company/vacancy/admin/candidate-status-counts'),
         ]);
 
-        // Atualiza os estados com os dados recebidos
         setTotalUsers(usersRes.data.length);
         setTotalCompanies(companiesRes.data.length);
         setTotalCandidates(candidatesRes.data.length);
-        setTotalVacancies(vacanciesRes.data.length);
-        setTotalReports(reportsRes.data.length); // Mantenho a funcionalidade de denúncias
+        setTotalReports(reportsRes.data.length);
 
-        // Atualiza as contagens de candidaturas por status
         setApprovedApplications(statusCountsRes.data.approved);
         setPendingApplications(statusCountsRes.data.inAnalysis);
         setDismissedApplications(statusCountsRes.data.dismissed);
-
       } catch (error) {
         console.error("Erro ao carregar os dados do dashboard: ", error);
       }
@@ -74,9 +68,23 @@ function Admin() {
       }
     };
 
+    const fetchSystemStats = async () => {
+      try {
+        const response = await axiosInstance.get('/api/user/company/vacancy/system-stats');
+        if (response.status === 200) {
+          setTotalVacancies(response.data.totalVacancies);
+          setTotalApplications(response.data.totalApplications);
+        }
+      } catch (error) {
+        console.error('Erro ao buscar estatísticas do sistema:', error);
+        toast.error('Erro ao buscar estatísticas do sistema');
+      }
+    };
+
     // Executa ambas as funções
     fetchData();
     fetchWarningsAndBanned();
+    fetchSystemStats();
   }, []);
 
   return (
@@ -167,7 +175,7 @@ function Admin() {
                 <div className='balanco-geral'>
                   <div className='candidaturas-vagas'>
                     <h1>Candidaturas por vagas</h1>
-                    <h2 style={{fontSize: '1.8vw'}}>{totalApplications} <span style={{ color: 'forestgreen'}}> / {totalVacancies}</span></h2>
+                    <h2 style={{ fontSize: '1.8vw' }}>{totalApplications} <span style={{ color: 'forestgreen' }}> / {totalVacancies}</span></h2>
                   </div>
 
                   <div className='vagas-curriculos'>
