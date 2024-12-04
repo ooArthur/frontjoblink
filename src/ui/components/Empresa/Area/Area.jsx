@@ -30,9 +30,6 @@ export default function Empresa() {
         const companyData = response.data;
         setCompany(companyData);
         fetchJobCount(companyData.branchOfActivity);
-
-        const response2 = await axiosInstance.get('/api/user/candidate/list-candidates');
-        setTotalCandidates(response2.data.length);
       }
     } catch (error) {
       console.error('Erro ao buscar a empresa:', error);
@@ -70,9 +67,24 @@ export default function Empresa() {
     }
   };
 
+  const fetchCompanyStats = async () => {
+    try {
+      const response = await axiosInstance.get('/api/user/company/vacancy/get-company-job-stats');
+      console.log(response.data)
+      if (response.status === 200) {
+        setJobVacancies(response.data.jobCount);
+        setTotalCandidates(response.data.candidateCount);
+      }
+    } catch (error) {
+      console.error('Erro ao buscar estatísticas da empresa:', error);
+      toast.error('Erro ao buscar estatísticas da empresa.');
+    }
+  };
+
   useEffect(() => {
     fetchCompany();
     fetchApplicationStatusCount();
+    fetchCompanyStats(); // Chama a nova função
   }, []);
 
   if (loading) {
@@ -91,7 +103,7 @@ export default function Empresa() {
   } else if (totalCandidates === jobVacancies) {
     performanceClass = 'performance-medium'; // médio
     performanceText = 'Desempenho médio';
-    performanceMood = 'Continue assim!'
+    performanceMood = 'Dá pra melhorar!'
   }
 
   const dataAtual = new Date();
@@ -122,7 +134,7 @@ export default function Empresa() {
         <section className='dashboard-company'>
           <div className='container-dashboard-company'>
             <div className='left-box-company'>
-              <div className='dashboard-company-geral' style={{marginBottom: '2vw'}}>
+              <div className='dashboard-company-geral' style={{ marginBottom: '2vw' }}>
                 <div className='dashboard-geral-title'>
                   <h1>Dashboard Geral</h1>
                   <Link to="/minhas-vagas" style={{ transform: 'rotate(45deg)' }}><i className="fa-solid fa-arrow-right"></i></Link>
@@ -169,18 +181,18 @@ export default function Empresa() {
                 <div className='area-employ-company'>
                   <div style={{ borderLeft: '1.3vw solid  #160E37' }} className='area-employ-company-title'>
                     <div className='dashboard-geral-title'>
-                      <h2 style={{fontSize: '1.2vw', fontWeight: '500'}}>{company.branchOfActivity}</h2>
+                      <h2 style={{ fontSize: '1.2vw', fontWeight: '500' }}>{company.branchOfActivity}</h2>
                       <p>{jobVacanciesInArea}</p>
                     </div>
-                    <p style={{fontSize: '0.8vw', marginTop: '1vw', color: 'gray', fontWeight: '300'}}>Área de tecnologia está em alta</p>
+                    <p style={{ fontSize: '0.8vw', marginTop: '1vw', color: 'gray', fontWeight: '300' }}>Área de tecnologia está em alta</p>
                   </div>
 
                   <div style={{ borderLeft: '1.3vw solid #D0C900' }} className='area-employ-company-title'>
                     <div className='dashboard-geral-title'>
-                      <h2 style={{fontSize: '1.2vw', fontWeight: '500'}}>Empregados</h2>
+                      <h2 style={{ fontSize: '1.2vw', fontWeight: '500' }}>Empregados</h2>
                       <p>{company.employeerNumber}</p>
                     </div>
-                    <p style={{fontSize: '0.8vw', marginTop: '1vw', color: 'gray', fontWeight: '300'}}>Total de pessoas na sua empresa</p>
+                    <p style={{ fontSize: '0.8vw', marginTop: '1vw', color: 'gray', fontWeight: '300' }}>Total de pessoas na sua empresa</p>
                   </div>
                 </div>
               </div>
@@ -188,7 +200,7 @@ export default function Empresa() {
               <div className='analistic-vacancy-company'>
                 <div className='analistic-vacancy'>
                   <div className='dashboard-geral-title'>
-                    <h2 style={{fontSize: '1.6vw'}}>Análise de candidaturas</h2>
+                    <h2 style={{ fontSize: '1.6vw' }}>Análise de candidaturas</h2>
                     <Link to="/listar-candidatos"><i style={{ transform: 'rotate(310deg)' }} className="fa-solid fa-arrow-right"></i></Link>
                   </div>
                   <div className='analistic-situation-container'>
