@@ -7,12 +7,16 @@ import { toast } from 'sonner';
 import InputMask from 'react-input-mask';
 import { useUser } from '../../../../Context/UserContext';
 import './ContaCandidato.css';
+import bcrypt from 'bcryptjs';
 
 export function ContaCandidato() {
     const { handleLogout } = useUser();
     const [salaryValue, setSalaryValue] = useState('');
     const [salaryCurrency, setSalaryCurrency] = useState('');
     const [showPasswordInfo, setShowPasswordInfo] = useState(false);
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [newPasswordConfirmation, setNewPasswordConfirmation] = useState('');
     const [menuOpen, setMenuOpen] = useState(false);
     const [formData, setFormData] = useState({
         candidateAddress: {
@@ -74,27 +78,66 @@ export function ContaCandidato() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
+        // Prepara os dados para atualização do candidato
+        let updatedFormData = {
+            ...formData,
+            candidateTargetSalary: `${salaryCurrency} ${salaryValue}`,
+        };
+    
+        // Verifica se a senha foi alterada
+        const isPasswordChanged = newPassword && currentPassword;
+    
+        if (isPasswordChanged) {
+            // Verifica se a senha atual tem no mínimo 8 caracteres
+            if (currentPassword.length < 8) {
+                toast.error('A senha atual deve ter no mínimo 8 caracteres.');
+                return;
+            }
+    
+            // Verifica se a nova senha tem no mínimo 8 caracteres
+            if (newPassword.length < 8) {
+                toast.error('A nova senha deve ter no mínimo 8 caracteres.');
+                return;
+            }
+    
+            // Verifica se a senha atual está correta
+            const isPasswordValid = await bcrypt.compare(currentPassword, candidate.password);
+    
+            if (!isPasswordValid) {
+                toast.error('A senha atual está incorreta.');
+                return;
+            }
+    
+            // Verifica se a nova senha e a confirmação da nova senha coincidem
+            if (newPassword !== newPasswordConfirmation) {
+                toast.error('A nova senha e a confirmação não coincidem.');
+                return;
+            }
+    
+            // Atualiza a senha no banco de dados (presumindo que você tenha uma API para isso)
+            updatedFormData.password = newPassword;  // Adiciona a nova senha ao objeto de dados
+    
+            // Limpa os campos de senha após validação
+            setCurrentPassword('');
+            setNewPassword('');
+            setNewPasswordConfirmation('');
+            toast.success('Senha atualizada com sucesso!');
+        }
+    
+        // Atualiza os outros dados do candidato
         try {
-            // Combina a moeda e o valor do salário
-            const combinedSalary = `${salaryCurrency} ${salaryValue}`;
-
-            // Atualiza o formData com a pretenção salarial antes de enviar para a API
-            const updatedFormData = {
-                ...formData,
-                candidateTargetSalary: combinedSalary,  // Atualiza a pretenção salarial no formData
-            };
-
-            // Faz a requisição PUT para atualizar os dados do candidato
             const response = await axiosInstance.put(`/api/user/candidate/update-candidate/${candidate._id}`, updatedFormData);
-
-            // Atualiza o estado com a resposta da API
+    
+            // Atualiza os dados do candidato com a resposta da API
             setFormData(response.data);
+            setCandidate(response.data); // Atualiza o estado com os novos dados do candidato
             toast.success('Conta atualizada com sucesso!');
         } catch (error) {
             toast.error('Erro ao atualizar conta!');
         }
     };
+    
     useEffect(() => {
         const fetchCandidateData = async () => {
             try {
@@ -368,13 +411,33 @@ export function ContaCandidato() {
                                 {showPasswordInfo && (
                                     <div className={`password-info-candidato ${showPasswordInfo ? 'enter' : 'exit'}`}>
                                         <div className='content-password-info-candidato'>
-                                            <p>Nova senha:</p>
-                                            <input type="password" placeholder="Nova Senha" />
+                                            <p>Senha atual:</p>
+                                            <input
+                                                type="password"
+                                                placeholder="Senha atual"
+                                                value={currentPassword}
+                                                onChange={(e) => setCurrentPassword(e.target.value)}
+                                            />
                                         </div>
 
                                         <div className='content-password-info-candidato'>
-                                            <p>Confirmar senha:</p>
-                                            <input type="password" placeholder="Confirme a nova Senha" />
+                                            <p>Nova senha:</p>
+                                            <input
+                                                type="password"
+                                                placeholder="Nova senha"
+                                                value={newPassword}
+                                                onChange={(e) => setNewPassword(e.target.value)}
+                                            />
+                                        </div>
+
+                                        <div className='content-password-info-candidato'>
+                                            <p>Confirmar nova senha:</p>
+                                            <input
+                                                type="password"
+                                                placeholder="Confirmar nova senha"
+                                                value={newPasswordConfirmation}
+                                                onChange={(e) => setNewPasswordConfirmation(e.target.value)}
+                                            />
                                         </div>
 
                                     </div>

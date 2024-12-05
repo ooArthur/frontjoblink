@@ -115,7 +115,7 @@
     margin: 4vw 0;
 }
 
-.boxVagasPreVisualizacao{
+.boxVagasPreVisualizacao {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -152,18 +152,138 @@
     color: #160E37;
 }
 
-.iconVoltar i{
+.iconVoltar i {
     font-size: 1.5vw;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width:450px){
     .headerPreVisualizacao{
         margin-top: 10px;
+=======
+/* Estilização do overlay para o modal de denúncia de empresa */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo semitransparente */
+    z-index: 999;
+    /* Fica acima de outros elementos */
+}
+
+/* Estilização do modal específico para denúncia de empresa */
+#denunciaCard {
+    position: fixed;
+    top: 50%;
+    /* Centraliza verticalmente */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajusta para o centro exato */
+    width: 90%;
+    /* Tamanho ajustável para telas menores */
+    max-width: 500px;
+    /* Tamanho máximo para desktops */
+    background-color: #fff;
+    /* Fundo branco */
+    padding: 20px;
+    /* Espaçamento interno */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    z-index: 1000;
+    /* Fica acima do overlay */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Espaçamento entre os elementos */
+}
+
+/* Título do modal */
+#denunciaCard h3 {
+    font-size: 20px;
+    color: #333;
+    /* Texto escuro */
+    margin-bottom: 10px;
+    text-align: center;
+    /* Centraliza o título */
+}
+
+/* Labels dos campos */
+#denunciaCard label {
+    font-size: 14px;
+    color: #555;
+    /* Texto mais claro */
+    margin-bottom: 5px;
+    display: block;
+    /* Força quebra de linha */
+}
+
+/* Campo de seleção */
+#denunciaCard select,
+#denunciaCard textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    /* Remove a opção de redimensionar o textarea */
+    margin-bottom: 10px;
+}
+
+/* Área de ações (botões) */
+#denunciaCard .denunciaActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Botões do modal */
+#denunciaCard .denunciaActions button {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Botão de cancelar */
+#denunciaCard .denunciaActions button:first-child {
+    background-color: #ccc;
+}
+
+#denunciaCard .denunciaActions button:first-child:hover {
+    background-color: #bbb;
+}
+
+/* Botão de enviar */
+#denunciaCard .denunciaActions button:last-child {
+    background-color: #b30000;
+}
+
+#denunciaCard .denunciaActions button:last-child:hover {
+    background-color: #c20808ad;
+}
+
+
+@media screen and (max-width:450px) {
+    .headerPreVisualizacao {
+>>>>>>> 81e46742157ca76c56c2759a2b45028fd760f9c5
         width: 90%;
         height: 13vw;
         border-radius: 30px;
     }
 
+<<<<<<< HEAD
     .infoPreVisualizacao > h3{
         font-size: 4vw;
         color: white;
@@ -171,58 +291,127 @@
 
     .infoPreVisualizacao > h5{
         font-size: 3vw;
+=======
+    .infoPreVisualizacao>h3 {
+        font-size: 3vw;
+        color: white;
     }
 
-    .iconVoltar i{
+    .infoPreVisualizacao>h5 {
+        font-size: 2vw;
+>>>>>>> 81e46742157ca76c56c2759a2b45028fd760f9c5
+    }
+
+    .iconVoltar i {
         font-size: 4vw;
     }
 
+<<<<<<< HEAD
     .dadosEmpresaPreVisualizacao{
         margin: 30px 0;
     }
 
     .dadosEmpresaPreVisualizacao > h3{
         font-size: 3.3vw;
+=======
+    .dadosEmpresaPreVisualizacao>h3 {
+        font-size: 4vw;
+>>>>>>> 81e46742157ca76c56c2759a2b45028fd760f9c5
     }
 
-    .sectionPreVisualizacaoE{
+    .sectionPreVisualizacaoE {
         width: 90%;
     }
 
-    .infoDadosEmpresa{
+    .infoDadosEmpresa {
         height: auto;
         margin: 10px 0;
         padding: 5px;
     }
 
+<<<<<<< HEAD
     .infoDadosEmpresa > h5{
         font-size: 2.5vw;
     }
 
     .infoDadosEmpresa > a{
         font-size: 2.5vw;
-    }
-
-    .descricaoEmpresaPreVisualizacao > h3{
+=======
+    .infoDadosEmpresa>h5 {
         font-size: 3vw;
     }
 
-    .descricaoEmpresaPreVisualizacao > p{
+    .infoDadosEmpresa>a {
+        font-size: 3vw;
+>>>>>>> 81e46742157ca76c56c2759a2b45028fd760f9c5
+    }
+
+    .descricaoEmpresaPreVisualizacao>h3 {
         font-size: 3vw;
     }
 
-    .EmpresaPreVisualizacao{
+    .descricaoEmpresaPreVisualizacao>p {
+        font-size: 3vw;
+    }
+
+    .EmpresaPreVisualizacao {
         height: auto;
         box-shadow: 0 0 10px 3px #d3d3d3;
         margin: 20px 0;
     }
 
-    .boxVagasPreVisualizacao > h3{
+    .boxVagasPreVisualizacao>h3 {
         font-size: 4vw;
     }
 
+<<<<<<< HEAD
     .buttonPreVisualizacao>button {
         font-size: 3vw !important;
         padding: 10px 20px !important;
+=======
+    /* Modal */
+    #denunciaCard {
+        width: 90%;
+        /* Modal ocupa 90% da largura */
+        max-width: none;
+        /* Remove o limite de 500px para maior flexibilidade */
+        padding: 15px;
+        /* Reduz o padding para caber melhor em telas pequenas */
+    }
+
+    /* Título */
+    #denunciaCard h3 {
+        font-size: 16px;
+        /* Reduz o tamanho da fonte no título */
+    }
+
+    /* Labels dos campos */
+    #denunciaCard label {
+        font-size: 12px;
+        /* Ajusta o tamanho da fonte nos labels */
+    }
+
+    /* Campos de entrada */
+    #denunciaCard select,
+    #denunciaCard textarea {
+        font-size: 12px;
+        /* Ajusta o tamanho da fonte para ficar mais compacto */
+        padding: 8px;
+        /* Reduz o padding para um melhor ajuste */
+    }
+
+    /* Botões */
+    #denunciaCard .denunciaActions button {
+        font-size: 12px;
+        /* Ajusta o tamanho da fonte nos botões */
+        padding: 8px;
+        /* Reduz o padding dos botões */
+    }
+
+    /* Ajuste para o overlay */
+    #modal-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        /* Aumenta a opacidade do fundo */
+>>>>>>> 81e46742157ca76c56c2759a2b45028fd760f9c5
     }
 }

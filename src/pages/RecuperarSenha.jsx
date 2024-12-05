@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom'; // Adicionando o useNavigate
 import { toast } from 'sonner';
 import axiosInstance from '../source/axiosInstance'; // Importa o axiosInstance
 import whitelogo from '/whitelogo.svg';
-import logoMobile from './../assets/images/JL (1).svg'
+import logoMobile from './../assets/images/JL (1).svg';
 import '../assets/style/recuperarSenha.css';
 
 export default function RecuperarSenha() {
@@ -11,6 +11,9 @@ export default function RecuperarSenha() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [searchParams] = useSearchParams();
   const token = searchParams.get('token');
+  
+  // Adicionando o hook useNavigate para navegação
+  const navigate = useNavigate();
 
   const handlePasswordReset = async (e) => {
     e.preventDefault();
@@ -26,8 +29,11 @@ export default function RecuperarSenha() {
     }
 
     try {
+      // Enviando a requisição para redefinir a senha
       await axiosInstance.post(`/api/user/reset-password?token=${token}`, { newPassword });
       toast.success('Senha redefinida com sucesso.');
+      
+      // Navegando para a página de login após sucesso
       navigate('/login');
     } catch (error) {
       toast.error(error.response?.data?.message || 'Erro ao redefinir a senha.');
@@ -36,17 +42,16 @@ export default function RecuperarSenha() {
 
   return (
     <section className="login">
-      <Link className="voltar" href="/login">
+      <Link className="voltar" to="/login">
         <i style={{ color: 'white' }} className="fa-solid fa-chevron-left"></i>
       </Link>
 
-
       <div className='box-login'>
-                <div className='container-login'>
-                    <div className='logo-login'>
-                        <Link className='logoDesktop' to='/'><img src={whitelogo} alt="Logo" /></Link>
-                        <Link className='logoMobile' to='/'><img src={logoMobile} alt="Logo" /></Link>
-                    </div>
+        <div className='container-login'>
+          <div className='logo-login'>
+            <Link className='logoDesktop' to='/'><img src={whitelogo} alt="Logo" /></Link>
+            <Link className='logoMobile' to='/'><img src={logoMobile} alt="Logo" /></Link>
+          </div>
 
           <div className="content-login">
             <div className="content-reset-password">
