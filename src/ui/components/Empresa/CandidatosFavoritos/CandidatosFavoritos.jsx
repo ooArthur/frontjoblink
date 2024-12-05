@@ -1,12 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Menu from "../Menu/Menu";
+import MenuMobile from '../MenuMobile/MenuMobile';
 import CompanyName from '../CompanyName/CompanyName';
 import { useFavorites } from '../../../../Context/FavoritesContext';
 
 export function VagasFavoritas() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites(); // Pega as funções do contexto de favoritos
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // Filtra os favoritos para mostrar apenas candidatos
   const favoriteCandidates = favorites.filter(item => item.role === 'Candidate');
@@ -43,7 +45,8 @@ export function VagasFavoritas() {
 
   return (
     <>
-      <Menu setMenuOpen={setMenuOpen} />
+      {windowWidth > 450 && <Menu setMenuOpen={setMenuOpen} />}
+      {windowWidth < 450 && <MenuMobile />}
       <main className={`blurMain ${menuOpen ? 'blurred' : ''}`}>
         <section className="cabecalhoCandidato">
           <div>

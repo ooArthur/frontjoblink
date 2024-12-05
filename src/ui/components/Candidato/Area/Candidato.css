@@ -339,6 +339,11 @@
     font-size: 1.1vw;
     font-weight: 300;
     padding: 0.6vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 0.11vw solid #f3f3f3;
+    border-radius: 0.9vw;
 }
 
 .CVInfo>div>div>input {
@@ -348,14 +353,6 @@
     padding: 0.6vw;
     margin-top: 2%;
     margin-bottom: 2%;
-}
-
-.CVInfo>div>textarea {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border: 0.11vw solid #f3f3f3;
-    border-radius: 0.4vw;
 }
 
 .CVInfo>div>div>button {
@@ -368,7 +365,7 @@
     background-color: white;
     border: 0.11vw solid #f3f3f3;
     margin-bottom: 2%;
-    border-radius: 0.4vw;
+    border-radius: 0.9vw;
     transition: 0.3s;
 }
 
@@ -716,7 +713,7 @@ button:hover+.tooltip {
 @media screen and (max-width: 450px) {
 
     .cabecalhoCandidato {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
     }
 
@@ -729,7 +726,7 @@ button:hover+.tooltip {
     }
 
     .cabecalhoCandidato>div {
-        width: 90%;
+        width: 100%;
         margin: 5vw 0;
     }
 
@@ -769,7 +766,7 @@ button:hover+.tooltip {
     .CVInfo>div>div>button {
         display: flex;
         color: black;
-        border: #c3c3c3 solid 0.3vw;
+        border: #dadada solid 0.3vw;
         padding: 2vw 6vw !important;
         justify-content: center !important;
         font-size: 3vw;
@@ -786,7 +783,7 @@ button:hover+.tooltip {
     #aboutCandidate {
         width: 100%;
         font-size: 3vw;
-        border: solid 0.3vw #c3c3c3;
+        border: solid 0.3vw #dadada;
     }
 
     .skillCompetencies>input {
@@ -798,7 +795,8 @@ button:hover+.tooltip {
     .CVInfo>div>input {
         font-size: 3vw;
         padding: 2vw 6vw !important;
-        border: solid 0.3vw #c3c3c3;
+        border: solid 0.3vw #dadada;
+        border-radius: 0.9vw;
     }
 
     .CVInfo>button {

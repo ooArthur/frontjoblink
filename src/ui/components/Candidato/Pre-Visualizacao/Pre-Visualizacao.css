@@ -21,7 +21,7 @@
     color: #FFF600;
 }
 
-.class-icon > button {
+.class-icon>button {
     color: #FFF600;
     background: none;
     border: none;
@@ -40,12 +40,12 @@
     font-size: 2vw;
 }
 
-.perfil-pre-visualizacao > h3 {
+.perfil-pre-visualizacao>h3 {
     font-weight: 400;
     font-size: 1.8vw;
 }
 
-.perfil-pre-visualizacao > h4 {
+.perfil-pre-visualizacao>h4 {
     font-weight: 300;
     color: #BDBDBD;
     font-size: 1.2vw;
@@ -115,7 +115,7 @@
     padding: 1.4vw 0;
 }
 
-.alinhamento-perfil-dois > p {
+.alinhamento-perfil-dois>p {
     text-align: justify;
     overflow-wrap: break-word;
     overflow-y: auto;

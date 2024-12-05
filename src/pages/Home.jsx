@@ -182,7 +182,7 @@ export function Home() {
         <div className={`header-itens ${isScrolled ? 'rolagem' : ''}`}>
           <div className='logo-header'>
             <Link id='logoDesktop' className='logoDesktop' to="/"><img src={logo} alt="Logo" /></Link>
-            <img id='logoMobile' src={logoMobile} alt="Logo" onClick={scrollToTop} />
+            <img className='logoMobile' src={logoMobile} alt="Logo" onClick={scrollToTop} />
           </div>
           <div className='options-header'>
             <Link to="/cadastro" id='option-header-cadastro'>CADASTRO</Link>

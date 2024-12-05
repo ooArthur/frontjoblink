@@ -63,14 +63,19 @@
 }
 
 @media screen and (max-width: 450px) {
+
+    .container-cards-empresas>.no-results{
+        font-size: 3vw !important;
+        color: #777 !important;
+    }
+
     .cabecalhoMobile{
-        display: block;
-        margin: 6vw 0 0 5vw;
+        width: 90%;
     }
 
     .container-cards-empresas{
         width: 90%;
-        margin: 3vw 0 0 5vw;
+        margin: 3vw 5vw 15vw 7vw;
         justify-content: space-between !important;
     }
 

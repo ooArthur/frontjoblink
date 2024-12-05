@@ -350,7 +350,7 @@ header {
 }
 
 .carrossel-slide img {
-
+    width: 40vw;
     height: auto;
     display: block;
 }

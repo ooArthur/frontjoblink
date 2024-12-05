@@ -121,7 +121,7 @@ export default function ListarEmpresas() {
                             </div>
                         ))
                     ) : (
-                        <p className="no-results">Nenhuma empresa encontrada com os filtros aplicados.</p>
+                        <p  className="no-results">Nenhuma empresa encontrada com os filtros aplicados.</p>
                     )}
                 </div>
             </main>
