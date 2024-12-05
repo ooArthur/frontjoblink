@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axiosInstance from '../../../../source/axiosInstance';
-import './PreVisualizacao.css';
 import { useFavorites } from '../../../../Context/FavoritesContext'; // Importando o hook corretamente
 import { useInterested } from '../../../../Context/InterestedContext';
+import { toast } from 'sonner';
+import './PreVisualizacao.css';
+
 
 export default function PrevisualizacaoE() {
   const { id } = useParams();
@@ -14,6 +16,9 @@ export default function PrevisualizacaoE() {
   const [jobVacancies, setJobVacancies] = useState([]);
   const [isCardOpen, setIsCardOpen] = useState(false);
   const [selectedVacancy, setSelectedVacancy] = useState(null);
+  const [motivo, setMotivo] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [isCompanyModalOpen, setIsCompanyModalOpen] = useState(false);
 
   // Usando o hook `useFavorites` para acessar o contexto de favoritos
   const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites() || {};
@@ -140,10 +145,39 @@ export default function PrevisualizacaoE() {
   function truncateDescription(description) {
     const maxLength = 30;
     if (!description) return '';
-    return description.length > maxLength 
-      ? description.slice(0, maxLength) + '...' 
+    return description.length > maxLength
+      ? description.slice(0, maxLength) + '...'
       : description;
   }
+
+  const openCompanyModal = () => setIsCompanyModalOpen(true);
+  const closeCompanyModal = () => setIsCompanyModalOpen(false);
+
+  const handleSubmitCompanyReport = async () => {
+    if (!motivo || !descricao) {
+      toast.error("Por favor, preencha todos os campos da denúncia.");
+      return;
+    }
+
+    try {
+      const payload = {
+        type: "company",
+        targetId: company._id,
+        reportReason: motivo,
+        description: descricao,
+      };
+
+      const response = await axiosInstance.post('/api/report/create-report', payload);
+
+      setMotivo('');
+      setDescricao('');
+      closeCompanyModal();
+      toast.success(response.data.message || "Denúncia enviada com sucesso!");
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || error.message || "Erro ao enviar denúncia.";
+      toast.error(errorMessage);
+    }
+  };
 
   return (
     <>
@@ -186,6 +220,51 @@ export default function PrevisualizacaoE() {
           <img src="https://fastly.picsum.photos/id/448/300/200.jpg?hmac=WHgZcNfmMcA8Sl33YH3lirNV6pSOFPOrxigNhp-lNzc" alt="Company Preview" />
         </div>
         <hr />
+        <button className='buttonDenuncia' onClick={openCompanyModal}>
+          Denunciar Empresa
+        </button>
+
+        {isCompanyModalOpen && (
+          <>
+            <div id="modal-overlay" onClick={closeCompanyModal}></div>  {/* Overlay com ID */}
+            <div id="denunciaCard" ref={denunciaCardRef}>  {/* Modal com ID */}
+              <h3>Denunciar Empresa</h3>
+              <label>
+                Motivo:
+                <select value={motivo} onChange={handleMotivoChange}>
+                  <option value="" disabled>Selecione um motivo</option>
+                  <option value="Conteúdo Inadequado">Conteúdo Inadequado</option>
+                  <option value="Discriminação ou Assédio">Discriminação ou Assédio</option>
+                  <option value="Informações Falsas">Informações Falsas</option>
+                  <option value="Spam ou Golpe">Spam ou Golpe</option>
+                  <option value="Atividade Suspeita">Atividade Suspeita</option>
+                  <option value="Linguagem Ofensiva">Linguagem Ofensiva</option>
+                  <option value="Violação de Privacidade">Violação de Privacidade</option>
+                  <option value="Violência ou Ameaça">Violência ou Ameaça</option>
+                  <option value="Falsificação de Identidade">Falsificação de Identidade</option>
+                  <option value="Fraude ou Informações Enganosas">Fraude ou Informações Enganosas</option>
+                  <option value="Comportamento Desrespeitoso">Comportamento Desrespeitoso</option>
+                  <option value="Vaga Enganosa">Vaga Enganosa</option>
+                  <option value="Conteúdo Ilegal">Conteúdo Ilegal</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </label>
+              <label>
+                Descrição:
+                <textarea
+                  value={descricao}
+                  onChange={handleDescricaoChange}
+                  placeholder="Descreva o motivo da denúncia"
+                ></textarea>
+              </label>
+              <div className="denunciaActions">
+                <button onClick={closeCompanyModal}>Cancelar</button>
+                <button onClick={handleSubmitCompanyReport}>Enviar Denúncia</button>
+              </div>
+            </div>
+          </>
+        )}
+
       </section>
 
       <section className='boxVagasPreVisualizacao'>
@@ -323,6 +402,7 @@ export default function PrevisualizacaoE() {
           </div>
         </>
       )}
+
     </>
   );
 }
