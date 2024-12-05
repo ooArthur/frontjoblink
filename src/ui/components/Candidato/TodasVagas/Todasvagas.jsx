@@ -4,7 +4,7 @@ import Menu from "../Menu/Menu";
 import MenuMobile from "../MenuMobile/MenuMobile";
 import CandidateName from "../CandidateName/CandidateName";
 import axiosInstance from '../../../../source/axiosInstance';
-import './Todasvagas.css';
+import './TodasVagas.css';
 import { toast } from 'sonner';
 
 export function TodasVagas() {
