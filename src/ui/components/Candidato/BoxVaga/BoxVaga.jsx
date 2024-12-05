@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'sonner'
 import './BoxVaga.css';
 
-export function BoxVaga({ searchQuery, selectedFilter, advFilteredFilter }) {
+export function BoxVaga({ filteredVacancies }) {
   const [jobVacancies, setJobVacancies] = useState([]);
   const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
   const { isInterested, addInterested, removeInterested } = useInterested();
@@ -16,7 +16,7 @@ export function BoxVaga({ searchQuery, selectedFilter, advFilteredFilter }) {
   const [descricao, setDescricao] = useState('');
   const cardRef = useRef(null);
   const denunciaCardRef = useRef(null);
-  const [filteredVacancies, setFilteredVacancies] = useState([]);
+  /* const [filteredVacancies, setFilteredVacancies] = useState([]); */
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const toggleFavorite = async (vaga) => {
@@ -40,7 +40,7 @@ useEffect(() => {
   fetchJobVacancies();
 }, []);
 
-useEffect(() => {
+/* useEffect(() => {
   const applyFilters = () => {
     const filtered = jobVacancies.filter((vaga) => {
       const jobTitle = vaga.jobTitle || ''; // Garantir que é uma string
@@ -67,7 +67,7 @@ useEffect(() => {
 
   applyFilters();
 }, [jobVacancies, searchQuery, selectedFilter, advFilteredFilter]);
-
+ */
 useEffect(() => {
   const handleClickOutside = (event) => {
     console.log("Clique detectado:", event.target);
