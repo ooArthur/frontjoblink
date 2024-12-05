@@ -82,58 +82,6 @@ export function TodasVagas() {
     function handleRemoveFilter(filter) {
         setAppliedFilters(prev => prev.filter(f => f !== filter));
     }
-
-    
-    function applyFilters() {
-        let filtered = vacancies;
-    
-        // Se a pesquisa estiver vazia, mostra todas as vagas
-        if (searchQuery.trim() !== '') {
-            filtered = filtered.filter(vaga =>
-                vaga.jobTitle.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-        }
-    
-        // Aplica os filtros adicionais (como área, estado, idioma, etc)
-        appliedFilters.forEach(filter => {
-            const [category, value] = filter.split(': ');
-    
-            if (category === 'Área de Atuação') {
-                filtered = filtered.filter(vaga => vaga.jobArea.toLowerCase().includes(value.toLowerCase()));
-            } else if (category === 'Estados') {
-                filtered = filtered.filter(vaga => vaga.jobLocation.state.toLowerCase().includes(value.toLowerCase()));
-            } else if (category === 'Idioma') {
-                filtered = filtered.filter(vaga => {
-                    return (
-                        vaga.requiredQualifications.some(qualification => qualification.toLowerCase().includes(value.toLowerCase())) ||
-                        vaga.desiredSkills.some(skill => skill.toLowerCase().includes(value.toLowerCase()))
-                    );
-                });
-            } else if (category === 'Habilidades e Competências') {
-                filtered = filtered.filter(vaga => {
-                    return (
-                        vaga.requiredQualifications.some(qualification => qualification.toLowerCase().includes(value.toLowerCase())) ||
-                        vaga.desiredSkills.some(skill => skill.toLowerCase().includes(value.toLowerCase()))
-                    );
-                });
-            } else if (category === 'Salário') {
-                filtered = filtered.filter(vaga => {
-                    const salaryString = vaga.salary;
-                    const salaryRegex = /([A-Za-z₽₩¥₹€$A₽₾₱₤]+)\s*(\d+(\.\d{1,2})?)/;
-    
-                    const match = salaryString.match(salaryRegex);
-    
-                    if (match && match[1] === salaryCurrency) {
-                        const salaryValue = parseFloat(match[2]);
-                        return salaryValue >= salaryFilter;
-                    }
-                    return false;
-                });
-            }
-        });
-    
-        setFilteredVacancies(filtered);
-    }  
     
 
     function applyFilters() {
