@@ -24,6 +24,7 @@ export function BoxVagaRecomendada() {
         const response = await axiosInstance.get('/api/user/company/vacancy/recommend-jobvacancies');
         if (Array.isArray(response.data)) {
           setRecommendedVacancies(response.data);
+          console.log("Recomendações: " + recommendedVacancies)
         } else {
           setRecommendedVacancies([]); // Reset para array vazio se não for um array
         }
@@ -115,12 +116,12 @@ export function BoxVagaRecomendada() {
 
   return (
     <>
-      <div className="container-box-vagas">
+      <div className="container-box-vagas" id='container-box-vagasFavoritas'>
         {recommendedVacancies.length === 0 ? (
           <p className="no-vacancies-message">Nenhuma vaga recomendada no momento.</p>
         ) : (
           recommendedVacancies.map((vaga) => (
-            <div key={vaga._id} className="box-vaga" onClick={() => setSelectedVacancy(vaga)}>
+            <div key={vaga._id} className="box-vaga" id='box-vagaFavorita' onClick={() => setSelectedVacancy(vaga)}>
               <div className="info-box-vaga">
                 <div className="header-box-vaga">
                   <div className="nome-vaga">

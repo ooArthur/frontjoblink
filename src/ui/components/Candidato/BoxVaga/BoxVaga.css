@@ -9,6 +9,18 @@
     margin-top: 2vw;
 }
 
+#container-box-vagasFavoritas{
+    margin-left: 14vw;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -20vw;
+}
+
+#box-vagaFavorita{
+    width: 24vw;
+}
+
 .container-box-vagas p {
     color: #777;
     font-size: 1vw;
