@@ -98,14 +98,8 @@ export default function ContaEmpresa() {
         const isPasswordChanged = newPassword && currentPassword;
 
         // Se a senha foi alterada, primeiro valida a senha atual e a nova senha
-<<<<<<< HEAD
-        if (isPasswordChanged) {
-            console.log("Senha atual fornecida:", currentPassword);
-            console.log("Senha criptografada no servidor:", company.password);
 
-=======
-        if (isPasswordChanged) {    
->>>>>>> 81e46742157ca76c56c2759a2b45028fd760f9c5
+        if (isPasswordChanged) {
             // Verifica se a senha atual está correta
             const isPasswordValid = await bcrypt.compare(currentPassword, company.password);
 
@@ -128,20 +122,11 @@ export default function ContaEmpresa() {
                 return;
             }
 
-<<<<<<< HEAD
             // Criptografa a nova senha antes de enviá-la ao backend
             const hashedPassword = await bcrypt.hash(newPassword, 10);
             updatedFormData.password = hashedPassword;
-=======
-            // Atualiza a senha no banco de dados (presumindo que você tenha uma API para isso)
-            updatedFormData.password = newPassword;  // Adiciona a nova senha ao objeto de dados
-    
-            // Limpa os campos de senha após validação
-            setCurrentPassword('');
-            setNewPassword('');
-            setNewPasswordConfirmation('');
             toast.success('Senha atualizada com sucesso!');
->>>>>>> 81e46742157ca76c56c2759a2b45028fd760f9c5
+
         }
 
         try {
