@@ -621,14 +621,14 @@ function Candidato() {
               <button
                 onClick={handleButtonClick}
               >
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
               </button>
               <p>Sua área</p>
             </div>
 
             <div style={{ borderLeft: "solid 2px #FFF600", borderRight: "solid 2px #FFF600" }} className='dashboard-mobile-content'>
 
-              <Link to='/curriculos-enviados'><i class="fa-solid fa-address-card"></i></Link>
+              <Link to='/curriculos-enviados'><i className="fa-solid fa-address-card"></i></Link>
 
               <p>Curriculos enviados</p>
             </div>

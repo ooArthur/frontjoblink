@@ -3,12 +3,13 @@ import { toast } from 'sonner';
 import axiosInstance from '../../../../source/axiosInstance';
 import CompanyName from '../CompanyName/CompanyName';
 import Menu from '../Menu/Menu';
+import MenuMobile from '../MenuMobile/MenuMobile'
 import { Link } from 'react-router-dom';
 import BoxVagas from '../BoxVagas/BoxVagas';
 import CurriculosRecomendados from '../CurriculosRecomendados/CurriculosRecomendados';
 import Loading from '../../Loading/Loading';
 
-import './areaEmpresa.css';
+import './AreaEmpresa.css';
 
 export default function Empresa() {
   const [company, setCompany] = useState(null);
@@ -22,6 +23,7 @@ export default function Empresa() {
     dismissed: 0
   });
   const [jobVacanciesInArea, setJobVacanciesInArea] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const fetchCompany = async () => {
     try {
@@ -120,7 +122,8 @@ export default function Empresa() {
 
   return (
     <>
-      <Menu setMenuOpen={setMenuOpen} />
+      {windowWidth > 450 && <Menu setMenuOpen={setMenuOpen} />}
+      {windowWidth < 450 && <MenuMobile />}
       <main id='mainAdaptationCompany' className={`blurMain ${menuOpen ? 'blurred' : ''}`}>
         <section className='header-company'>
           <div className='company-name'>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Menu from "../Menu/Menu";
+import MenuMobile from '../MenuMobile/MenuMobile';
 import CompanyName from '../CompanyName/CompanyName';
 import axiosInstance from '../../../../source/axiosInstance';
 import { toast } from 'sonner';
@@ -20,13 +21,14 @@ export default function ContaEmpresa() {
     const [newPassword, setNewPassword] = useState('');
     const [newPasswordConfirmation, setNewPasswordConfirmation] = useState('');
     const [iconeAtivo, setIconeAtivo] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const areas = [
         'Tecnologia', 'Saúde', 'Educação', 'Finanças', 'Engenharia',
         'Marketing', 'Vendas', 'Recursos Humanos', 'Administração',
         'Jurídico', 'Logística', 'Atendimento ao Cliente',
         'Design', 'Operações', 'Construção Civil'
-      ];
+    ];
 
     const buscarEndereco = async (cep) => {
         try {
@@ -88,53 +90,51 @@ export default function ContaEmpresa() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         // Prepara os dados para atualização da empresa
         let updatedFormData = { ...formData };
-    
+
         // Verifica se a senha foi alterada
         const isPasswordChanged = newPassword && currentPassword;
-    
+
         // Se a senha foi alterada, primeiro valida a senha atual e a nova senha
-        if (isPasswordChanged) {    
+
+        if (isPasswordChanged) {
             // Verifica se a senha atual está correta
             const isPasswordValid = await bcrypt.compare(currentPassword, company.password);
-    
+
             console.log("Senhas são iguais?", isPasswordValid); // True ou False
-    
+
             if (!isPasswordValid) {
                 toast.error('A senha atual está incorreta.');
                 return;
             }
-    
+
             // Verifica se a nova senha tem pelo menos 8 caracteres
             if (newPassword.length < 8) {
                 toast.error('A nova senha deve ter pelo menos 8 caracteres.');
                 return;
             }
-    
+
             // Verifica se a nova senha e a confirmação coincidem
             if (newPassword !== newPasswordConfirmation) {
                 toast.error('A nova senha e a confirmação não coincidem.');
                 return;
             }
 
-            // Atualiza a senha no banco de dados (presumindo que você tenha uma API para isso)
-            updatedFormData.password = newPassword;  // Adiciona a nova senha ao objeto de dados
-    
-            // Limpa os campos de senha após validação
-            setCurrentPassword('');
-            setNewPassword('');
-            setNewPasswordConfirmation('');
+            // Criptografa a nova senha antes de enviá-la ao backend
+            const hashedPassword = await bcrypt.hash(newPassword, 10);
+            updatedFormData.password = hashedPassword;
             toast.success('Senha atualizada com sucesso!');
+
         }
-    
+
         try {
             const response = await axiosInstance.put(
                 `/api/user/company/update-company/${company._id}`,
                 updatedFormData
             );
-    
+
             setFormData(response.data);
             setCompany(response.data);
             toast.success('Conta atualizada com sucesso!');
@@ -143,9 +143,9 @@ export default function ContaEmpresa() {
             console.error('Erro ao atualizar:', error);
         }
     };
-    
-    
-    
+
+
+
     const fetchCompany = async () => {
         try {
             const response = await axiosInstance.get('/api/user/company/list-company/');
@@ -199,7 +199,8 @@ export default function ContaEmpresa() {
 
     return (
         <>
-            <Menu setMenuOpen={setMenuOpen} />
+            {windowWidth > 450 && <Menu setMenuOpen={setMenuOpen} />}
+            {windowWidth < 450 && <MenuMobile />}
             <main className={`blurMain ${menuOpen ? 'blurred' : ''}`}>
                 <section className="cabecalhoCandidato">
                     <div>
@@ -236,14 +237,14 @@ export default function ContaEmpresa() {
                         </div>
                         <div>
                             <label>Telefone:</label>
-                                <InputMask
+                            <InputMask
                                 type="text"
                                 mask="(99) 99999-9999"
                                 name="telephone"
                                 value={formData.telephone}
                                 onChange={handleChange}
                                 placeholder={company.telephone || '(11) 99999-9999'}
-                              />
+                            />
                         </div>
                         <div>
                             <label>Número de empregados:</label>
@@ -260,24 +261,24 @@ export default function ContaEmpresa() {
                                 <div>
                                     <label>CPF:</label>
                                     <InputMask
-                                    type="text"
-                                    mask="999.999.999-99"
-                                    name="cpf"
+                                        type="text"
+                                        mask="999.999.999-99"
+                                        name="cpf"
                                         value={formData.liberalProfessionalData.cpf || ''}
                                         onChange={handleChange}
                                         placeholder='CPF da empresa'
-                                  />
+                                    />
                                 </div>
                                 <div>
                                     <label>Documento de Registro:</label>
                                     <InputMask
-                                    type="text"
-                                    mask="99.999.999-9"
-                                    name="registrationDocument"
+                                        type="text"
+                                        mask="99.999.999-9"
+                                        name="registrationDocument"
                                         value={formData.liberalProfessionalData.registrationDocument || ''}
                                         onChange={handleChange}
                                         placeholder='Documento de Registro'
-                                  />
+                                    />
                                 </div>
                                 <div>
                                     <label>Número de Registro:</label>
@@ -296,13 +297,13 @@ export default function ContaEmpresa() {
                                 <div>
                                     <label>CNPJ:</label>
                                     <InputMask
-                                    type="text"
-                                    mask="99.999.999/9999-99"
-                                    placeholder='CNPJ da empresa'
-                                    onChange={handleChange}
-                                    value={formData.crhCompanyData?.cnpj || ''}
-                                    name="cnpj"
-                                  />
+                                        type="text"
+                                        mask="99.999.999/9999-99"
+                                        placeholder='CNPJ da empresa'
+                                        onChange={handleChange}
+                                        value={formData.crhCompanyData?.cnpj || ''}
+                                        name="cnpj"
+                                    />
                                 </div>
                                 <div>
                                     <label>Razão Social:</label>
@@ -332,13 +333,13 @@ export default function ContaEmpresa() {
                                 <div>
                                     <label>CNPJ:</label>
                                     <InputMask
-                                    type="text"
-                                    mask="99.999.999/9999-99"
-                                    name="cnpj"
+                                        type="text"
+                                        mask="99.999.999/9999-99"
+                                        name="cnpj"
                                         value={formData.crhCompanyData?.cnpj || ''}
                                         onChange={handleChange}
                                         placeholder='CNPJ da empresa'
-                                  />
+                                    />
                                 </div>
                                 <div>
                                     <label>Razão Social:</label>
@@ -426,10 +427,10 @@ export default function ContaEmpresa() {
                         <div className="branchOfAct">
                             <label>Ramo de atividade:</label>
                             <select name="branchOfActivity" onChange={handleChange} >
-                              <option value="">{formData.branchOfActivity || company.branchOfActivity}</option>
-                              {areas.map((area, index) => (
-                                <option key={index} value={area}>{area}</option>
-                              ))}
+                                <option value="">{formData.branchOfActivity || company.branchOfActivity}</option>
+                                {areas.map((area, index) => (
+                                    <option key={index} value={area}>{area}</option>
+                                ))}
                             </select>
                         </div>
                         <div>
@@ -462,55 +463,55 @@ export default function ContaEmpresa() {
                                     <button type='button' onClick={handleAlterarSenha}>Alterar senha <i className="fa-solid fa-chevron-right"></i></button>
 
                                     {showPasswordInfo && (
-                                    <div className={`password-info-candidato ${showPasswordInfo ? 'enter' : 'exit'}`}>
-                                        <div className='content-password-info-candidato'>
-                                            <p>Senha atual:</p>
-                                            <input
-                                                type="password"
-                                                placeholder="Senha atual"
-                                                value={currentPassword}
-                                                onChange={(e) => setCurrentPassword(e.target.value)}
-                                            />
-                                        </div>
+                                        <div className={`password-info-candidato ${showPasswordInfo ? 'enter' : 'exit'}`}>
+                                            <div className='content-password-info-candidato'>
+                                                <p>Senha atual:</p>
+                                                <input
+                                                    type="password"
+                                                    placeholder="Senha atual"
+                                                    value={currentPassword}
+                                                    onChange={(e) => setCurrentPassword(e.target.value)}
+                                                />
+                                            </div>
 
-                                        <div className='content-password-info-candidato'>
-                                            <p>Nova senha:</p>
-                                            <input
-                                                type="password"
-                                                placeholder="Nova senha"
-                                                value={newPassword}
-                                                onChange={(e) => setNewPassword(e.target.value)}
-                                            />
-                                        </div>
+                                            <div className='content-password-info-candidato'>
+                                                <p>Nova senha:</p>
+                                                <input
+                                                    type="password"
+                                                    placeholder="Nova senha"
+                                                    value={newPassword}
+                                                    onChange={(e) => setNewPassword(e.target.value)}
+                                                />
+                                            </div>
 
-                                        <div className='content-password-info-candidato'>
-                                            <p>Confirmar nova senha:</p>
-                                            <input
-                                                type="password"
-                                                placeholder="Confirmar nova senha"
-                                                value={newPasswordConfirmation}
-                                                onChange={(e) => setNewPasswordConfirmation(e.target.value)}
-                                            />
-                                        </div>
+                                            <div className='content-password-info-candidato'>
+                                                <p>Confirmar nova senha:</p>
+                                                <input
+                                                    type="password"
+                                                    placeholder="Confirmar nova senha"
+                                                    value={newPasswordConfirmation}
+                                                    onChange={(e) => setNewPasswordConfirmation(e.target.value)}
+                                                />
+                                            </div>
 
-                                    </div>
-                                )}
+                                        </div>
+                                    )}
                                 </div>
 
                             </div>
 
-                            <div>
+                            <div className='descricaoEmpresaMobile'>
 
-                            <label>Descrição:</label>
-                            <input
-                                type="text"
-                                name="description"
-                                value={formData.description || company.description}
-                                onChange={handleChange}
-                                placeholder={company.description || 'Sobre a empresa'}
-                            />
+                                <label>Descrição:</label>
+                                <input
+                                    type="text"
+                                    name="description"
+                                    value={formData.description || company.description}
+                                    onChange={handleChange}
+                                    placeholder={company.description || 'Sobre a empresa'}
+                                />
 
-                        </div>
+                            </div>
 
                             <div className='salvar-empresa'>
                                 <button type="submit">Salvar Alterações</button>

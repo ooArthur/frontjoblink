@@ -210,38 +210,38 @@ export function BoxVagaRecomendada() {
                   {isInterested(selectedVacancy._id) ? 'Remover Candidatura' : 'Enviar Currículo'}
                 </button>
               </div>
+              {isCardOpen && (
+                <div className="denunciaCard" ref={denunciaCardRef}>
+                  <label>
+                    Motivo:
+                    <select value={motivo} onChange={handleMotivoChange}>
+                      <option value="" disabled>Selecione um motivo</option>
+                      <option value="Conteúdo Inadequado">Conteúdo Inadequado</option>
+                      <option value="Discriminação ou Assédio">Discriminação ou Assédio</option>
+                      <option value="Informações Falsas">Informações Falsas</option>
+                      <option value="Spam ou Golpe">Spam ou Golpe</option>
+                      <option value="Atividade Suspeita">Atividade Suspeita</option>
+                      <option value="Linguagem Ofensiva">Linguagem Ofensiva</option>
+                      <option value="Violação de Privacidade">Violação de Privacidade</option>
+                      <option value="Violência ou Ameaça">Violência ou Ameaça</option>
+                      <option value="Falsificação de Identidade">Falsificação de Identidade</option>
+                      <option value="Fraude ou Informações Enganosas">Fraude ou Informações Enganosas</option>
+                      <option value="Comportamento Desrespeitoso">Comportamento Desrespeitoso</option>
+                      <option value="Vaga Enganosa">Vaga Enganosa</option>
+                      <option value="Conteúdo Ilegal">Conteúdo Ilegal</option>
+                      <option value="Outro">Outro</option>
+                    </select>
+                  </label>
+                  <label>
+                    Descrição:
+                    <textarea value={descricao} onChange={handleDescricaoChange} placeholder="Descreva o motivo da denúncia"></textarea>
+                  </label>
+                  <button onClick={handleSubmitDenuncia}>Enviar Denúncia</button>
+                </div>
+              )}
             </div>
           </div>
 
-          {isCardOpen && (
-            <div className="denunciaCard" ref={denunciaCardRef}>
-              <label>
-                Motivo:
-                <select value={motivo} onChange={handleMotivoChange}>
-                  <option value="" disabled>Selecione um motivo</option>
-                  <option value="Conteúdo Inadequado">Conteúdo Inadequado</option>
-                  <option value="Discriminação ou Assédio">Discriminação ou Assédio</option>
-                  <option value="Informações Falsas">Informações Falsas</option>
-                  <option value="Spam ou Golpe">Spam ou Golpe</option>
-                  <option value="Atividade Suspeita">Atividade Suspeita</option>
-                  <option value="Linguagem Ofensiva">Linguagem Ofensiva</option>
-                  <option value="Violação de Privacidade">Violação de Privacidade</option>
-                  <option value="Violência ou Ameaça">Violência ou Ameaça</option>
-                  <option value="Falsificação de Identidade">Falsificação de Identidade</option>
-                  <option value="Fraude ou Informações Enganosas">Fraude ou Informações Enganosas</option>
-                  <option value="Comportamento Desrespeitoso">Comportamento Desrespeitoso</option>
-                  <option value="Vaga Enganosa">Vaga Enganosa</option>
-                  <option value="Conteúdo Ilegal">Conteúdo Ilegal</option>
-                  <option value="Outro">Outro</option>
-                </select>
-              </label>
-              <label>
-                Descrição:
-                <textarea value={descricao} onChange={handleDescricaoChange} placeholder="Descreva o motivo da denúncia"></textarea>
-              </label>
-              <button onClick={handleSubmitDenuncia}>Enviar Denúncia</button>
-            </div>
-          )}
         </>
       )}
     </>

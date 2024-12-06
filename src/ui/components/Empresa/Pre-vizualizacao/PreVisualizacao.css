@@ -1,3 +1,4 @@
+/* Header de visualização */
 .headerPreVisualizacao {
     display: flex;
     justify-content: flex-start;
@@ -15,6 +16,7 @@
 .iconVoltar>i {
     color: white !important;
     font-size: 1vw;
+    cursor: pointer;
 }
 
 .iconVoltar>i:hover {
@@ -36,6 +38,7 @@
     color: #aeaeae;
 }
 
+/* Section de visualização */
 .sectionPreVisualizacaoE {
     display: flex;
     flex-direction: column;
@@ -46,6 +49,7 @@
 
 .dadosEmpresaPreVisualizacao {
     width: 100%;
+    margin: 30px 0;
 }
 
 .dadosEmpresaPreVisualizacao>h3 {
@@ -53,6 +57,7 @@
     text-align: center;
 }
 
+/* Informações de empresa */
 .infoDadosEmpresa {
     display: flex;
     width: 100%;
@@ -71,6 +76,7 @@
     font-size: 1.1vw;
 }
 
+/* Empresa */
 .EmpresaPreVisualizacao {
     display: flex;
     flex-direction: row;
@@ -107,6 +113,7 @@
     filter: brightness(0.5);
 }
 
+/* Separador */
 .sectionPreVisualizacaoE>hr {
     width: 100%;
     height: 0.2vw;
@@ -115,7 +122,8 @@
     margin: 4vw 0;
 }
 
-.boxVagasPreVisualizacao{
+/* Box de vagas */
+.boxVagasPreVisualizacao {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -126,11 +134,13 @@
     font-size: 1.5vw;
 }
 
+/* Container de vagas */
 .containerBoxVagasPV {
     margin: 2vw 0 4vw 0 !important;
     justify-content: center;
 }
 
+/* Botões */
 .buttonPreVisualizacao {
     display: flex;
     justify-content: center;
@@ -144,71 +154,181 @@
     border: 0.15vw solid #160E37;
     color: white;
     border-radius: 0.5vw;
+    transition: all 0.3s ease;
 }
 
 .buttonPreVisualizacao>button:hover {
-    border: 0.15vw solid #160E37;
     background-color: transparent;
     color: #160E37;
 }
 
-.iconVoltar i{
-    font-size: 1.5vw;
+/* Modal */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
-@media screen and (max-width:450px){
-    .headerPreVisualizacao{
+#denunciaCard {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#denunciaCard h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#denunciaCard label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#denunciaCard select,
+#denunciaCard textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+#denunciaCard .denunciaActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#denunciaCard .denunciaActions button {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#denunciaCard .denunciaActions button:first-child {
+    background-color: #ccc;
+}
+
+#denunciaCard .denunciaActions button:first-child:hover {
+    background-color: #bbb;
+}
+
+#denunciaCard .denunciaActions button:last-child {
+    background-color: #b30000;
+}
+
+#denunciaCard .denunciaActions button:last-child:hover {
+    background-color: #c20808ad;
+}
+
+/* Responsividade */
+@media screen and (max-width: 450px) {
+    .headerPreVisualizacao {
         width: 90%;
-        height: 9vw;
+        height: 13vw;
+        border-radius: 30px;
     }
 
-    .infoPreVisualizacao > h3{
+    .infoPreVisualizacao>h3 {
+        font-size: 4vw;
+    }
+
+    .infoPreVisualizacao>h5 {
         font-size: 3vw;
-        color: white;
     }
 
-    .infoPreVisualizacao > h5{
-        font-size: 2vw;
-    }
-
-    .iconVoltar i{
+    .iconVoltar i {
         font-size: 4vw;
     }
 
-    .dadosEmpresaPreVisualizacao > h3{
-        font-size: 4vw;
+    .dadosEmpresaPreVisualizacao>h3 {
+        font-size: 3.3vw;
     }
 
-    .sectionPreVisualizacaoE{
+    .sectionPreVisualizacaoE {
         width: 90%;
     }
 
-    .infoDadosEmpresa{
+    .infoDadosEmpresa {
         height: auto;
-        margin: 1.5vw 0;
+        margin: 10px 0;
+        padding: 5px;
     }
 
-    .infoDadosEmpresa > h5{
+    .infoDadosEmpresa>h5,
+    .infoDadosEmpresa>a {
+        font-size: 2.5vw;
+    }
+
+    .descricaoEmpresaPreVisualizacao>h3,
+    .descricaoEmpresaPreVisualizacao>p {
         font-size: 3vw;
     }
 
-    .infoDadosEmpresa > a{
-        font-size: 3vw;
-    }
-
-    .descricaoEmpresaPreVisualizacao > h3{
-        font-size: 3vw;
-    }
-
-    .descricaoEmpresaPreVisualizacao > p{
-        font-size: 3vw;
-    }
-
-    .EmpresaPreVisualizacao{
+    .EmpresaPreVisualizacao {
         height: auto;
+        box-shadow: 0 0 10px 3px #d3d3d3;
+        margin: 20px 0;
     }
 
-    .boxVagasPreVisualizacao > h3{
+    .boxVagasPreVisualizacao>h3 {
         font-size: 4vw;
+    }
+
+    .buttonPreVisualizacao>button {
+        font-size: 3vw;
+        padding: 10px 20px;
+    }
+
+    #denunciaCard {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #denunciaCard h3 {
+        font-size: 16px;
+    }
+
+    #denunciaCard label {
+        font-size: 12px;
+    }
+
+    #denunciaCard select,
+    #denunciaCard textarea {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    #denunciaCard .denunciaActions button {
+        font-size: 12px;
+        padding: 8px;
     }
 }

@@ -217,7 +217,7 @@ i {
     height: 3.35vw;
 }
 
-#buttonContaSair{
+#buttonContaSair {
     display: none;
 }
 
@@ -272,10 +272,15 @@ i {
 
     .senha-candidato button {
         font-size: 4vw;
-        border: solid 0.5vw #c3c3c3;
+        border: solid 0.4vw #c3c3c3;
         padding: 3vw;
         border-radius: 3vw 0;
         margin-bottom: 50px;
+    }
+
+    .alinhamento-salvar>.senha-salvar{
+        width: 100%;
+        margin-bottom: 0;
     }
 
     .senha-salvar {
@@ -286,18 +291,18 @@ i {
         font-size: 4vw;
     }
 
-    .buttonsConta{
+    .buttonsConta {
         display: flex;
         justify-content: space-between;
     }
 
-    #buttonContaSair{
+    #buttonContaSair {
         display: flex;
         background-color: #9c0000;
         border: 1px solid #9c0000;
     }
 
-    #buttonContaSair:hover{
+    #buttonContaSair:hover {
         background-color: transparent;
         border: 1px solid black;
     }
@@ -309,5 +314,35 @@ i {
 
     .salvar-conta button {
         font-size: 3vw;
+    }
+
+    .alinhamento-salvar {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .branchOfAct>select {
+        width: 18vw;
+        background-color: none;
+        border: 0.1vw solid #c3c3c3;
+        width: 100%;
+        height: 55px;
+        color: #c3c3c3;
+        border-radius: 3vw 0;
+        font-size: 4vw;
+        padding: 3vw;
+    }
+
+    .descricaoEmpresaMobile{
+        width: 100%;
+    }
+
+    .descricaoEmpresaMobile>input{
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 50px !important;
+        height: 200px !important;
+        width: 100% !important;
     }
 }

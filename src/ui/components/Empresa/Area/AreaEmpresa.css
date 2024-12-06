@@ -1,17 +1,17 @@
-#mainAdaptationCompany{
+#mainAdaptationCompany {
     margin-left: 10%;
-    width: 90% ;
+    width: 90%;
 }
 
-.header-company{
+.header-company {
     display: flex;
     height: 100%;
     align-items: center;
     width: 95%;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
-.visualizacao a{
+.visualizacao a {
     background-color: #160E37;
     color: white;
     border: 1px solid #160E37;
@@ -21,12 +21,12 @@
     text-decoration: none;
 }
 
-.dashboard-company{
+.dashboard-company {
     width: 95%;
     padding: 1vw;
 }
 
-.container-dashboard-company{
+.container-dashboard-company {
     width: 100%;
     border: 0.2vw solid rgb(249, 249, 249);
     padding: 2vw;
@@ -36,7 +36,7 @@
     justify-content: space-between;
 }
 
-.left-box-company{
+.left-box-company {
     width: 48%;
     height: 100%;
     display: flex;
@@ -44,7 +44,7 @@
     justify-content: space-between;
 }
 
-.dashboard-company-geral{
+.dashboard-company-geral {
     border: 0.17vw solid #f4f4f4;
     border-radius: 1vw;
     box-shadow: 0 0 1vw 0.1vw #efefef;
@@ -52,7 +52,7 @@
     padding: 1vw 2vw;
 }
 
-.dashboard-geral-title{
+.dashboard-geral-title {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -60,15 +60,15 @@
     flex-wrap: wrap;
 }
 
-.dashboard-geral-title h1{
+.dashboard-geral-title h1 {
     font-size: 1.5vw;
 }
 
-.dashboard-geral-title h2{
+.dashboard-geral-title h2 {
     font-size: 1.4vw;
 }
 
-.dashboard-geral-title i{
+.dashboard-geral-title i {
     background-color: #e8e8e862;
     color: #160E37;
     padding: 1vw;
@@ -77,13 +77,13 @@
 
 }
 
-.container-company-name>p{
+.container-company-name>p {
     font-size: 1.2vw;
     font-weight: 400;
     color: rgb(109, 109, 109);
 }
 
-.candidate-vacancy-company{
+.candidate-vacancy-company {
     display: flex;
     width: 100%;
     align-items: center;
@@ -91,7 +91,7 @@
     padding: 2vw 0;
 }
 
-.box-candidate-vacancy-company{
+.box-candidate-vacancy-company {
     width: 48%;
     border: solid 0.17vw #e4e4e4;
     border-radius: 1vw;
@@ -99,19 +99,19 @@
     font-size: 1vw;
 }
 
-.box-candidate-vacancy-company h1{
+.box-candidate-vacancy-company h1 {
     font-size: 3vw;
     font-weight: 900;
     color: #160E37;
 }
 
-.company-number-geral{
+.company-number-geral {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.company-number-geral i{
+.company-number-geral i {
     color: white;
     background-color: #160E37;
     padding: 1vw;
@@ -120,16 +120,16 @@
     font-weight: bold;
 }
 
-.company-number-geral a{
+.company-number-geral a {
     color: #00BBFF;
     text-decoration: none;
 }
 
-.company-number-geral a:hover{
+.company-number-geral a:hover {
     text-decoration: underline;
 }
 
-.company-performance{
+.company-performance {
     width: 100%;
     border: 3px solid green;
     border-radius: 10px;
@@ -139,22 +139,23 @@
     justify-content: space-evenly;
 }
 
-.company-performance-situation{
+.company-performance-situation {
     width: 80%;
 }
 
-.company-performance-situation>p{
+.company-performance-situation>p {
     font-size: 1.1vw;
 }
 
-.company-performance i{
+.company-performance i {
     color: green;
     font-size: 2vw;
-    
+
 }
 
 .performance-good {
-    background-color: #dff0d8; /* Verde claro */
+    background-color: #dff0d8;
+    /* Verde claro */
     width: 100%;
     border: 0.17vw solid #3c763d;
     border-radius: 1vw;
@@ -162,11 +163,13 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-  }
-  
-  .performance-medium {
-    background-color: #fcf8e3; /* Laranja claro */
-    color: #8a6d3b; /* Laranja escuro */
+}
+
+.performance-medium {
+    background-color: #fcf8e3;
+    /* Laranja claro */
+    color: #8a6d3b;
+    /* Laranja escuro */
     width: 100%;
     border: 3px solid #8a6d3b;
     border-radius: 10px;
@@ -175,15 +178,17 @@
     align-items: center;
     justify-content: space-evenly;
 
-  }
+}
 
-  .performance-medium i{
+.performance-medium i {
     transform: rotate(90deg);
-  }
-  
-  .performance-bad {
-    background-color: #f2dede; /* Vermelho claro */
-    color: #a94442; /* Vermelho escuro */
+}
+
+.performance-bad {
+    background-color: #f2dede;
+    /* Vermelho claro */
+    color: #a94442;
+    /* Vermelho escuro */
     width: 100%;
     border: 3px solid #a94442;
     border-radius: 10px;
@@ -191,42 +196,42 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-  }
+}
 
-  .performance-bad i{
+.performance-bad i {
     transform: rotate(180deg);
-  }
+}
 
 
-.right-box-company{
+.right-box-company {
     width: 48%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.vacancys-create-company{
+.vacancys-create-company {
     width: 100%;
     height: 20%;
 }
 
 
-.vacancys-create h1{
+.vacancys-create h1 {
     font-size: 3vw;
 }
 
-.vacancys-create p{
+.vacancys-create p {
     color: #c3c3c3;
 }
 
-.area-employ-company{
+.area-employ-company {
     height: 100%;
     display: flex;
     justify-content: space-between;
 
 }
 
-.area-employ-company-title{
+.area-employ-company-title {
     border: 0.13vw solid #fcfcfc;
     box-shadow: 0 0 1vw 0.1vw #e7e7e7;
     padding: 1vw;
@@ -234,25 +239,25 @@
     width: 49%;
 }
 
-.area-employ-company-title p{
+.area-employ-company-title p {
     font-size: 1vw;
 }
 
 
-.analistic-vacancy{
+.analistic-vacancy {
     border: 0.17vw solid #f8f8f8;
     box-shadow: 0 0 1vw 0.1vw #eeeeee;
     padding: 1.5vw;
     border-radius: 1vw;
 }
 
-.analistic-situation-container{
+.analistic-situation-container {
     display: flex;
     padding: 1vw 0;
     justify-content: space-between;
 }
 
-.analistic-situation{
+.analistic-situation {
     width: 30%;
     padding: 1vw;
     color: white;
@@ -260,14 +265,14 @@
     font-size: 1vw;
 }
 
-.analistic-situation-number{
+.analistic-situation-number {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.analistic-situation-number a{
+.analistic-situation-number a {
     color: white;
     background-color: #90909064;
     text-decoration: none;
@@ -276,7 +281,7 @@
 }
 
 
-.container-company-name{
+.container-company-name {
     border: 0.17vw solid #f8f8f8;
     box-shadow: 0 0 1vw 0.01vw #f0f0f0;
     border-radius: 1vw;
@@ -288,28 +293,29 @@
     font-weight: 1000;
 }
 
-.area-empresa-content{
+.area-empresa-content {
     width: 95%;
     margin: 5vw 0;
 }
 
-.content-titulo-empresa{
+.content-titulo-empresa {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 1.5vw;
 }
 
-.content-titulo-empresa h2, h1{
+.content-titulo-empresa h2,
+h1 {
     font-size: 1.4vw;
     font-weight: 400;
 }
 
-.performance{
+.performance {
     font-size: 2vw;
 }
 
-.content-titulo-empresa a{
+.content-titulo-empresa a {
     background-color: #160E37;
     padding: 0.5vw 3vw;
     color: white;
@@ -318,10 +324,101 @@
     font-size: 1.2vw;
 }
 
-.content-titulo-empresa button{
+.content-titulo-empresa button {
     background-color: #160E37;
     padding: 0.5vw 3vw;
     color: white;
     text-decoration: none;
     border-radius: 1vw;
+}
+
+@media screen and (max-width: 450px) {
+
+    .header-company{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .company-name>h1{
+        font-size: 5vw;
+    }
+
+    .visualizacao a{
+        display: none;
+    }
+
+    .container-dashboard-company{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .left-box-company, .right-box-company{
+        width: 100%;
+    }
+
+    .left-box-company{
+        margin-bottom: 20px;
+    }
+
+    .dashboard-geral-title h1{
+        font-size: 3.5vw;
+        font-weight: 600;
+    }
+
+    .dashboard-geral-title h2{
+        font-size: 3.5vw !important;
+        font-weight: 400 !important;
+    }
+
+    .dashboard-geral-title>a>i{
+        font-size: 2vw;
+    }
+
+    .dashboard-company-geral>p{
+        font-size: 2.9vw !important;
+        font-weight: 400;
+    }
+
+    .box-candidate-vacancy-company{
+        font-size: 2.7vw;
+        padding: 15px 5px;
+        text-align: center;
+        border: solid 2.4px #e6e6e6;
+        border-radius: 10px;
+    }
+
+    .company-number-geral a{
+        display: none;
+    }
+
+    .company-number-geral{
+        justify-content: center;
+    }
+
+    .company-performance-situation>p{
+        font-size: 3vw !important;
+    }
+
+    .container-company-name{
+        display: none;
+    }
+
+    .analistic-vacancy-company{
+        margin: 13px 0;
+    }
+
+    .area-employ-company-title>p{
+        font-size: 2.3vw !important;
+    }
+
+    .analistic-situation p{
+        color: white;
+        font-size: 2.5vw;
+    }
+
+    .analistic-situation-container{
+        padding: 10px 0;
+    }
 }

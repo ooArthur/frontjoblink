@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axiosInstance from '../../../../source/axiosInstance';
 import { Link } from 'react-router-dom';
 import Menu from '../Menu/Menu';
+import MenuMobile from '../MenuMobile/MenuMobile';
 import CompanyName from '../CompanyName/CompanyName';
 import './ListarCandidato.css';
 import BoxCandidatos from '../BoxCandidatos/BoxCandidatos';
@@ -21,6 +22,7 @@ export default function ListarCandidatos() {
     const [selectedArea, setSelectedArea] = useState('');
     const [selectedExperience, setSelectedExperience] = useState('');
     const [selectedSkills, setSelectedSkills] = useState([]);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     
     useEffect(() => {
         const fetchCandidates = async () => {
@@ -224,7 +226,8 @@ export default function ListarCandidatos() {
 
     return (
         <>
-            <Menu setMenuOpen={setMenuOpen} />
+            {windowWidth > 450 && <Menu setMenuOpen={setMenuOpen} />}
+            {windowWidth < 450 && <MenuMobile />}
             <main className={`blurMain ${menuOpen ? 'blurred' : ''}`}>
                 <section className="cabecalhoCandidato">
                     <div>

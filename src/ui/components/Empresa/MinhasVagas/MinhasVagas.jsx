@@ -6,6 +6,7 @@ import axiosInstance from '../../../../source/axiosInstance';
 import '../BoxVagas/BoxVagas.css';
 import BoxVagas from '../BoxVagas/BoxVagas';
 import Menu from '../Menu/Menu';
+import MenuMobile from '../MenuMobile/MenuMobile';
 import CompanyName from '../CompanyName/CompanyName';
 import './MinhasVagas.css';
 import { toast } from 'sonner';
@@ -17,6 +18,7 @@ export default function MinhasVagas() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [newVaga, setNewVaga] = useState(false);
   const [jobVacancies, setJobVacancies] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [vagaData, setVagaData] = useState({
     jobTitle: '',
     jobDescription: '',
@@ -196,7 +198,8 @@ export default function MinhasVagas() {
 
   return (
     <>
-      <Menu setMenuOpen={setMenuOpen} />
+      {windowWidth > 450 && <Menu setMenuOpen={setMenuOpen} />}
+      {windowWidth < 450 && <MenuMobile />}
       <main className={`blurMain ${menuOpen ? 'blurred' : ''}`}>
         <section className="cabecalhoCandidato">
           <div>
