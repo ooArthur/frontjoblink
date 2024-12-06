@@ -514,11 +514,11 @@ function Candidato() {
                               value={language.name}
                               onChange={(e) => handleLanguageChange(index, 'name', e.target.value)}
                             >
-                              {languageOptions.map((option, i) => (
-                                <>
-                                  <option value="Idioma">
+                              <option value="Idioma">
                                     Selecione um idioma
                                   </option>
+                              {languageOptions.map((option, i) => (
+                                <>
                                   <option key={i} value={option}>
                                     {option}
                                   </option>

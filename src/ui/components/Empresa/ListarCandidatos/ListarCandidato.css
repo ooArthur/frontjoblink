@@ -247,6 +247,7 @@
     font-size: 1vw;
     background-color: rgb(233, 233, 233);
     text-align: center;
+    height: 3vw;
 }
 
 @media screen and (max-width: 450px) {

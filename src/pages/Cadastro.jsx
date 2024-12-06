@@ -811,7 +811,7 @@ export default function Cadastro() {
                             </label>
                             <label className='selectMobile'>
                               <p>Pretenção salarial:</p>
-                              <select value={salaryCurrency} onChange={(e) => setSalaryCurrency(e.target.value)}>
+                              <select style={{width: '100%', marginBottom: '10px'}} value={salaryCurrency} onChange={(e) => setSalaryCurrency(e.target.value)}>
                                 <option value="R$">R$ - Real Brasileiro</option>
                                 <option value="US$">US$ - Dólar Americano</option>
                                 <option value="€">€ - Euro</option>
