@@ -215,17 +215,17 @@ export function TodasVagas() {
                                             ))}
                                         </div>
                                     </div>
-                                    <div className="filter-option-title">
-                                        <h3 style={{ fontWeight: '500', fontSize: '1.5vw' }}>{selectedFilter}</h3>
-                                    </div>
-                                    <div className="filter-itens">
+                                    <div className="filter-itens salarioItens">
                                         {renderFilterOptions()}
                                         {selectedFilter === 'Salário' && (
                                             <>
-                                                <h5>Selecione apenas UM filtro de salário</h5>
+                                                <h5>Salário</h5>
                                                 <div>
-                                                    <p>Tipo de moeda:</p>
-                                                    <select value={salaryCurrency} onChange={(e) => setSalaryCurrency(e.target.value)}>
+                                                    {/* <p>Tipo de moeda:</p> */}
+                        
+                                                </div>
+                                                <div className="salary-range">
+                                                <select value={salaryCurrency} onChange={(e) => setSalaryCurrency(e.target.value)}>
                                                         <option value="R$">R$ - Real Brasileiro</option>
                                                         <option value="US$">US$ - Dólar Americano</option>
                                                         <option value="€">€ - Euro</option>
@@ -237,8 +237,7 @@ export function TodasVagas() {
                                                         <option value="₹">₹ - Rúpia Indiana</option>
                                                         <option value="₽">₽ - Rublo Russo</option>
                                                     </select>
-                                                </div>
-                                                <div className="salary-range">
+                                                    <span>Salário mínimo: {salaryCurrency}{salaryFilter}</span>
                                                     <input
                                                         type="range"
                                                         min="0"
@@ -247,8 +246,10 @@ export function TodasVagas() {
                                                         value={salaryFilter}
                                                         onChange={(e) => setSalaryFilter(parseFloat(e.target.value))}
                                                     />
-                                                    <span>Salário mínimo: {salaryCurrency}{salaryFilter}</span>
-                                                    <button onClick={() => setSalaryFilter(0)}>Resetar</button>
+                                                </div>
+
+                                                <div>
+                                                <button onClick={() => setSalaryFilter(0)}>Resetar</button>
                                                     <button onClick={() => {
                                                         setAppliedFilters([...appliedFilters, `Salário: ${salaryCurrency} ${salaryFilter}`]);
                                                     }}>Confirmar</button>

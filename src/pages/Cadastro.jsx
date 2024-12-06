@@ -124,7 +124,13 @@ export default function Cadastro() {
     }
 
 /*     const formattedCep = cep.replace(/(\d{5})(\d{3})/, "$1-$2"); */
-    const formattedTelephone = formData.candidatePhone?.replace(/\D/g, '').replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3") || '';
+const formattedTelephone = formData.candidatePhone
+?.replace(/\D/g, '') // Remove caracteres não numéricos
+.replace(
+  /^(\d{2})(\d{4,5})(\d{4})$/,
+  (_, p1, p2, p3) => `(${p1}) ${p2}-${p3}`
+) || '';
+
 
     const combinedSalary = `${salaryCurrency || 'R$'} ${salaryValue}`;
 

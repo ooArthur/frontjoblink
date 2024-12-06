@@ -40,7 +40,7 @@ export default function BoxVagas({ vacancies }) {
                             <div className='content-infos-minhas-vagas'>
                                 <div className='content-titulo-minhas-vagas'>
                                     <h1>{job.jobTitle}</h1>
-                                    <Link to={`/editar-vaga/${job._id}`}>
+                                    <Link className='iconDetalhesVaga' to={`/editar-vaga/${job._id}`}>
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </Link>
                                 </div>

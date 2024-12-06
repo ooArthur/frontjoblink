@@ -8,7 +8,7 @@ import celularHome from '../assets/images/celularHome.svg';
 import faq from '../assets/images/FAQ.svg';
 // Importando as imagens do carrossel
 import carrossel1 from '../assets/images/Carrossel1.svg';
-import carrossel2 from '../assets/images/Carrossel2.svg';
+import carrossel2 from '../assets/images/Carrossel6.svg';
 import carrossel3 from '../assets/images/Carrossel3.svg';
 import carrossel4 from '../assets/images/Carrossel4.svg';
 import carrossel5 from '../assets/images/Carrossel6.svg';

@@ -129,9 +129,9 @@ export default function Empresa() {
           <div className='company-name'>
             <CompanyName />
           </div>
-          <div className='visualizacao'>
+          {/* <div className='visualizacao'>
             <Link to="#">Pré-visualização</Link>
-          </div>
+          </div> */}
         </section>
 
         <section className='dashboard-company'>
@@ -250,7 +250,7 @@ export default function Empresa() {
           <BoxVagas />
         </section>
 
-        <section className='area-empresa-content'>
+        <section id='curriculosRecomendadosMobile' className='area-empresa-content'>
           <div className='content-titulo-empresa'>
             <h1>Currículos Recomendados</h1>
             <Link to='/listar-candidatos'>Ver mais</Link>

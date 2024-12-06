@@ -292,9 +292,6 @@ export default function ListarCandidatos() {
                                         </div>
 
                                     </div>
-                                    <div className="filter-option-title">
-                                        <h3 style={{fontWeight: '500', fontSize: '1.5vw'}}>{selectedFilter}</h3>
-                                    </div>
                                     <div className="filter-itens">
                                         {renderFilterOptions()}
                                     </div>

@@ -186,6 +186,36 @@ button.selected {
     color: white;
 }
 
+.filter-itens h5{
+    font-size: 1.3vw;
+
+}
+
+.salarioItens{
+    display: flex;
+    flex-direction: row;
+    width: 40vw;;
+    margin-left: 5vw;
+}
+
+.salarioItens > div > p{
+    font-size: 1.25vw;
+}
+
+.salarioItens > div > select{
+    width: 6vw;
+    height: 2vw;
+}
+
+.filter-itens > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80vw;
+    align-items: center;
+}
+
 
 @media screen and (max-width:450px){
     .container-todas-vagas{

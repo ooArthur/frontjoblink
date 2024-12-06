@@ -90,3 +90,56 @@
     font-size: 1.2vw !important;
     color: #b4b4b4;
 }
+
+@media screen and (max-width:450px) {
+
+    .criar-vagas button{
+        font-size: 3.3vw;
+        padding: 20px 40px;
+    }
+
+    .content-minhas-vagas{
+        width: 100% !important;
+    }
+
+    .content-infos-minhas-vagas{
+        width: 100% !important;
+        height: 27vw !important;
+        padding: 10px 20px !important;
+    }
+
+    .content-titulo-minhas-vagas h1{
+        font-size: 3.5vw !important;
+        font-weight: bold;
+    }
+
+    .area-atuacao{
+        font-size: 2.7vw;
+    }
+
+    .content-infos-minhas-vagas h4{
+        font-size: 2.4vw !important;
+    }
+
+    .content-infos-minhas-vagas p{
+        font-size: 2vw !important;
+        font-weight: 300;
+    }
+
+    .content-area-minhas-vagas a{
+        font-size: 3vw !important;
+        padding: 7px 0 !important;
+    }
+
+    .iconDetalhesVaga>i{
+        font-size: 2vw !important;
+        padding: 9px !important;
+        background-color: #160e37 !important;
+        color: white !important;
+    }
+
+    .content-minhas-vagas{
+        box-shadow: 0 0 10px 3px rgb(134, 134, 134) !important;
+        border-radius: 3px !important;
+    }
+}

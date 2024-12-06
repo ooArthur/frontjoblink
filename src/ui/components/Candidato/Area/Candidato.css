@@ -727,7 +727,7 @@ button:hover+.tooltip {
 
     .cabecalhoCandidato>div {
         width: 100%;
-        margin: 5vw 0;
+        padding: 5vw 0;
     }
 
     .cabecalhoCandidato button.baixar-curriculo {
@@ -764,6 +764,7 @@ button:hover+.tooltip {
     }
 
     .CVInfo>div>div>button {
+        width: 100%;
         display: flex;
         color: black;
         border: #dadada solid 0.3vw;

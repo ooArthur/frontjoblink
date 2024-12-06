@@ -250,11 +250,11 @@ i {
     }
 
     .camposCandidato>div input {
-        font-size: 4vw;
+        font-size: 3.5vw;
         border: solid 0.4vw #c3c3c3;
         padding: 3vw;
         border-radius: 3vw 0;
-        width: 100%;
+        width: 100%;  
     }
 
     .targetSalaryAccount>div {
@@ -342,7 +342,35 @@ i {
         display: flex !important;
         flex-direction: column !important;
         min-height: 50px !important;
-        height: 200px !important;
+        max-height: 200px !important;
         width: 100% !important;
+    }
+
+    .salvar-empresa button{
+        font-size: 3vw;
+        padding: 15px 40px;
+        margin: 20px 0;
+    }
+
+    #buttonSalvarEmpresa:hover{
+        background-color: transparent;
+        color: #160E37;
+        border: 1px solid #160E37;
+    }
+
+    .salvar-empresa{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    #buttonSairEmpresa {
+        background-color: #9c0000;
+        border: 1px solid #9c0000;
+    }
+
+    #buttonSairEmpresa:hover {
+        background-color: transparent;
+        color: #9c0000;
     }
 }

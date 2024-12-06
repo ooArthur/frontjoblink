@@ -9,6 +9,7 @@
     align-items: center;
     width: 95%;
     justify-content: space-between;
+    margin-left: 2vw;
 }
 
 .visualizacao a {
@@ -341,7 +342,7 @@ h1 {
     }
 
     .company-name>h1{
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     .visualizacao a{
@@ -352,6 +353,15 @@ h1 {
         display: flex;
         flex-direction: column;
         margin: 10px 0;
+        padding: 10px 15px;
+    }
+
+    .dashboard-geral-title{
+        padding: 5px;
+    }
+
+    .dashboard-company-geral, .container-dashboard-company,.area-employ-company-title, .analistic-vacancy {
+        box-shadow: 0 0 10px 3px rgb(197, 197, 197);
     }
 
     .left-box-company, .right-box-company{
@@ -364,7 +374,7 @@ h1 {
 
     .dashboard-geral-title h1{
         font-size: 3.5vw;
-        font-weight: 600;
+        font-weight: 700;
     }
 
     .dashboard-geral-title h2{
@@ -376,9 +386,18 @@ h1 {
         font-size: 2vw;
     }
 
+    .dashboard-company-geral{
+        margin: 18px 0;
+    }
+
+    .area-employ-company-title{
+        border-left: 10px solid rgb(208, 201, 0) !important;
+    }
+
     .dashboard-company-geral>p{
         font-size: 2.9vw !important;
         font-weight: 400;
+        padding: 10px 0;
     }
 
     .box-candidate-vacancy-company{
@@ -419,6 +438,51 @@ h1 {
     }
 
     .analistic-situation-container{
-        padding: 10px 0;
+        padding: 15px 0;
+    }
+
+    .analistic-situation{
+        height: 45px;
+    }
+
+    .analistic-situation-number>h2{
+        font-size: 2.3vw;
+    }
+
+    .content-titulo-empresa h2, h1{
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .content-titulo-empresa a{
+        padding: 10px 20px;
+        font-size: 3vw;
+        border: 1px solid #160E37;
+    }
+
+    .content-titulo-empresa a:hover{
+        background-color: transparent;
+        color: #160E37;
+    }
+
+    .area-empresa-content{
+        margin: 50px 0;
+    }
+
+    #curriculosRecomendadosMobile{
+        margin-bottom: 100px;
+    }
+
+    .container-vagas-candidato>p{
+        font-size: 3vw;
+        color: #c3c3c3;
+    }
+
+    .area-employ-company-title p{
+        font-size: 2.4vw;
+    }
+
+    .area-employ-company{
+        display: flex !important;
     }
 }

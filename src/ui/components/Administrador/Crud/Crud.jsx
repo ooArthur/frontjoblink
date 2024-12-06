@@ -4,8 +4,10 @@ import Menu from "../Menu/Menu";
 import BoxCandidatos from "./BoxCandidatos/BoxCandidatos.jsx";
 import BoxVagas from "./BoxVaga/BoxVaga.jsx";
 import BoxEmpresa from "./BoxEmpresa/BoxEmpresa.jsx";
+import BoxAdmin from "./BoxAdmin/BoxAdmin.jsx";
 import AdministradorName from "../AdministradorName/AdministradorName";
 import './Crud.css';
+import { toast } from 'sonner';
 
 function Crud() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +15,7 @@ function Crud() {
   const [showModalCandidate, setShowModalCandidate] = useState(false);
   const [showModalCompany, setShowModalCompany] = useState(false);
   const [showModalVacancy, setShowModalVacancy] = useState(false);
+  const [showModalAdmin, setShowModalAdmin] = useState(false);
   const [companies, setCompanies] = useState([]);
   const [candidateData, setCandidateData] = useState({
     candidateName: '',
@@ -79,6 +82,11 @@ function Crud() {
     jobArea: ''
   });
 
+  const [adminData, setAdminData] = useState({
+    email: '',
+    password: ''
+  })
+
   const employmentTypes = ['CLT', 'PJ', 'Temporário', 'Jovem Aprendiz', 'Estágio'];
   const jobAreas = [
     'Tecnologia', 'Saúde', 'Educação', 'Finanças', 'Engenharia', 'Marketing',
@@ -125,6 +133,8 @@ function Crud() {
         return <BoxVagas />;
       case 'Empresas':
         return <BoxEmpresa />;
+      case 'Administradores':
+        return <BoxAdmin />;
       default:
         return <BoxCandidatos />;
     }
@@ -135,6 +145,8 @@ function Crud() {
       setShowModalCompany(true);
     } else if (activeComponent === 'Vagas') {
       setShowModalVacancy(true);
+    } else if(activeComponent === 'Administradores'){
+      setShowModalAdmin(true);
     } else {
       setShowModalCandidate(true);
     }
@@ -144,6 +156,7 @@ function Crud() {
     setShowModalCandidate(false);
     setShowModalCompany(false);
     setShowModalVacancy(false);
+    setShowModalAdmin(false);
   };
 
   const handleSubmitVacancy = async (e) => {
@@ -177,7 +190,7 @@ function Crud() {
 
       await axiosInstance.post('/api/user/company/vacancy/create-vacancy', formattedVacancyData);
       toast.success("Vaga criada com sucesso!");
-      handleCloseModalVacancy();
+      handleCloseModal();
     } catch (error) {
       console.error("Erro ao criar vaga:", error);
       toast.error("Erro ao criar vaga.");
@@ -186,42 +199,87 @@ function Crud() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    // Verifica se o campo pertence a um objeto aninhado
-    if (name.startsWith("jobLocation.")) {
-      const subfield = name.split('.')[1];
-      setJobData((prevData) => ({
+  
+    if (activeComponent === 'Administradores') {
+      setAdminData((prevData) => ({
         ...prevData,
-        jobLocation: {
-          ...prevData.jobLocation,
-          [subfield]: value
-        }
+        [name]: value, // Atualiza o email ou password
       }));
-    } else if (name.startsWith("workSchedule.")) {
-      const subfield = name.split('.')[1];
-      setJobData((prevData) => ({
-        ...prevData,
-        workSchedule: {
-          ...prevData.workSchedule,
-          [subfield]: value
-        }
-      }));
-    } else {
-      // Atualiza campos diretos
-      setJobData((prevData) => ({
-        ...prevData,
-        [name]: value
-      }));
+    } else if (activeComponent === 'Empresas') {
+      // Atualiza dados da empresa
+      if (name.startsWith('address.')) {
+        const subfield = name.split('.')[1];
+        setCompanyData((prevData) => ({
+          ...prevData,
+          address: {
+            ...prevData.address,
+            [subfield]: value,
+          },
+        }));
+      } else {
+        setCompanyData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }
+    } else if (activeComponent === 'Candidatos') {
+      // Atualiza dados do candidato
+      if (name.startsWith('candidateAddress.')) {
+        const subfield = name.split('.')[1];
+        setCandidateData((prevData) => ({
+          ...prevData,
+          candidateAddress: {
+            ...prevData.candidateAddress,
+            [subfield]: value,
+          },
+        }));
+      } else {
+        setCandidateData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }
+    } else if (activeComponent === 'Vagas') {
+      // Atualiza dados da vaga
+      if (name.startsWith('jobLocation.')) {
+        const subfield = name.split('.')[1];
+        setJobData((prevData) => ({
+          ...prevData,
+          jobLocation: {
+            ...prevData.jobLocation,
+            [subfield]: value,
+          },
+        }));
+      } else if (name.startsWith('workSchedule.')) {
+        const subfield = name.split('.')[1];
+        setJobData((prevData) => ({
+          ...prevData,
+          workSchedule: {
+            ...prevData.workSchedule,
+            [subfield]: value,
+          },
+        }));
+      } else {
+        setJobData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }
     }
   };
+  
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = activeComponent === 'Empresas'
-      ? '/api/user/company/create-company'
-      : '/api/user/candidate/create-candidate';
-
+  
+    const endpoint = 
+      activeComponent === 'Empresas'
+        ? '/api/user/company/create-company'
+        : activeComponent === 'Administradores'
+        ? '/api/user/create-admin'
+        : '/api/user/candidate/create-candidate';
+  
     // Filtra `companyData` com base no tipo de empresa selecionado
     const filteredCompanyData = { ...companyData };
     if (companyData.type === 'Empresa Empregadora') {
@@ -234,20 +292,47 @@ function Crud() {
       delete filteredCompanyData.employerCompanyData;
       delete filteredCompanyData.crhCompanyData;
     }
-
-    const dataToSend = activeComponent === 'Empresas' ? filteredCompanyData : candidateData;
-
+  
+    const dataToSend =
+      activeComponent === 'Empresas'
+        ? filteredCompanyData
+        : activeComponent === 'Administradores'
+        ? adminData
+        : candidateData;
+  
     console.log('Enviando dados:', dataToSend);
-
+  
     try {
       await axiosInstance.post(endpoint, dataToSend);
-      toast.success(`${activeComponent === 'Empresas' ? 'Empresa' : 'Candidato'} criado com sucesso!`);
+      toast.success(
+        `${activeComponent === 'Empresas' ? 'Empresa' : activeComponent === 'Administradores' ? 'Administrador' : 'Candidato'} criado com sucesso!`
+      );
       handleCloseModal();
     } catch (error) {
-      console.error(`Erro ao criar ${activeComponent === 'Empresas' ? 'empresa' : 'candidato'}:`, error);
-      toast.error(`Erro ao criar ${activeComponent === 'Empresas' ? 'empresa' : 'candidato'}.`);
+      console.error(
+        `Erro ao criar ${
+          activeComponent === 'Empresas'
+            ? 'empresa'
+            : activeComponent === 'Administradores'
+            ? 'administrador'
+            : 'candidato'
+        }:`,
+        error
+      );
+
+      console.log("Admin Log: " + adminData.password)
+      toast.error(
+        `Erro ao criar ${
+          activeComponent === 'Empresas'
+            ? 'empresa'
+            : activeComponent === 'Administradores'
+            ? 'administrador'
+            : 'candidato'
+        }.`
+      );
     }
   };
+  
 
   const [selectedDays, setSelectedDays] = useState([]);
   const [qualificationInput, setQualificationInput] = useState('');
@@ -345,12 +430,34 @@ function Crud() {
             <button onClick={handleOpenModal}>+</button>
           </div>
           <div className="navCrud">
-            <nav>
-              <button className={activeComponent === 'Candidatos' ? 'active-button' : 'normal-button'} onClick={() => setActiveComponent('Candidatos')}>Candidatos</button>
-              <button className={activeComponent === 'Empresas' ? 'active-button' : 'normal-button'} onClick={() => setActiveComponent('Empresas')}>Empresas</button>
-              <button className={activeComponent === 'Vagas' ? 'active-button' : 'normal-button'} onClick={() => setActiveComponent('Vagas')}>Vagas</button>
-            </nav>
-          </div>
+  <nav>
+    <button 
+      className={activeComponent === 'Candidatos' ? 'active-button' : 'normal-button'} 
+      onClick={() => setActiveComponent('Candidatos')}
+    >
+      Candidatos
+    </button>
+    <button 
+      className={activeComponent === 'Empresas' ? 'active-button' : 'normal-button'} 
+      onClick={() => setActiveComponent('Empresas')}
+    >
+      Empresas
+    </button>
+    <button 
+      className={activeComponent === 'Vagas' ? 'active-button' : 'normal-button'} 
+      onClick={() => setActiveComponent('Vagas')}
+    >
+      Vagas
+    </button>
+    <button 
+      className={activeComponent === 'Administradores' ? 'active-button' : 'normal-button'} 
+      onClick={() => setActiveComponent('Administradores')}
+    >
+      Administradores
+    </button>
+  </nav>
+</div>
+
           <div>
             {renderComponent()}
           </div>
@@ -748,6 +855,40 @@ function Crud() {
               <button id='buttonCrud' type="submit">Criar Vaga</button>
               <button id='buttonCrud' type="button" onClick={handleCloseModal}>Cancelar</button>
             </form>
+
+          </div>
+        </div>
+      )}
+
+{showModalAdmin && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal cardCrud" onClick={(e) => e.stopPropagation()}>
+            <h2>Criar Novo Admnistrador</h2>
+            <form onSubmit={handleSubmit}>
+  <div>
+    <label>Email:</label>
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="E-mail" 
+      onChange={handleInputChange} 
+      required 
+    />
+  </div>
+
+  <div>
+    <label>Senha:</label>
+    <input 
+      type="password" 
+      name="password" 
+      placeholder="Senha" 
+      onChange={handleInputChange} 
+      required 
+    />
+  </div>
+
+  <button id='buttonCrud' type="submit">Criar Admnistrador</button>
+</form>
 
           </div>
         </div>

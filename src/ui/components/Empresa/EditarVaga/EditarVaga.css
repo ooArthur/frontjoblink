@@ -314,3 +314,99 @@
     background-color: white !important;
     color: red !important;
 }
+
+@media screen and (max-width:450px){
+    .content-vaga-titulo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+    }
+
+    .vaga-titulo{
+        height: 20vh;
+    }
+
+    .vaga-titulo-nome p{
+        text-align: center;
+    }
+
+    .empresa-data p{
+        font-size: 3vw;
+    }
+
+    .content-vaga-titulo button{
+        font-size: 3vw;
+        width: auto;
+        padding: 3vw;
+    }
+
+    .container-dados-vaga{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-dados-vaga{
+        width: 100%;
+    }
+
+    .local-dados-vaga h1{
+        color: white;
+    }
+
+    .tempo-dados-vaga h1{
+        color: white;
+    }
+
+    .description-dados-vaga{
+        padding: 3vw 0;
+    }
+
+    .description-dados-vaga p{
+        color: white;
+        font-size: 3vw;
+        padding: 2.5vw 0;
+    }
+
+    .mapItens li{
+        font-size: 3vw;
+    }
+
+    .list-dados-vaga{
+        padding: 3vw 0;
+    }
+
+    .list-dados-vaga h1{
+        color: white;
+    }
+
+    .balanco-dados-vaga{
+        width: 100%;
+    }
+
+    .balanco-dados-vaga h1{
+        color: white;
+    }
+
+    .analise-dados-vaga p{
+        color: white;
+        font-size: 4vw;
+    }
+
+    .analise-dados-vaga i{
+        font-size: 3vw;
+    }
+
+    .box-analise-dados-vaga p{
+        color:  rgb(195, 195, 195); 
+        font-size: 3.5vw;
+    }
+
+    .box-analise-dados-vaga h1{
+        color: rgb(195, 195, 195);
+        font-size: 3vw;
+    }
+}

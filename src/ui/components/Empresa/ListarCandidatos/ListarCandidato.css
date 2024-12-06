@@ -9,7 +9,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 50%;
     box-sizing: border-box;
-    z-index: 1000; /* Garantir que o card fique acima do overlay */
+    z-index: 1000;
 }
 
 /* Header do card com título e botão de fechar */
@@ -62,7 +62,7 @@
 }
 
 .desc-info-modal{
-    width: 45%;
+    /* width: 45%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -196,6 +196,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 1vw;
+    margin-top: 5%;
 }
 
 .filter-options button {
@@ -209,6 +210,10 @@
     font-size: 1vw;
 }
 
+.filter-option-title{
+    margin-top: 5vw;
+}
+
 
 .applied-filters{
     text-align: center;
@@ -218,11 +223,12 @@
 }
 
 .applied-filters-selected{
-    height: 10vw;
+    height: 4vw;
     overflow: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 5vw;
 }
 
 .filter-button {
@@ -258,6 +264,11 @@
 
     .modal-header{
         font-size: 4vw;
+        margin: 8px 0;
+    }
+
+    .modal-header>h2{
+        font-size: 5vw;
     }
 
     .modal-content-filter{
@@ -280,8 +291,15 @@
         font-size: 4vw;
     }
 
+    .modal-header button:hover{
+        color: #acacac !important;
+        border: none;
+        transform: scale(1);
+    }
+
     .filter-itens{
         gap: 10px 20px;
+        margin-top: 30%;
     }
 
     .filter-options{
@@ -294,84 +312,76 @@
     }
 
     .applied-filters-selected{
-        height: auto;
-        overflow: hidden !important;
-        margin: 20px 0;
+        height: 12vw;
+        overflow: auto !important;
+        margin: 0;
     }
 
     .applied-filters-selected>span{
         font-size: 3vw;
         margin-top: 8px;
+
     }
 
     .filter-options h3{
         font-size: 3vw !important;
     }
 
+    .filter-tag{
+        width: 80%;
+    }
+
     .button-filter button{
         font-size: 3vw;
     }
-}
 
-@media screen and (max-width: 450px) {
-    .filter-modal{
-        height: 80vh;
+    .applied-filters{
+        margin: 0;
+    }
+
+    .applied-filters span{
+        height: auto;
+    }
+
+    .candidate-card{
         width: 90vw;
-    }
-
-    .modal-header{
-        font-size: 4vw;
-    }
-
-    .modal-content-filter{
-        height: 87%;
-    }
-
-    .sidebar{
-        width: 35%;
-    }
-
-    .sidebar button.active, .sidebar button.disable{
-        font-size: 3vw;
-    }
-
-    .modal-overlay{
-        z-index: 10000000000000000 !important;
-    }
-
-    .modal-header button{
-        font-size: 4vw;
-    }
-
-    .filter-itens{
-        gap: 10px 20px;
-    }
-
-    .filter-options{
-        padding: 10px;
-    }
-
-    .filter-options button {
-        font-size: 2vw;
-        width: 40%;
-    }
-
-    .applied-filters-selected{
         height: auto;
-        overflow: hidden !important;
-        margin: 20px 0;
     }
 
-    .applied-filters-selected>span{
+    .area-atuacao-modal h2{
+        font-size: 4vw;
+    }
+
+    .desc-info-modal h3{
+        font-size: 3.1vw;
+        font-weight: 400;
+    }
+
+    .desc-info-modal p{
+        font-size: 2.7vw;
+        font-weight: 300;
+        padding: 0 5px;
+    }
+
+    .desc-candidato-modal p{
         font-size: 3vw;
-        margin-top: 8px;
+        width: 100%;
     }
 
-    .filter-options h3{
-        font-size: 3vw !important;
+    .desc-candidato-modal{
+        padding: 10px 30px;
     }
 
-    .button-filter button{
-        font-size: 3vw;
+    .desc-info-modal2{
+        justify-content: start !important;
+    }
+
+    .acessar-perfil-button a{
+        padding: 10px 20px !important;
+        font-size: 2.7vw;
+    }
+
+    .desc-info-modal{
+        width: 47%;
     }
 }

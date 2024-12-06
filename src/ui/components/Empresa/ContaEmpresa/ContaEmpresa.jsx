@@ -514,9 +514,9 @@ export default function ContaEmpresa() {
                             </div>
 
                             <div className='salvar-empresa'>
-                                <button type="submit">Salvar Alterações</button>
+                                <button id="buttonSalvarEmpresa" type="submit">Salvar Alterações</button>
+                                <button id="buttonSairEmpresa" type="submit">Sair da Conta</button>
                             </div>
-
                         </div>
 
                     </form>

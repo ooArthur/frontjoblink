@@ -381,9 +381,10 @@ export default function MinhasVagas() {
                         <option value="Design">Design</option>
                         <option value="Operações">Operações</option>
                         <option value="Construção Civil">Construção Civil</option>
+                        <option value="Outros">Outros</option>
                       </select>
                     </div>
-                    <button style={{ marginTop: '1vw' }} className='button-modal-vagas' type="submit">Criar</button>
+                    <button style={{ marginTop: '1vw' }} className='button-modal-vagas buttonCriarVagaMobile' type="submit">Criar</button>
                   </form>
                 </div>
               </div>

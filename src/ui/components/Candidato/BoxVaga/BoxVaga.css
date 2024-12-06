@@ -554,7 +554,7 @@
 
     .vaga-cardInfo {
         width: 90vw;
-        height: 70vh;
+        height: 80vh;
     }
 
     .vagaArea {
@@ -581,6 +581,12 @@
 
     .vagaInfo p {
         font-size: 3vw;
+    }
+
+    .vagaContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .vagaDescription p {
@@ -613,13 +619,19 @@
 
     .buttonDenuncia {
         font-size: 3vw;
+        padding: 15px 40px;
         color: white;
+        margin-bottom: 10px;
     }
 
     .buttonEnviarCV {
         font-size: 3vw;
         padding: 10px 20px;
         color: white;
+    }
+
+    .carousel-button:disabled, .button-Cleft, .button-Cright{
+        font-size: 5vw !important;
     }
 
 }

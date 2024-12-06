@@ -1,14 +1,17 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Menu from "../Menu/Menu";
 import MenuMobile from '../MenuMobile/MenuMobile';
 import CompanyName from '../CompanyName/CompanyName';
 import { useFavorites } from '../../../../Context/FavoritesContext';
+import { Link } from 'react-router-dom';
 
 export function VagasFavoritas() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites(); // Pega as funções do contexto de favoritos
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [selectedCandidate, setSelectedCandidate] = useState(null);
+  const cardRef = useRef(null);
 
   // Filtra os favoritos para mostrar apenas candidatos
   const favoriteCandidates = favorites.filter(item => item.role === 'Candidate');
@@ -42,6 +45,13 @@ export function VagasFavoritas() {
     return age;
   }
 
+  function truncateText(text, maxLength) {
+    if (typeof text !== 'string') {
+      return ''; // Retorna uma string vazia se o texto não for uma string
+    }
+    
+    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  }
 
   return (
     <>
@@ -98,6 +108,53 @@ export function VagasFavoritas() {
           )}
 
         </section>
+
+        {selectedCandidate && (
+        <>
+          <div className="modal-overlay">
+            <div className="candidate-card" ref={cardRef}>
+              <div className="modal-header">
+                <h2>{selectedCandidate.candidateName}</h2>
+                <button onClick={() => setSelectedCandidate(null)}>
+                  <i className="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <div className="area-atuacao-modal">
+                <h2>{selectedCandidate.areaOfInterest}</h2>
+              </div>
+              <div className="infos-modal">
+                <div className="desc-info-modal desc-info-modal2">
+                  <h3>Idade:</h3>
+                  <p>{ageCalculator(selectedCandidate.candidateBirth)}</p>
+                </div>
+                <div className="desc-info-modal">
+                  <h3>Pretensão salarial:</h3>
+                  <p>{selectedCandidate.candidateTargetSalary}</p>
+                </div>
+              </div>
+              <div className="infos-modal">
+                <div className="desc-info-modal">
+                  <h3>Endereço:</h3>
+                  <p>
+                    {selectedCandidate.candidateAddress?.city},{" "}
+                    {selectedCandidate.candidateAddress?.state}
+                  </p>
+                </div>
+                <div className="desc-info-modal desc-info-modal2">
+                  <h3>Telefone:</h3>
+                  <p>{selectedCandidate.candidatePhone}</p>
+                </div>
+              </div>
+              <div className="desc-candidato-modal">
+                <p>{truncateText(selectedCandidate.candidateAbout, 100)}</p>
+              </div>
+              <div className="acessar-perfil-button">
+                <Link to={`/pre-visualizacao/${selectedCandidate?._id}`}>{'Acessar Perfil' || 'Candidato não encontrado'}</Link>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
       </main>
     </>

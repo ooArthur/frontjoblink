@@ -125,3 +125,51 @@
     border-bottom: 0.26vw solid #EFEFEF;
     width: 100%;
 }
+
+@media screen and (max-width: 450px) {
+
+    .header{
+        width: 58%;
+    }
+
+    .class-icon>button {
+        font-size: 5vw;
+    }
+
+    .pre-visualizacao header{
+        height: 100px !important;
+    }
+
+    .perfil-pre-visualizacao span{
+        font-size: 8vw;
+    }
+
+    .perfil-pre-visualizacao>h3{
+        color: white;
+        font-size: 4vw;
+        font-weight: 800;
+    }
+
+    .perfil-pre-visualizacao>h4{
+        font-size: 3.3vw;
+        font-weight: 500;
+    }
+
+    .info-perfil-borda{
+        padding: 20px 0;
+        border-bottom: 2px solid #d4d4d4;
+    }
+
+    .infos-pre-visualizacao h3{
+        font-size: 3.5vw;
+    }
+
+    .infos-pre-visualizacao p{
+        font-size: 3vw;
+    }
+
+    .infos-pre-visualizacao{
+        width: 80%;
+        padding: 0 0 2vw 0 !important;
+    }
+}
