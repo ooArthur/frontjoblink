@@ -22,6 +22,7 @@ export default function ContaEmpresa() {
     const [newPasswordConfirmation, setNewPasswordConfirmation] = useState('');
     const [iconeAtivo, setIconeAtivo] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const { handleLogout } = useUser();
 
     const areas = [
         'Tecnologia', 'Saúde', 'Educação', 'Finanças', 'Engenharia',
@@ -515,7 +516,7 @@ export default function ContaEmpresa() {
 
                             <div className='salvar-empresa'>
                                 <button id="buttonSalvarEmpresa" type="submit">Salvar Alterações</button>
-                                <button id="buttonSairEmpresa" type="submit">Sair da Conta</button>
+                                <button id="buttonSairEmpresa" onClick={handleLogout}>Sair da Conta</button>
                             </div>
                         </div>
 

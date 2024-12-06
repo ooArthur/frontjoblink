@@ -136,7 +136,7 @@
     background-color: rgba(0, 0, 0, 0.400);
     display: flex;
     flex-direction: column;
-    padding: 2vw 2vw;
+    padding: 4vw 2vw;
     width: 100%;
     border-radius: 10px;
     margin: 3vw 0 0 0;
@@ -315,6 +315,28 @@
     color: red !important;
 }
 
+.candidate-modal{
+    background-color: white;
+    padding: 3vw;
+}
+
+.modal-content p {
+    padding: 1vw 0;
+}
+
+.modal-actions{
+    gap: 1vw;
+}
+
+.modal-actions button{
+    background-color: #160E37;
+    color: white;
+    border: solid 1px #160E37;
+    padding: 1vw 3vw;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
 @media screen and (max-width:450px){
     .content-vaga-titulo{
         display: flex;
@@ -326,6 +348,7 @@
 
     .vaga-titulo{
         height: 20vh;
+        margin: 20px 0;
     }
 
     .vaga-titulo-nome p{
@@ -339,7 +362,7 @@
     .content-vaga-titulo button{
         font-size: 3vw;
         width: auto;
-        padding: 3vw;
+        padding: 5vw 9vw;
     }
 
     .container-dados-vaga{
@@ -408,5 +431,41 @@
     .box-analise-dados-vaga h1{
         color: rgb(195, 195, 195);
         font-size: 3vw;
+    }
+
+    .content-curriculos-interessados{
+        width: 100%;
+        height: 30vw;
+    }
+
+    .content-box-infos-curriculos{
+        padding: 15px;
+    }
+
+    .content-box-infos-curriculos p{
+        font-size: 3vw;
+    }
+
+    .content-curriculos-interessados > button > p{
+        font-size: 3vw;
+        color: white;
+        width: 55px;
+    }
+
+    .buttons-vaga-titulo {
+        margin: 20px 0;
+    }
+
+    .empresa-data>h1{
+        font-weight: bold !important;
+        font-size: 5vw;
+    }
+
+    .header-editar-vaga{
+        margin: 20px 0;
+    }
+
+    .content-header-editar-vaga a{
+        font-size: 5vw;
     }
 }
