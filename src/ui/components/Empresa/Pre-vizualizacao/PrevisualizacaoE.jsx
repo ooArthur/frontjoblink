@@ -4,6 +4,7 @@ import axiosInstance from '../../../../source/axiosInstance';
 import { useFavorites } from '../../../../Context/FavoritesContext'; // Importando o hook corretamente
 import { useInterested } from '../../../../Context/InterestedContext';
 import { toast } from 'sonner';
+import Loading from '../../Loading/Loading'
 import './PreVisualizacao.css';
 
 
@@ -128,7 +129,7 @@ export default function PrevisualizacaoE() {
   };
 
   if (loading) {
-    return <div>Carregando...</div>;
+    return <Loading />
   }
 
   if (!company) {
