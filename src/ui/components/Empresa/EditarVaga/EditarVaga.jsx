@@ -430,21 +430,69 @@ export default function EditarVaga() {
                   </div>
 
                   <h4>Qualificações Necessárias:</h4>
-                  <input
-                    type="text"
-                    value={vagaData.requiredQualifications.join(', ')} // Exibindo como uma string
-                    onChange={(e) => setVagaData({ ...vagaData, requiredQualifications: e.target.value.split(', ') })}
-                    placeholder="Adicionar qualificação"
-                  />
+{vagaData.requiredQualifications.map((qualification, index) => (
+  <div key={index} className="qualification-input">
+    <input
+      type="text"
+      value={qualification}
+      onChange={(e) => {
+        const updatedQualifications = [...vagaData.requiredQualifications];
+        updatedQualifications[index] = e.target.value;
+        setVagaData({ ...vagaData, requiredQualifications: updatedQualifications });
+      }}
+      placeholder="Adicionar qualificação"
+    />
+    {/* Botão para remover a qualificação */}
+    <button
+      type="button"
+      onClick={() => {
+        const updatedQualifications = vagaData.requiredQualifications.filter((_, i) => i !== index);
+        setVagaData({ ...vagaData, requiredQualifications: updatedQualifications });
+      }}
+    >
+      Remover
+    </button>
+  </div>
+))}
 
-                  <h4>Habilidades Desejadas:</h4>
-                  <input
-                    type="text"
-                    value={vagaData.desiredSkills.join(', ')} // Exibindo como uma string
-                    onChange={(e) => setVagaData({ ...vagaData, desiredSkills: e.target.value.split(', ') })}
-                    placeholder="Adicionar habilidade"
-                  />
+{/* Botão para adicionar uma nova qualificação */}
+<button
+  type="button"
+  onClick={() => {
+    setVagaData({
+      ...vagaData,
+      requiredQualifications: [...vagaData.requiredQualifications, '']
+    });
+  }}
+>
+  Adicionar Qualificação
+</button>
 
+<h4>Habilidades Desejadas:</h4>
+{vagaData.desiredSkills.map((skill, index) => (
+  <div key={index} className="skill-input">
+    <input
+      type="text"
+      value={skill}
+      onChange={(e) => {
+        const updatedSkills = [...vagaData.desiredSkills];
+        updatedSkills[index] = e.target.value;
+        setVagaData({ ...vagaData, desiredSkills: updatedSkills });
+      }}
+      placeholder="Adicionar habilidade"
+    />
+    {/* Botão para remover a habilidade */}
+    <button
+      type="button"
+      onClick={() => {
+        const updatedSkills = vagaData.desiredSkills.filter((_, i) => i !== index);
+        setVagaData({ ...vagaData, desiredSkills: updatedSkills });
+      }}
+    >
+      Remover
+    </button>
+  </div>
+))}
                   <h4>Tipo de Emprego:</h4>
                   <select
                     name="employmentType"

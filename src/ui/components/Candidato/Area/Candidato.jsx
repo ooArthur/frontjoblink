@@ -503,7 +503,7 @@ function Candidato() {
                   {languages.map((language, index) => (
                     <div key={index}>
                       <button onClick={() => handleLanguageToggle(index)}>
-                        {language.name} - {language.level}
+                        {language.name === "-" ? "Selecione um idioma" : language.name} - {language.level}
                       </button>
                       {activeLanguageIndex === index && (
                         <div className='expandido'>
@@ -515,9 +515,14 @@ function Candidato() {
                               onChange={(e) => handleLanguageChange(index, 'name', e.target.value)}
                             >
                               {languageOptions.map((option, i) => (
-                                <option key={i} value={option}>
-                                  {option}
-                                </option>
+                                <>
+                                  <option value="Idioma">
+                                    Selecione um idioma
+                                  </option>
+                                  <option key={i} value={option}>
+                                    {option}
+                                  </option>
+                                </>
                               ))}
                             </select>
 
